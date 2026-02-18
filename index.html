@@ -61,24 +61,37 @@
 
         nav {
             background: rgba(10, 14, 39, 0.95);
-            padding: 1.5rem;
+            padding: 0.9rem 1.5rem;
             text-align: center;
             position: sticky;
             top: 0;
             z-index: 100;
             border-bottom: 1px solid #2a3550;
             backdrop-filter: blur(10px);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.3rem 0;
+        }
+
+        .nav-row {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            gap: 0;
+            padding: 0.2rem 0;
         }
 
         nav a {
             color: #a8b4c8;
             text-decoration: none;
-            margin: 0 1.5rem;
-            font-size: 0.95rem;
+            margin: 0 0.85rem;
+            font-size: 0.88rem;
             font-weight: 500;
             transition: all 0.3s ease;
             border-bottom: 2px solid transparent;
-            padding-bottom: 0.5rem;
+            padding-bottom: 0.4rem;
+            white-space: nowrap;
         }
 
         nav a:hover, nav a.active {
@@ -688,14 +701,18 @@
     </header>
 
     <nav>
-        <a href="#" class="tab-btn active" onclick="showSection('unreal', this); return false;">🚀 Unreal 최신 뉴스</a>
-        <a href="#" class="tab-btn" onclick="showSection('gis', this); return false;">🗺️ Unreal GIS 뉴스</a>
-        <a href="#" class="tab-btn" onclick="showSection('us', this); return false;">🇺🇸 자율주행 미국 뉴스</a>
-        <a href="#" class="tab-btn" onclick="showSection('china', this); return false;">🇨🇳 자율주행 중국 뉴스</a>
-        <a href="#" class="tab-btn" onclick="showSection('europe', this); return false;">🇪🇺 자율주행 유럽 뉴스</a>
-        <a href="#" class="tab-btn" onclick="showSection('linkedin', this); return false;">💼 AV 시뮬레이션 업계 뉴스</a>
-        <a href="#" class="tab-btn" onclick="showSection('games', this); return false;">🎮 레이싱 & 시뮬 게임</a>
-        <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
+        <div class="nav-row">
+            <a href="#" class="tab-btn active" onclick="showSection('unreal', this); return false;">🚀 Unreal 최신 뉴스</a>
+            <a href="#" class="tab-btn" onclick="showSection('gis', this); return false;">🗺️ Unreal GIS 뉴스</a>
+            <a href="#" class="tab-btn" onclick="showSection('us', this); return false;">🇺🇸 자율주행 미국 뉴스</a>
+            <a href="#" class="tab-btn" onclick="showSection('china', this); return false;">🇨🇳 자율주행 중국 뉴스</a>
+        </div>
+        <div class="nav-row">
+            <a href="#" class="tab-btn" onclick="showSection('europe', this); return false;">🇪🇺 자율주행 유럽 뉴스</a>
+            <a href="#" class="tab-btn" onclick="showSection('linkedin', this); return false;">💼 링크드인 뉴스</a>
+            <a href="#" class="tab-btn" onclick="showSection('games', this); return false;">🎮 레이싱 & 시뮬 게임</a>
+            <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
+        </div>
     </nav>
 
     <div class="container">
@@ -1440,7 +1457,7 @@
 
         <!-- 7. AV 시뮬레이션 업계 뉴스 (LinkedIn 유형) -->
         <div id="linkedin" class="section">
-            <h2>💼 AV 시뮬레이션 업계 전문 뉴스</h2>
+            <h2>💼 링크드인 뉴스 — AV 시뮬레이션 업계</h2>
             <p style="color:#aab0d0;font-size:0.85rem;margin-bottom:1rem;">※ LinkedIn은 공개 RSS를 제공하지 않아, 동일 주제의 업계 전문 뉴스를 Google News에서 집계합니다. 매일 자동 업데이트됩니다.</p>
             <div class="card-grid" id="news-grid-linkedin_av">
 
