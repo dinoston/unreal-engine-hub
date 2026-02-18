@@ -31,7 +31,9 @@ NEWS_FEEDS = {
     'unreal':   'https://news.google.com/rss/search?q=%22Unreal+Engine%22+OR+%22Epic+Games%22&hl=en-US&gl=US&ceid=US:en',
     'gis':      'https://news.google.com/rss/search?q=%22Unreal+Engine%22+GIS+OR+%22digital+twin%22+OR+Cesium+OR+ArcGIS&hl=en-US&gl=US&ceid=US:en',
     'us_av':    'https://news.google.com/rss/search?q=autonomous+driving+simulation+Waymo+OR+Tesla+OR+NVIDIA+OR+%22self-driving%22&hl=en-US&gl=US&ceid=US:en',
-    'china_av': 'https://news.google.com/rss/search?q=China+%22autonomous+vehicle%22+OR+%22self-driving%22+BYD+OR+Baidu+OR+DeepSeek&hl=en-US&gl=US&ceid=US:en',
+    'china_av':  'https://news.google.com/rss/search?q=China+%22autonomous+vehicle%22+OR+%22self-driving%22+BYD+OR+Baidu+OR+DeepSeek&hl=en-US&gl=US&ceid=US:en',
+    'europe_av': 'https://news.google.com/rss/search?q=Europe+%22autonomous+vehicle%22+OR+%22self-driving%22+Mercedes+OR+BMW+OR+Volkswagen+OR+Wayve+OR+Mobileye&hl=en-US&gl=US&ceid=US:en',
+    'linkedin_av': 'https://news.google.com/rss/search?q=%22AV+simulation%22+OR+%22autonomous+driving+simulation%22+OR+%22CARLA+simulator%22+OR+%22driving+simulator%22+OR+%22synthetic+data+autonomous%22&hl=en-US&gl=US&ceid=US:en',
 }
 
 

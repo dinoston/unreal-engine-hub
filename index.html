@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unreal Engine Hub</title>
+    <title>Simulation Unreal Engine Hub</title>
     <style>
         * {
             margin: 0;
@@ -467,6 +467,25 @@
             border: 1px solid #667eea;
         }
 
+        .hot-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #ff4e00, #ec9f05);
+            color: #fff;
+            padding: 0.25rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            box-shadow: 0 2px 8px rgba(255, 78, 0, 0.4);
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .card { position: relative; }
+
         .card-price {
             color: #27ae60;
             font-weight: bold;
@@ -664,7 +683,7 @@
 </head>
 <body>
     <header>
-        <h1>Unreal Engine Hub</h1>
+        <h1>Simulation Unreal Engine Hub</h1>
         <p>Latest News, Free Assets & GIS Integration in One Place</p>
     </header>
 
@@ -673,6 +692,8 @@
         <a href="#" class="tab-btn" onclick="showSection('gis', this); return false;">🗺️ Unreal GIS 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('us', this); return false;">🇺🇸 자율주행 미국 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('china', this); return false;">🇨🇳 자율주행 중국 뉴스</a>
+        <a href="#" class="tab-btn" onclick="showSection('europe', this); return false;">🇪🇺 자율주행 유럽 뉴스</a>
+        <a href="#" class="tab-btn" onclick="showSection('linkedin', this); return false;">💼 AV 시뮬레이션 업계 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('games', this); return false;">🎮 레이싱 & 시뮬 게임</a>
         <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
     </nav>
@@ -957,6 +978,7 @@
             <div class="card-grid" id="news-grid-unreal">
 
                 <div class="card fade-in">
+                    <span class="hot-badge">🔥 HOT</span>
                     <div class="card-image">
                         <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/2026/02/unreal-fest-chicago-2026-header.jpg" alt="Unreal Fest Chicago 2026">
                     </div>
@@ -1067,6 +1089,7 @@
             <div class="card-grid" id="news-grid-gis">
 
                 <div class="card fade-in">
+                    <span class="hot-badge">🔥 HOT</span>
                     <div class="card-image" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); font-size: 2.5rem;">🌍</div>
                     <div class="card-content">
                         <div class="card-meta">Technology · Terrain</div>
@@ -1169,6 +1192,7 @@
             <div class="card-grid" id="news-grid-us_av">
 
                 <div class="card fade-in">
+                    <span class="hot-badge">🔥 HOT</span>
                     <div class="card-image">🤖</div>
                     <div class="card-content">
                         <div class="card-meta">February 6, 2026 · Waymo</div>
@@ -1252,6 +1276,7 @@
             <div class="card-grid" id="news-grid-china_av">
 
                 <div class="card fade-in">
+                    <span class="hot-badge">🔥 HOT</span>
                     <div class="card-image">🏭</div>
                     <div class="card-content">
                         <div class="card-meta">February 12, 2026 · Chongqing</div>
@@ -1329,7 +1354,176 @@
             </div>
         </div>
 
-        <!-- 6. 레이싱 & 시뮬 게임 -->
+        <!-- 6. 자율주행 유럽 뉴스 -->
+        <div id="europe" class="section">
+            <h2>🇪🇺 자율주행 시뮬레이션 - 유럽</h2>
+            <div class="card-grid" id="news-grid-europe_av">
+
+                <div class="card fade-in">
+                    <span class="hot-badge">🔥 HOT</span>
+                    <div class="card-image">🚗</div>
+                    <div class="card-content">
+                        <div class="card-meta">January 2026 · Mercedes-Benz</div>
+                        <h3 class="card-title">Mercedes-Benz L3 Drive Pilot — Europe's First Legal AV
+                            <div class="card-title-kor">메르세데스-벤츠 드라이브 파일럿 — 유럽 최초 합법 자율주행</div>
+                        </h3>
+                        <p class="card-summary">메르세데스-벤츠가 독일·미국에서 세계 최초 L3 자율주행 양산 승인을 획득했습니다. 고속도로 60km/h 이하에서 운전자가 손을 뗄 수 있으며, NVIDIA Cosmos 기반 시뮬레이션으로 수천만 km의 가상 검증을 거쳤습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">L3 Autonomous</span>
+                            <a href="https://www.mercedes-benz.com/en/vehicles/passenger-cars/mercedes-benz-cars-equipped-with-drive-pilot/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🤖</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Wayve (UK)</div>
+                        <h3 class="card-title">Wayve: Embodied AI for Autonomous Driving
+                            <div class="card-title-kor">웨이브: 자율주행을 위한 구현형 AI</div>
+                        </h3>
+                        <p class="card-summary">영국 스타트업 Wayve가 NVIDIA·SoftBank로부터 $1B+ 투자를 유치했습니다. 대형 행동 모델(LINGO)을 활용해 다양한 도시 환경에서 즉각 적응하는 범용 자율주행 AI를 개발 중이며, Microsoft와의 클라우드 파트너십도 체결했습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Embodied AI</span>
+                            <a href="https://wayve.ai" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">⚙️</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · Bosch / Continental</div>
+                        <h3 class="card-title">Bosch & Continental: Europe's ADAS Supply Chain
+                            <div class="card-title-kor">보쉬 & 컨티넨탈: 유럽 ADAS 공급망 주도</div>
+                        </h3>
+                        <p class="card-summary">보쉬와 컨티넨탈이 유럽 완성차 ADAS 시장의 70% 이상을 공급합니다. 레이더·카메라·LiDAR 센서 퓨전 기술과 함께 dSPACE AURELION 언리얼 엔진 기반 시뮬레이션으로 L2+~L3 시스템을 대규모 검증하고 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">ADAS Supply Chain</span>
+                            <a href="https://www.bosch-mobility.com/en/solutions/software-and-services/automated-driving/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🏎️</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · Volkswagen / CARIAD</div>
+                        <h3 class="card-title">VW CARIAD: Software-Defined Vehicle Platform
+                            <div class="card-title-kor">폭스바겐 카리아드: 소프트웨어 정의 차량 플랫폼</div>
+                        </h3>
+                        <p class="card-summary">폭스바겐 그룹 소프트웨어 자회사 CARIAD가 Audi·Porsche·VW 전 차종에 통합 AV 소프트웨어 스택을 개발 중입니다. 그룹 내 모든 자율주행 기능의 플랫폼화를 목표로 하며, 2026년부터 L2+ 기능을 순차 탑재할 예정입니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">SDV Platform</span>
+                            <a href="https://cariad.technology" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🛣️</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · EU Regulation</div>
+                        <h3 class="card-title">EU AV Regulation: Type Approval for L3+ Systems
+                            <div class="card-title-kor">EU 자율주행 규제: L3+ 시스템 형식 승인 체계</div>
+                        </h3>
+                        <p class="card-summary">유럽연합이 UNECE WP.29 기준에 따른 L3 이상 자율주행 시스템의 형식 승인 체계를 시행 중입니다. 독일·프랑스·영국이 자국 AV 법제를 정비하며 유럽 내 자율주행 상용화 경쟁이 가속되고 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Regulation</span>
+                            <a href="https://unece.org/transport/vehicle-regulations/wp29-world-forum-harmonization-vehicle-regulations" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 7. AV 시뮬레이션 업계 뉴스 (LinkedIn 유형) -->
+        <div id="linkedin" class="section">
+            <h2>💼 AV 시뮬레이션 업계 전문 뉴스</h2>
+            <p style="color:#aab0d0;font-size:0.85rem;margin-bottom:1rem;">※ LinkedIn은 공개 RSS를 제공하지 않아, 동일 주제의 업계 전문 뉴스를 Google News에서 집계합니다. 매일 자동 업데이트됩니다.</p>
+            <div class="card-grid" id="news-grid-linkedin_av">
+
+                <div class="card fade-in">
+                    <span class="hot-badge">🔥 HOT</span>
+                    <div class="card-image">🧪</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · CARLA Simulator</div>
+                        <h3 class="card-title">CARLA Open-Source AV Simulator — Industry Standard
+                            <div class="card-title-kor">카를라 오픈소스 자율주행 시뮬레이터 — 업계 표준</div>
+                        </h3>
+                        <p class="card-summary">CARLA(Car Learning to Act)는 자율주행 연구의 사실상 업계 표준 오픈소스 시뮬레이터입니다. Unreal Engine 기반으로 구축되어 있으며, 센서 시뮬레이션(카메라·LiDAR·레이더)과 교통 흐름 생성, 다양한 날씨·조명 조건 재현이 가능합니다. 전 세계 AV 연구팀과 기업들이 알고리즘 사전 검증에 활용합니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Open Source</span>
+                            <a href="https://carla.org" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🌐</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · NVIDIA Omniverse</div>
+                        <h3 class="card-title">NVIDIA Omniverse & Cosmos: Synthetic Data at Scale
+                            <div class="card-title-kor">NVIDIA 옴니버스 & 코스모스: 대규모 합성 데이터 생성</div>
+                        </h3>
+                        <p class="card-summary">NVIDIA Omniverse와 Cosmos 플랫폼이 자율주행 합성 데이터 생성의 핵심 인프라로 자리잡고 있습니다. Waymo·Toyota 등 주요 AV 기업들이 수십억 km의 가상 주행 데이터를 생성해 AI 학습에 활용 중입니다. dSPACE·ANSYS와의 통합으로 HIL/SIL 테스트까지 원스톱 처리가 가능합니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Synthetic Data</span>
+                            <a href="https://www.nvidia.com/en-us/omniverse/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🔬</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · Waymo / Google</div>
+                        <h3 class="card-title">Waymo Simulation-First: Testing Billions of Miles Virtually
+                            <div class="card-title-kor">웨이모 '시뮬레이션 우선': 수십억 마일의 가상 테스트</div>
+                        </h3>
+                        <p class="card-summary">웨이모는 실제 도로 주행보다 시뮬레이션 검증을 앞세우는 'Simulation-First' 전략을 채택했습니다. 자체 개발 시뮬레이터 CarCraft에서 연간 수십억 마일을 가상으로 주행하며, 엣지 케이스(Edge Case) 시나리오를 체계적으로 생성·검증합니다. 이 방식으로 실차 주행 대비 수천 배 빠른 안전성 검증이 가능합니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Simulation-First</span>
+                            <a href="https://waymo.com/research/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">📊</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · Industry Trend</div>
+                        <h3 class="card-title">AV Simulation Market: $10B+ by 2030
+                            <div class="card-title-kor">자율주행 시뮬레이션 시장: 2030년 100억 달러 돌파 전망</div>
+                        </h3>
+                        <p class="card-summary">글로벌 자율주행 시뮬레이션 시장이 연평균 30% 이상 성장해 2030년 100억 달러를 넘어설 것으로 전망됩니다. dSPACE·Ansys·Applied Intuition·Cognata 등 전문 시뮬레이션 업체들이 OEM 및 Tier-1 공급업체의 수요를 흡수하며 빠르게 성장하고 있습니다. Unreal Engine 기반 솔루션의 채택이 특히 두드러집니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Market Research</span>
+                            <a href="https://www.linkedin.com/search/results/content/?keywords=autonomous+driving+simulation" class="read-more" target="_blank">LinkedIn에서 보기</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🤝</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 · Applied Intuition</div>
+                        <h3 class="card-title">Applied Intuition: Enterprise AV Simulation Platform
+                            <div class="card-title-kor">어플라이드 인튜이션: 기업용 자율주행 시뮬레이션 플랫폼</div>
+                        </h3>
+                        <p class="card-summary">Applied Intuition이 Toyota·Hyundai·GM 등 주요 완성차 기업과 파트너십을 확대하며 기업용 AV 시뮬레이션 플랫폼의 선두주자로 부상했습니다. 수동 시나리오 작성 없이 AI가 자동으로 엣지 케이스를 생성하는 'Generative Simulation' 기능이 업계의 주목을 받고 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Enterprise Platform</span>
+                            <a href="https://www.appliedintuition.com" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 8. 레이싱 & 시뮬 게임 -->
         <div id="games" class="section">
             <h2>🎮 레이싱 & 시뮬레이션 게임</h2>
             <div class="games-split">
@@ -1583,7 +1777,7 @@
     </div> <!-- /container -->
 
     <footer>
-        <p>&copy; 2026 Unreal Engine Hub | Last Updated: February 18, 2026</p>
+        <p>&copy; 2026 Simulation Unreal Engine Hub | Last Updated: February 18, 2026</p>
         <p>For official news, visit <a href="https://www.unrealengine.com/en-US/news" style="color: #667eea; text-decoration: none;">Unreal Engine News</a> and <a href="https://www.fab.com" style="color: #667eea; text-decoration: none;">Fab Marketplace</a></p>
     </footer>
 
@@ -1621,8 +1815,9 @@
             if (!articles || !articles.length) return;
             const grid = document.getElementById('news-grid-' + section);
             if (!grid) return;
-            grid.innerHTML = articles.map(a => `
+            grid.innerHTML = articles.map((a, i) => `
                 <div class="card fade-in">
+                    ${i === 0 ? '<span class="hot-badge">🔥 HOT</span>' : ''}
                     <div class="card-image" style="font-size:2.5rem; background:linear-gradient(135deg,#1a1f3a,#2a3550);">📰</div>
                     <div class="card-content">
                         <div class="card-meta">${fmtDate(a.date)}${a.source ? ' · ' + esc(a.source) : ''}</div>
@@ -1631,7 +1826,7 @@
                         </h3>
                         <p class="card-summary">${esc(a.summary_ko || a.summary || '')}</p>
                         <div class="card-footer">
-                            <span class="card-tag">Latest</span>
+                            <span class="card-tag">${i === 0 ? '🔥 인기' : 'Latest'}</span>
                             ${a.link ? '<a href="'+esc(a.link)+'" class="read-more" target="_blank">Read More</a>' : ''}
                         </div>
                     </div>
@@ -1665,10 +1860,12 @@
 
                 // Update news grids
                 if (data.news) {
-                    renderNews('unreal',   data.news.unreal);
-                    renderNews('gis',      data.news.gis);
-                    renderNews('us_av',    data.news.us_av);
-                    renderNews('china_av', data.news.china_av);
+                    renderNews('unreal',      data.news.unreal);
+                    renderNews('gis',         data.news.gis);
+                    renderNews('us_av',       data.news.us_av);
+                    renderNews('china_av',    data.news.china_av);
+                    renderNews('europe_av',   data.news.europe_av);
+                    renderNews('linkedin_av', data.news.linkedin_av);
                 }
             } catch(e) {
                 console.log('Data load error:', e);
