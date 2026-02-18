@@ -717,24 +717,6 @@
         .li-sub { font-size: 0.78rem; color: #667eea; }
         .li-arrow { font-size: 0.8rem; color: #a8b4c8; margin-top: 0.6rem; }
 
-        .reddit-shortcut-card {
-            display: flex;
-            flex-direction: column;
-            gap: 0.4rem;
-            background: linear-gradient(135deg, #1e1a2e, #2e1e1e);
-            border: 1px solid #3a2525;
-            border-radius: 14px;
-            padding: 1.4rem 1.6rem;
-            text-decoration: none;
-            color: #e0e6ed;
-            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-        .reddit-shortcut-card:hover {
-            border-color: #ff4500;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 24px rgba(255,69,0,0.25);
-        }
 
         @media (max-width: 768px) {
             .games-split { grid-template-columns: 1fr; }
@@ -757,7 +739,6 @@
         </div>
         <div class="nav-row">
             <a href="#" class="tab-btn" onclick="showSection('linkedin', this); return false;">💼 링크드인 속보</a>
-            <a href="#" class="tab-btn" onclick="showSection('reddit', this); return false;">🔴 레딧 속보</a>
             <a href="#" class="tab-btn" onclick="showSection('games', this); return false;">🎮 레이싱 & 시뮬 게임</a>
             <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
         </div>
@@ -1569,73 +1550,7 @@
             </div>
         </div>
 
-        <!-- 8. 레딧 속보 -->
-        <div id="reddit" class="section">
-            <h2>🔴 레딧 속보 — 자율주행 커뮤니티 포스트</h2>
-            <p style="color:#aab0d0;font-size:0.85rem;margin-bottom:2rem;">Reddit 자율주행 커뮤니티에서 개인들이 올린 최신 포스트를 바로 확인하세요. 아래 버튼을 클릭하면 해당 서브레딧으로 이동합니다.</p>
-
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem; max-width:1100px;">
-
-                <a href="https://www.reddit.com/r/SelfDrivingCars/new/" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">🚗</div>
-                    <div class="li-label">r/SelfDrivingCars</div>
-                    <div class="li-sub">자율주행 최신 포스트</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-                <a href="https://www.reddit.com/r/autonomous/new/" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">🤖</div>
-                    <div class="li-label">r/autonomous</div>
-                    <div class="li-sub">자율주행 기술 토론</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-                <a href="https://www.reddit.com/r/MachineLearning/search/?q=autonomous+driving&sort=new" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">🧠</div>
-                    <div class="li-label">r/MachineLearning</div>
-                    <div class="li-sub">자율주행 AI/ML 포스트</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-                <a href="https://www.reddit.com/r/Waymo/new/" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">🏎️</div>
-                    <div class="li-label">r/Waymo</div>
-                    <div class="li-sub">Waymo 사용자 경험 & 뉴스</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-                <a href="https://www.reddit.com/r/teslamotors/search/?q=autopilot+FSD&sort=new" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">⚡</div>
-                    <div class="li-label">r/teslamotors — FSD</div>
-                    <div class="li-sub">Tesla 자율주행 포스트</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-                <a href="https://www.reddit.com/r/nvidia/search/?q=autonomous+driving+simulation&sort=new" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">💻</div>
-                    <div class="li-label">r/nvidia — AV Simulation</div>
-                    <div class="li-sub">NVIDIA 자율주행 시뮬 포스트</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-                <a href="https://www.reddit.com/r/unrealengine/search/?q=autonomous+simulation&sort=new" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">🎮</div>
-                    <div class="li-label">r/unrealengine — AV Sim</div>
-                    <div class="li-sub">언리얼 엔진 자율주행 프로젝트</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-                <a href="https://www.reddit.com/r/China/search/?q=autonomous+vehicle+BYD+Baidu&sort=new" target="_blank" class="reddit-shortcut-card">
-                    <div class="li-icon">🇨🇳</div>
-                    <div class="li-label">Reddit — 중국 AV</div>
-                    <div class="li-sub">BYD · Baidu 자율주행 포스트</div>
-                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
-                </a>
-
-            </div>
-        </div>
-
-        <!-- 9. 레이싱 & 시뮬 게임 -->
+        <!-- 8. 레이싱 & 시뮬 게임 -->
         <div id="games" class="section">
             <h2>🎮 레이싱 & 시뮬레이션 게임</h2>
             <div class="games-split">
