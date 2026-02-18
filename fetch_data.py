@@ -151,4 +151,4 @@ for section, query in NEWS_QUERIES.items():
 with open('data.json', 'w', encoding='utf-8') as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 
-print(f'\n✅  data.json saved  [{output["updated_kst"]}]')
+print(f'\nOK  data.json saved  [{output["updated_kst"]}]')
