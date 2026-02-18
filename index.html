@@ -100,13 +100,68 @@
 
         /* 좌측 순위 사이드바 */
         .sidebar {
-            width: 20%;
-            min-width: 180px;
+            width: 16.5%;
+            min-width: 155px;
             flex-shrink: 0;
             position: sticky;
             top: 72px;
             z-index: 50;
         }
+
+        /* 주식 현황 패널 */
+        .stock-list {
+            background: linear-gradient(135deg, #1a1f3a 0%, #16192c 100%);
+            border: 1px solid #2a3550;
+            border-radius: 10px;
+            overflow: visible;
+            margin-bottom: 1rem;
+        }
+
+        .stock-item {
+            display: flex;
+            align-items: center;
+            padding: 0.45rem 0.6rem;
+            border-bottom: 1px solid #1e2540;
+            gap: 0.4rem;
+            position: relative;
+        }
+        .stock-item:last-child { border-bottom: none; }
+        .stock-item:hover { background: rgba(102,126,234,0.08); }
+
+        .stock-flag { font-size: 0.75rem; flex-shrink: 0; }
+
+        .stock-info { flex: 1; min-width: 0; }
+
+        .stock-name {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #e0e6ed;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .stock-ticker {
+            font-size: 0.62rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .stock-price-col { text-align: right; flex-shrink: 0; }
+
+        .stock-price {
+            font-size: 0.71rem;
+            font-weight: 700;
+            color: #e0e6ed;
+        }
+
+        .stock-chg {
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+        .stock-chg.up { color: #e74c3c; }
+        .stock-chg.down { color: #3498db; }
+        .stock-chg.flat { color: #7f8c8d; }
 
         .sidebar-title {
             font-size: 0.85rem;
@@ -803,6 +858,157 @@
 
             <div style="font-size:0.65rem; color:#4a5568; text-align:center; padding: 0.25rem 0;">
                 기업가치·시총 기준 / 2026.02 기준
+            </div>
+
+            <!-- 주식 현황 패널 -->
+            <div class="sidebar-title" style="margin-top:1.1rem;">📈 AV·자동차 주식 현황</div>
+            <div class="stock-list">
+                <div class="stock-item">
+                    <div class="stock-flag">🇺🇸</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Tesla</div>
+                        <div class="stock-ticker">TSLA</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$364</div>
+                        <div class="stock-chg down">▼ 1.2%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇺🇸</div>
+                    <div class="stock-info">
+                        <div class="stock-name">NVIDIA</div>
+                        <div class="stock-ticker">NVDA</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$138</div>
+                        <div class="stock-chg up">▲ 2.8%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇯🇵</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Toyota</div>
+                        <div class="stock-ticker">TM</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$192</div>
+                        <div class="stock-chg up">▲ 0.4%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇰🇷</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Hyundai</div>
+                        <div class="stock-ticker">HYMTF</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$42</div>
+                        <div class="stock-chg up">▲ 1.1%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇨🇳</div>
+                    <div class="stock-info">
+                        <div class="stock-name">BYD</div>
+                        <div class="stock-ticker">BYDDF</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$38</div>
+                        <div class="stock-chg up">▲ 3.5%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇩🇪</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Mercedes</div>
+                        <div class="stock-ticker">MBG.DE</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">€62</div>
+                        <div class="stock-chg down">▼ 0.7%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇩🇪</div>
+                    <div class="stock-info">
+                        <div class="stock-name">BMW</div>
+                        <div class="stock-ticker">BMW.DE</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">€82</div>
+                        <div class="stock-chg flat">— 0.0%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇺🇸</div>
+                    <div class="stock-info">
+                        <div class="stock-name">GM</div>
+                        <div class="stock-ticker">GM</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$52</div>
+                        <div class="stock-chg up">▲ 0.9%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇺🇸</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Ford</div>
+                        <div class="stock-ticker">F</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$11</div>
+                        <div class="stock-chg down">▼ 1.8%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇺🇸</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Mobileye</div>
+                        <div class="stock-ticker">MBLY</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$16</div>
+                        <div class="stock-chg up">▲ 1.4%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇨🇳</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Baidu</div>
+                        <div class="stock-ticker">BIDU</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$88</div>
+                        <div class="stock-chg up">▲ 2.1%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇩🇪</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Volkswagen</div>
+                        <div class="stock-ticker">VWAGY</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$8</div>
+                        <div class="stock-chg down">▼ 0.5%</div>
+                    </div>
+                </div>
+                <div class="stock-item">
+                    <div class="stock-flag">🇯🇵</div>
+                    <div class="stock-info">
+                        <div class="stock-name">Honda</div>
+                        <div class="stock-ticker">HMC</div>
+                    </div>
+                    <div class="stock-price-col">
+                        <div class="stock-price">$28</div>
+                        <div class="stock-chg down">▼ 0.3%</div>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size:0.6rem; color:#4a5568; text-align:center; padding: 0.2rem 0 0.5rem;">
+                ※ 참고 시세 / 실시간 아님 / 2026.02
             </div>
         </aside>
 
