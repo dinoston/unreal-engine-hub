@@ -1,24 +1,24 @@
 {
-  "updated": "2026-02-18 17:01 UTC",
-  "updated_kst": "2026-02-19 02:01 KST",
+  "updated": "2026-02-18 17:04 UTC",
+  "updated_kst": "2026-02-19 02:04 KST",
   "stocks": {
     "TSLA": {
-      "price": 414.32,
-      "change_pct": -0.75,
+      "price": 415.05,
+      "change_pct": -0.57,
       "currency": "USD",
       "name": "Tesla",
       "flag": "🇺🇸"
     },
     "NVDA": {
-      "price": 188.81,
-      "change_pct": 3.28,
+      "price": 189.04,
+      "change_pct": 3.41,
       "currency": "USD",
       "name": "NVIDIA",
       "flag": "🇺🇸"
     },
     "TM": {
-      "price": 244.44,
-      "change_pct": -1.55,
+      "price": 244.59,
+      "change_pct": -1.49,
       "currency": "USD",
       "name": "Toyota",
       "flag": "🇯🇵"
@@ -45,29 +45,29 @@
       "flag": "🇩🇪"
     },
     "GM": {
-      "price": 83.77,
-      "change_pct": 3.32,
+      "price": 83.85,
+      "change_pct": 3.42,
       "currency": "USD",
       "name": "GM",
       "flag": "🇺🇸"
     },
     "F": {
-      "price": 14.09,
-      "change_pct": -0.21,
+      "price": 14.08,
+      "change_pct": -0.28,
       "currency": "USD",
       "name": "Ford",
       "flag": "🇺🇸"
     },
     "MBLY": {
-      "price": 9.23,
-      "change_pct": 0.44,
+      "price": 9.24,
+      "change_pct": 0.6,
       "currency": "USD",
       "name": "Mobileye",
       "flag": "🇺🇸"
     },
     "BIDU": {
-      "price": 139.38,
-      "change_pct": 1.73,
+      "price": 139.42,
+      "change_pct": 1.76,
       "currency": "USD",
       "name": "Baidu",
       "flag": "🇨🇳"
@@ -80,315 +80,19 @@
       "flag": "🇩🇪"
     },
     "HMC": {
-      "price": 31.01,
-      "change_pct": -2.43,
+      "price": 31.02,
+      "change_pct": -2.39,
       "currency": "USD",
       "name": "Honda",
       "flag": "🇯🇵"
     }
   },
   "news": {
-    "unreal": [
-      {
-        "title": "(PR) Battlefield 6 Season 2 Heads to Europe With New Maps, Weapons, and Limited-Time Modes",
-        "title_ko": "(홍보) Battlefield 6 시즌 2가 새로운 지도, 무기, 기간 한정 모드와 함께 유럽으로 향합니다",
-        "link": "https://www.techpowerup.com/346478/battlefield-6-season-2-heads-to-europe-with-new-maps-weapons-and-limited-time-modes",
-        "summary": "Electronic Arts Inc. and Battlefield Studios today launched Season 2 across Battlefield 6 and REDSEC. Season 2 sends the fight to Europe with two new maps, limited-time modes, and much more, rolling out across three seasonal phases beginning today.\n\nLaunching…",
-        "summary_ko": "Electronic Arts Inc.와 Battlefield Studios는 오늘 Battlefield 6 및 REDSEC 전반에 걸쳐 시즌 2를 출시했습니다. 시즌 2에서는 두 개의 새로운 지도, 기간 한정 모드 등을 통해 유럽에서 전투를 펼치며 오늘부터 세 가지 시즌 단계에 걸쳐 출시됩니다.\n\n진수…",
-        "date": "2026-02-17T16:55:20Z",
-        "source": "Techpowerup.com",
-        "image": "https://www.techpowerup.com/img/vjiTW3eTpnxvUnPd.jpg"
-      },
-      {
-        "title": "Google Lost Two Antitrust Cases, But Stock Rose 65% – Here’s Why via @sejournal, @MattGSouthern",
-        "title_ko": "Google은 두 건의 독점금지 소송에서 패소했지만 주가는 65% 상승했습니다. @sejournal, @MattGSouthern을 통해 그 이유를 알아보세요.",
-        "link": "https://www.searchenginejournal.com/google-lost-two-antitrust-cases-but-stock-rose-65-heres-why/566461/",
-        "summary": "Courts ruled against Google, regulators push forward, and appeals loom. Here’s where every proceeding stands and what it signals for search and monetization.\nThe post Google Lost Two Antitrust Cases, But Stock Rose 65% – Here’s Why appeared first on Search En…",
-        "summary_ko": "법원은 Google에 대해 패소 판결을 내렸고 규제 당국은 이를 추진했으며 항소가 곧 이뤄질 예정입니다. 모든 절차가 진행되는 위치와 검색 및 수익 창출에 대한 신호는 다음과 같습니다.\nGoogle은 두 건의 독점금지 소송에서 패했지만 주가는 65% 상승했습니다. Search En에 처음 등장한 이유는 다음과 같습니다.",
-        "date": "2026-02-17T14:00:30Z",
-        "source": "Search Engine Journal",
-        "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/02/google-stock-rose-944.jpg"
-      },
-      {
-        "title": "Epstein Files, Anthropic, xAI, More: Tuesday ResearchBuzz, February 17, 2026",
-        "title_ko": "Epstein Files, Anthropic, xAI, 기타: 화요일 ResearchBuzz, 2026년 2월 17일",
-        "link": "https://researchbuzz.me/2026/02/17/epstein-files-anthropic-xai-more-tuesday-researchbuzz-february-17-2026/",
-        "summary": "NEW RESOURCES Daily Star: AI wiki turns Epstein files into encyclopedia. “The new site Jikipedia, styled as a Wikipedia clone, compiles dossiers on individuals mentioned in the emails released by the US […]",
-        "summary_ko": "새로운 리소스 Daily Star: AI wiki는 Epstein 파일을 백과사전으로 변환합니다. “Wikipedia 복제품 스타일의 새로운 사이트 Jikipedia는 미국이 공개한 이메일에 언급된 개인에 대한 서류를 편집합니다. [...]",
-        "date": "2026-02-17T13:01:54Z",
-        "source": "Researchbuzz.me",
-        "image": "https://s0.wp.com/_si/?t=eyJpbWciOiJodHRwczpcL1wvczAud3AuY29tXC9pXC9ibGFuay5qcGciLCJ0eHQiOiJSZXNlYXJjaEJ1enoiLCJ0ZW1wbGF0ZSI6ImhpZ2h3YXkiLCJmb250IjoiIiwiYmxvZ19pZCI6NDMyODc1Nn0.BjdcPIDlw4ZG0Ki13B-quwxnrzAxn9iB5rJXagRMNlcMQ"
-      },
-      {
-        "title": "High on Life 2 is absolutely hilarious gaming with some awkward mic drops — and it's on Xbox Game Pass, too",
-        "title_ko": "High on Life 2는 어색한 마이크 드롭이 포함된 정말 재미있는 게임입니다. Xbox Game Pass에서도 가능합니다.",
-        "link": "https://www.windowscentral.com/gaming/xbox/high-on-life-2-is-absolutely-hilarious-gaming-with-some-awkward-mic-drops-and-its-on-xbox-game-pass-too",
-        "summary": "Squanch Games manages to capture the magic of the original, though it has a few awkward performance issues.",
-        "summary_ko": "Squanch Games는 몇 가지 어색한 성능 문제가 있지만 원본의 마법을 포착했습니다.",
-        "date": "2026-02-17T11:41:47Z",
-        "source": "Windows Central",
-        "image": "https://cdn.mos.cms.futurecdn.net/fZq8bbB23r2VtR74QizDpg-1920-80.jpg"
-      },
-      {
-        "title": "Rocket League is adding Easy Anti-Cheat, Psyonix say Linux will still be supported with Proton",
-        "title_ko": "Rocket League는 Easy Anti-Cheat를 추가하고 있으며 Psyonix는 Linux가 Proton에서 계속 지원될 것이라고 말합니다.",
-        "link": "https://www.gamingonlinux.com/2026/02/rocket-league-is-adding-easy-anti-cheat-psyonix-say-linux-will-still-be-supported-with-proton/.",
-        "summary": "Rocket League is set to get Easy Anti-Cheat in April, as the Epic Games owned studio Psyonix just recently announced.Read the full article on GamingOnLinux.",
-        "summary_ko": "Rocket League는 Epic Games 소유 스튜디오 Psyonix가 최근 발표한 대로 4월에 Easy Anti-Cheat를 제공할 예정입니다. GamingOnLinux에서 전체 기사를 읽어보세요.",
-        "date": "2026-02-17T11:37:27Z",
-        "source": "Gamingonlinux.com",
-        "image": "https://www.gamingonlinux.com/uploads/articles/tagline_images/480837767id28507gol.jpg"
-      }
-    ],
-    "gis": [
-      {
-        "title": "Google Lost Two Antitrust Cases, But Stock Rose 65% – Here’s Why via @sejournal, @MattGSouthern",
-        "title_ko": "Google은 두 건의 독점금지 소송에서 패소했지만 주가는 65% 상승했습니다. @sejournal, @MattGSouthern을 통해 그 이유를 알아보세요.",
-        "link": "https://www.searchenginejournal.com/google-lost-two-antitrust-cases-but-stock-rose-65-heres-why/566461/",
-        "summary": "Courts ruled against Google, regulators push forward, and appeals loom. Here’s where every proceeding stands and what it signals for search and monetization.\nThe post Google Lost Two Antitrust Cases, But Stock Rose 65% – Here’s Why appeared first on Search En…",
-        "summary_ko": "법원은 Google에 대해 패소 판결을 내렸고 규제 당국은 이를 추진했으며 항소가 곧 이뤄질 예정입니다. 모든 절차가 진행되는 위치와 검색 및 수익 창출에 대한 신호는 다음과 같습니다.\nGoogle은 두 건의 독점금지 소송에서 패했지만 주가는 65% 상승했습니다. Search En에 처음 등장한 이유는 다음과 같습니다.",
-        "date": "2026-02-17T14:00:30Z",
-        "source": "Search Engine Journal",
-        "image": "https://cdn.searchenginejournal.com/wp-content/uploads/2026/02/google-stock-rose-944.jpg"
-      },
-      {
-        "title": "High on Life 2 is absolutely hilarious gaming with some awkward mic drops — and it's on Xbox Game Pass, too",
-        "title_ko": "High on Life 2는 어색한 마이크 드롭이 포함된 정말 재미있는 게임입니다. Xbox Game Pass에서도 가능합니다.",
-        "link": "https://www.windowscentral.com/gaming/xbox/high-on-life-2-is-absolutely-hilarious-gaming-with-some-awkward-mic-drops-and-its-on-xbox-game-pass-too",
-        "summary": "Squanch Games manages to capture the magic of the original, though it has a few awkward performance issues.",
-        "summary_ko": "Squanch Games는 몇 가지 어색한 성능 문제가 있지만 원본의 마법을 포착했습니다.",
-        "date": "2026-02-17T11:41:47Z",
-        "source": "Windows Central",
-        "image": "https://cdn.mos.cms.futurecdn.net/fZq8bbB23r2VtR74QizDpg-1920-80.jpg"
-      },
-      {
-        "title": "InstaLOD releases InstaLOD 2026",
-        "title_ko": "InstaLOD, InstaLOD 2026 출시",
-        "link": "https://www.cgchannel.com/2026/02/instalod-releases-instalod-2026/",
-        "summary": "Check out the new features in this powerful set of geometry optimization tools for games and VFX work. Free to indie artists.",
-        "summary_ko": "게임 및 VFX 작업을 위한 강력한 지오메트리 최적화 도구 세트의 새로운 기능을 확인해 보세요. 인디 아티스트에게는 무료입니다.",
-        "date": "2026-02-17T09:44:05Z",
-        "source": "Cgchannel.com",
-        "image": ""
-      },
-      {
-        "title": "Styx: Blades of Greed Review – A Sandbox Goblin Adventure",
-        "title_ko": "Styx: Blades of Greed 검토 – 샌드박스 고블린 모험",
-        "link": "https://wccftech.com/review/styx-blades-of-greed-review-a-sandbox-goblin-adventure/",
-        "summary": "Cyanide's Styx series may not be a household name for stealth games, but it still managed to carve out a niche for itself thanks to its solid gameplay and personable protagonist, a rogue goblin called Styx who's never afraid to voice his mind. No one would pr…",
-        "summary_ko": "Cyanide의 Styx 시리즈는 스텔스 게임의 유명한 이름은 아니지만 탄탄한 게임 플레이와 개성 넘치는 주인공, 자신의 마음을 표현하는 것을 결코 두려워하지 않는 Styx라는 불량 고블린 덕분에 여전히 틈새 시장을 개척할 수 있었습니다. 아무도 홍보하지 않을 것입니다…",
-        "date": "2026-02-17T09:00:00Z",
-        "source": "Wccftech",
-        "image": "https://cdn.wccftech.com/wp-content/uploads/2026/02/Styx-Blades-of-Greed-Review-header.jpeg"
-      },
-      {
-        "title": "New Leak Reveals Biggest Change to Rocket League Since Its Launch",
-        "title_ko": "New Leak은 출시 이후 Rocket League의 가장 큰 변화를 밝힙니다.",
-        "link": "http://comicbook.com/gaming/news/new-leak-reveals-biggest-change-to-rocket-league-since-its-launch/",
-        "summary": "A new leak has revealed what would be the biggest change to Rocket League since Psyonix released the game in 2015 as an early PlayStation Plus hit. Despite being 11 calendar years old, Rocket League hasn’t changed much since its original release. Normally, th…",
-        "summary_ko": "새로운 유출을 통해 Psyonix가 2015년 초기 PlayStation Plus 히트작으로 게임을 출시한 이후 Rocket League에 가장 큰 변화가 무엇인지 밝혀졌습니다. Rocket League는 11년이 지났음에도 불구하고 최초 출시 이후 크게 변하지 않았습니다. 일반적으로, 그…",
-        "date": "2026-02-16T16:06:05Z",
-        "source": "ComicBook.com",
-        "image": "https://comicbook.com/wp-content/uploads/sites/4/2026/02/rocket-league.png?resize=2000,1125"
-      }
-    ],
-    "us_av": [
-      {
-        "title": "Tesla ‘Robotaxi’ adds 5 more crashes in Austin in a month — 4x worse than humans",
-        "title_ko": "Tesla 'Robotaxi'는 한 달 동안 오스틴에서 5번의 충돌 사고를 더 추가합니다. 이는 인간보다 4배 더 심합니다.",
-        "link": "http://electrek.co/2026/02/17/tesla-robotaxi-adds-5-more-crashes-austin-month-4x-worse-than-humans/",
-        "summary": "Tesla has reported five new crashes involving its “Robotaxi” fleet in Austin, Texas, bringing the total to 14 incidents since the service launched in June 2025. The newly filed NHTSA data also reveals that Tesla quietly upgraded one earlier crash to include a…",
-        "summary_ko": "Tesla는 텍사스주 오스틴에서 자사의 \"Robotaxi\" 차량과 관련된 5건의 새로운 충돌 사고를 보고하여 2025년 6월 서비스 출시 이후 총 14건의 사고가 발생했습니다. 새로 제출된 NHTSA 데이터에 따르면 Tesla는 이전 충돌 사고 한 건을 조용히 업그레이드하여 다음을 포함했습니다.",
-        "date": "2026-02-17T16:08:46Z",
-        "source": "Electrek",
-        "image": "https://i0.wp.com/electrek.co/wp-content/uploads/sites/3/2021/08/Tesla-Full-Self-Driving-Beta-Hero.jpg?resize=1200%2C628&quality=82&strip=all&ssl=1"
-      },
-      {
-        "title": "Autonomous Vehicles Strategic Intelligence Report 2025: Market to Consolidate Around a Small Set of Well-capitalized First Movers-especially Baidu (Apollo Go), Waymo, Zoox, WeRide, and Pony.ai",
-        "title_ko": "자율주행차 전략 인텔리전스 보고서 2025: 시장은 자본력이 풍부한 소수의 First Mover, 특히 Baidu(Apollo Go), Waymo, Zoox, WeRide 및 Pony.ai를 중심으로 통합될 것입니다.",
-        "link": "https://www.globenewswire.com/news-release/2026/02/17/3239534/28124/en/Autonomous-Vehicles-Strategic-Intelligence-Report-2025-Market-to-Consolidate-Around-a-Small-Set-of-Well-capitalized-First-Movers-especially-Baidu-Apollo-Go-Waymo-Zoox-WeRide-and-Po.html",
-        "summary": "Robotaxi opportunities focus on city-specific expansions in China, the US, and Gulf states, driven by regulatory ease, data collection, and software development. Safety and public trust are crucial for scaling. Key players include Waymo, Baidu, and WeRide. Le…",
-        "summary_ko": "Robotaxi 기회는 규제 완화, 데이터 수집 및 소프트웨어 개발에 힘입어 중국, 미국 및 걸프 지역의 도시별 확장에 중점을 두고 있습니다. 확장에는 안전과 대중의 신뢰가 중요합니다. 주요 플레이어로는 Waymo, Baidu 및 WeRide가 있습니다. 르…",
-        "date": "2026-02-17T16:00:00Z",
-        "source": "GlobeNewswire",
-        "image": "https://ml.globenewswire.com/Resource/Download/908fb457-7f8e-4a08-9081-5565e3dfb3d7"
-      },
-      {
-        "title": "EVs take centre stage at 2026 Canadian Auto Show",
-        "title_ko": "2026년 캐나다 오토쇼에서 전기차가 중심 무대를 차지하다",
-        "link": "https://mobilesyrup.com/2026/02/17/evs-2026-canadian-auto-show/",
-        "summary": "Electric vehicles continue to play a big role in what automakers are showing at the 2026 Canadian International Auto Show (CIAS) in Toronto from Feb. 13-22. The timing comes soon after the federal government scrapped the previous EV mandate requiring all car …",
-        "summary_ko": "전기 자동차는 2월 13일부터 22일까지 토론토에서 열리는 2026 캐나다 국제 자동차 전시회(CIAS)에서 자동차 제조사들이 선보이는 전시에서 계속해서 큰 역할을 하고 있습니다. 그 시기는 연방 정부가 모든 차량을 의무적으로 요구하는 이전 EV 명령을 폐기한 직후에 발생합니다.",
-        "date": "2026-02-17T15:59:14Z",
-        "source": "MobileSyrup",
-        "image": "https://production-static.mobilesyrup.com/uploads/2026/02/Canadian-Auto-Show-hero-scaled.jpg"
-      },
-      {
-        "title": "How autonomous robotics are quietly reshaping logistics from the inside out",
-        "title_ko": "자율 로봇이 물류를 내부에서 외부로 조용히 재편하는 방법",
-        "link": "https://techpinions.com/robotics-the-quiet-revolution-in-logistics/",
-        "summary": "While generative AI dominates the headlines and the funding rounds, a different kind of automation is quietly restructuring one of the largest economic sectors on the planet. Autonomous robotics in logistics isn’t a future trend — it’s a present-tense industr…",
-        "summary_ko": "생성적 AI가 헤드라인과 자금 조달 라운드를 장악하고 있는 동안, 다른 종류의 자동화가 지구상에서 가장 큰 경제 부문 중 하나를 조용히 재구성하고 있습니다. 물류 분야의 자율 로봇 공학은 미래의 트렌드가 아닌 현재의 산업입니다…",
-        "date": "2026-02-17T15:00:00Z",
-        "source": "Techpinions.com",
-        "image": "https://techpinions.com/wp-content/uploads/2026/02/unsplash-4nfPgBofTs4.jpg"
-      },
-      {
-        "title": "NYC-Based Investor Launches Dual-Track Strategy Bridging Industrial Real Estate Development and Frontier Defense Technology",
-        "title_ko": "NYC 기반 투자자, 산업 부동산 개발과 최전선 방어 기술을 연결하는 이중 트랙 전략 출시",
-        "link": "https://www.globenewswire.com/news-release/2026/02/17/3239410/0/en/NYC-Based-Investor-Launches-Dual-Track-Strategy-Bridging-Industrial-Real-Estate-Development-and-Frontier-Defense-Technology.html",
-        "summary": "Corniche Capital founder David Ebrahimzadeh announces a dual-track strategy bridging industrial real estate development and frontier defense technology.​​​",
-        "summary_ko": "Corniche Capital 창립자 David Ebrahimzadeh는 산업 부동산 개발과 최전선 방어 기술을 연결하는 이중 트랙 전략을 발표했습니다.​​​",
-        "date": "2026-02-17T14:17:00Z",
-        "source": "GlobeNewswire",
-        "image": "https://ml.globenewswire.com/Resource/Download/ef9a76dd-ddd4-428c-9ac6-53ccd29c1b85"
-      }
-    ],
-    "china_av": [
-      {
-        "title": "Artificial intelligence: We’re AI-illiterate, and our economic growth is at stake – Mark Laurence",
-        "title_ko": "인공 지능: 우리는 AI에 대해 문맹이고 경제 성장이 위태로워졌습니다 – 마크 로렌스",
-        "link": "https://www.nzherald.co.nz/nz/artificial-intelligence-were-ai-illiterate-and-our-economic-growth-is-at-stake-mark-laurence/premium/QZS76625ZNBNDJJ6426NKJGT5I/",
-        "summary": "OPINION: Nations from the US to Australia are investing heavily in AI skills.",
-        "summary_ko": "의견: 미국부터 호주까지 다양한 국가에서 AI 기술에 막대한 투자를 하고 있습니다.",
-        "date": "2026-02-17T17:00:00Z",
-        "source": "New Zealand Herald",
-        "image": "https://www.nzherald.co.nz/resizer/v2/ZXWE5SYLSJHMLH337U2TWMZEXA.jpg?auth=f71e088b9a4fcddd074019269d84ddd800f3282679b16481f1d44d58a2d62636&width=1200&height=675&quality=70&focal=1423%2C725&smart=false"
-      },
-      {
-        "title": "Secrecy Surrounds Beijing-Backed Refinery Deal in Serbia",
-        "title_ko": "베이징이 지원하는 세르비아 정유소 거래에 대한 비밀 유지",
-        "link": "https://oilprice.com/Energy/Energy-General/Secrecy-Surrounds-Beijing-Backed-Refinery-Deal-in-Serbia.html",
-        "summary": "Residents of Smederevo, a Serbian industrial city already blanketed by pollution from a Chinese-owned steel mill, are pushing back against plans for a $2.8 billion oil refinery backed by Chinese state-owned companies -- a project negotiated largely out of pub…",
-        "summary_ko": "이미 중국 소유 제철소의 오염으로 뒤덮인 세르비아 산업 도시 스메데레보 주민들은 중국 국영 기업이 지원하는 28억 달러 규모의 정유소 계획에 반대하고 있습니다.",
-        "date": "2026-02-17T17:00:00Z",
-        "source": "OilPrice.com",
-        "image": "https://d32r1sh890xpii.cloudfront.net/article/718x300/2026-02-16_jw0desw3hl.jpg"
-      },
-      {
-        "title": "Benfica vs Real Madrid Free Streams: How to watch Champions League 2025/26 1st leg from anywhere in the world",
-        "title_ko": "벤피카 vs 레알 마드리드 무료 스트림: 전 세계 어디에서나 챔피언스 리그 2025/26 1차전을 시청하는 방법",
-        "link": "https://www.techradar.com/how-to-watch/football/benfica-vs-real-madrid-2025-26-1st-leg-free",
-        "summary": "All the ways to watch Benfica vs Real Madrid live streams for free, with Jose Mourinho out to haunt his old side in this UCL knockout phase playoff 1st leg.",
-        "summary_ko": "Benfica 대 Real Madrid의 실시간 스트리밍을 무료로 시청할 수 있는 모든 방법이 있습니다. Jose Mourinho가 이번 UCL 녹아웃 단계 플레이오프 1차전에서 그의 옛 팀을 괴롭힐 것입니다.",
-        "date": "2026-02-17T17:00:00Z",
-        "source": "TechRadar",
-        "image": "https://cdn.mos.cms.futurecdn.net/qZVAnSRs9cEjWVWgFrU3CT-1920-80.jpg"
-      },
-      {
-        "title": "Most people are individually optimistic, but think the world is falling apart",
-        "title_ko": "대부분의 사람들은 개인적으로 낙관적이지만 세상이 무너지고 있다고 생각합니다.",
-        "link": "https://hannahritchie.substack.com/p/many-people-are-individually-optimistic",
-        "summary": "Most people are personally optimistic, but socially pessimistic. This can be a drag on collective progress.",
-        "summary_ko": "대부분의 사람들은 개인적으로 낙관적이지만 사회적으로 비관적입니다. 이는 집단적 발전에 지장을 줄 수 있습니다.",
-        "date": "2026-02-17T16:57:36Z",
-        "source": "Substack.com",
-        "image": "https://substackcdn.com/image/fetch/$s_!DD7x!,w_1200,h_675,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F28d64d8e-9d77-4088-acfc-6febc931754a_1200x846.jpeg"
-      },
-      {
-        "title": "Seanergy Maritime Q4 Earnings Call Highlights",
-        "title_ko": "Seanergy Maritime 4분기 실적 발표 하이라이트",
-        "link": "https://www.marketbeat.com/instant-alerts/seanergy-maritime-q4-earnings-call-highlights-2026-02-17/?utm_source=yahoofinance&amp;utm_medium=yahoofinance",
-        "summary": "Seanergy Maritime (NASDAQ:SHIP) reported fourth-quarter and full-year 2025 results highlighting its fifth consecutive year of profitability, continued...",
-        "summary_ko": "Seanergy Maritime(NASDAQ:SHIP)은 5년 연속 수익성을 강조하는 2025년 4분기 및 연간 실적을 발표했습니다.",
-        "date": "2026-02-17T16:50:11Z",
-        "source": "MarketBeat",
-        "image": "https://s.yimg.com/os/en/marketbeat_955/91a7f679ce391410806157670a0ce0e2"
-      }
-    ],
-    "europe_av": [
-      {
-        "title": "Visa Launches North Africa Sub-Region to Fuel Digital Payment Growth",
-        "title_ko": "Visa, 디지털 결제 성장 촉진을 위해 북아프리카 하위 지역 개설",
-        "link": "https://www.pymnts.com/digital-payments/2026/visa-launches-north-africa-sub-region-fuel-digital-payment-growth/",
-        "summary": "Visa formed a new sub-region that includes Egypt, Libya and Sudan, saying the move will advance its strategic growth plans in the wider North Africa, Levant and Pakistan region. The new sub-region enables Visa to be closer to clients and stakeholders and rein…",
-        "summary_ko": "비자는 이집트, 리비아, 수단을 포함하는 새로운 하위 지역을 구성했으며 이번 조치로 더 넓은 북아프리카, 레반트, 파키스탄 지역에서 전략적 성장 계획이 진전될 것이라고 말했습니다. 새로운 하위 지역을 통해 Visa는 고객 및 이해관계자들과 더 가까워지고 관리를 강화할 수 있습니다.",
-        "date": "2026-02-17T17:01:35Z",
-        "source": "pymnts.com",
-        "image": "https://www.pymnts.com/wp-content/uploads/2026/01/Visa.jpeg"
-      },
-      {
-        "title": "Amazon Connect now supports multi-line text fields on case templates",
-        "title_ko": "Amazon Connect는 이제 사례 템플릿에서 여러 줄의 텍스트 필드를 지원합니다.",
-        "link": "https://aws.amazon.com/about-aws/whats-new/2026/02/amazon-connect-cases-multiline-text-fields/",
-        "summary": "Amazon Connect now supports larger, multi-line text fields on case templates allowing agents to capture detailed free-form notes and structured data directly within cases. These fields expand vertically to accommodate multiple paragraphs, making it easier to …",
-        "summary_ko": "Amazon Connect는 이제 사례 템플릿에서 더 큰 여러 줄의 텍스트 필드를 지원하므로 상담원이 사례 내에서 직접 자세한 자유 형식 메모와 구조화된 데이터를 캡처할 수 있습니다. 이 필드는 여러 단락을 수용할 수 있도록 수직으로 확장되므로...",
-        "date": "2026-02-17T17:00:00Z",
-        "source": "Amazon.com",
-        "image": ""
-      },
-      {
-        "title": "Thundercat, Mac Miller Ride Again On New Song",
-        "title_ko": "Thundercat, Mac Miller가 새 노래를 다시 선보입니다.",
-        "link": "https://www.spin.com/2026/02/thundercat-mac-miller-new-song/",
-        "summary": "Thundercat again pays tribute to his late friend Mac Miller on.. Thundercat again pays tribute to his late friend Mac Miller on..",
-        "summary_ko": "Thundercat은 다시 그의 고인이 된 친구 Mac Miller에게 경의를 표합니다. Thundercat은 다시 그의 고인이 된 친구 Mac Miller에게 경의를 표합니다..",
-        "date": "2026-02-17T17:00:00Z",
-        "source": "SPIN",
-        "image": "https://static.spin.com/files/2026/02/Thundercat-and-Mac-Miller-by-Justin-Boyd.jpeg"
-      },
-      {
-        "title": "SEAM: Modern Gear Management Personalized for You",
-        "title_ko": "SEAM: 귀하를 위한 맞춤형 최신 장비 관리",
-        "link": "https://soldiersystems.net/2026/02/17/seam-modern-gear-management-personalized-for-you/",
-        "summary": "DETROIT ARSENAL, Mich. — A Soldier’s strength is built on more than courage and rigorous training — it’s also in the gear worn on their bodies, stowed in their rucksacks and carried into conflict. Diligent equipment management has always been a cornerstone of…",
-        "summary_ko": "미시간주 디트로이트 아스널 - 군인의 힘은 용기와 엄격한 훈련 그 이상으로 형성됩니다. 또한 몸에 착용하고 배낭에 넣어 전투에 투입되는 장비에도 힘이 있습니다. 부지런한 장비 관리는 항상 회사의 초석이었습니다.",
-        "date": "2026-02-17T17:00:00Z",
-        "source": "Soldiersystems.net",
-        "image": "https://soldiersystems.net/wp-content/uploads/2026/02/image-20.jpg"
-      }
-    ],
-    "linkedin_av": [
-      {
-        "title": "Self-driving cars are poorly prepared for high-risk road situations – here’s how AI can improve them",
-        "title_ko": "자율주행차는 위험도가 높은 도로 상황에 제대로 준비되어 있지 않습니다. AI가 이를 개선할 수 있는 방법은 다음과 같습니다.",
-        "link": "https://theconversation.com/self-driving-cars-are-poorly-prepared-for-high-risk-road-situations-heres-how-ai-can-improve-them-275841",
-        "summary": "A virtual proving ground can help improve the ability of self driving cars to handle rare events on the road.",
-        "summary_ko": "가상 시험장은 도로에서 발생하는 드문 사건을 처리하는 자율 주행 자동차의 능력을 향상시키는 데 도움이 될 수 있습니다.",
-        "date": "2026-02-17T13:02:52Z",
-        "source": "The Conversation Africa",
-        "image": "https://images.theconversation.com/files/717915/original/file-20260212-64-6gn2iu.jpg?ixlib=rb-4.1.0&rect=0%2C987%2C8280%2C4140&q=45&auto=format&w=1356&h=668&fit=crop"
-      },
-      {
-        "title": "North American eShop releases for the week of Feb. 12th, 2026",
-        "title_ko": "2026년 2월 12일 주간 북미 eShop 출시",
-        "link": "https://gonintendo.com/contents/57651-north-american-eshop-releases-for-the-week-of-feb-12th-2026",
-        "summary": "A pretty big week for Switch 2",
-        "summary_ko": "Switch 2에 있어 꽤 중요한 한 주입니다.",
-        "date": "2026-02-12T18:07:00Z",
-        "source": "GoNintendo",
-        "image": "https://gonintendo.com/attachments/image/76576/file/medium-47230bf23b8c0c24d6c62d9ee7b264c3.webp"
-      },
-      {
-        "title": "Nintendo Download: 12th February (North America)",
-        "title_ko": "Nintendo 다운로드: 2월 12일(북미)",
-        "link": "https://www.nintendolife.com/news/2026/02/nintendo-download-12th-february-north-america",
-        "summary": "Mario Tennis Fever! Reanimal! BlazBlue Entropy Effect X!The latest Nintendo Download update for North America has arrived, and it's bringing new games galore to the eShop in your region. As always, be sure to drop a vote in our poll and comment down below wit…",
-        "summary_ko": "마리오 테니스 열풍! 다시 동물화! BlazBlue Entropy Effect X!북미용 최신 Nintendo 다운로드 업데이트가 도착했습니다. 이를 통해 해당 지역의 eShop에 새로운 게임이 많이 추가됩니다. 언제나 그렇듯, 설문조사에서 한 표를 선택하고 아래에 댓글을 남겨주세요.",
-        "date": "2026-02-12T15:30:00Z",
-        "source": "Nintendo Life",
-        "image": "https://images.nintendolife.com/f31d0056eb112/large.jpg"
-      },
-      {
-        "title": "Truck Simulator UI Kit by Universe of 3D",
-        "title_ko": "Universe of 3D의 트럭 시뮬레이터 UI 키트",
-        "link": "https://assetstore.unity.com/packages/2d/gui/truck-simulator-ui-kit-354992",
-        "summary": "Professional, customizable UI kit for truck and vehicle simulator games. Includes realistic HUDs, dashboards, menus, and indicators. Optimized for PC & mobile, easy to integrate in Unity.Resulution:Mockups Resulution is 1920*1080All icons/Slicing are depend u…",
-        "summary_ko": "트럭 및 차량 시뮬레이터 게임을 위한 전문적이고 사용자 정의 가능한 UI 키트입니다. 사실적인 HUD, 대시보드, 메뉴 및 표시기가 포함됩니다. PC 및 모바일에 최적화되어 Unity에 쉽게 통합됩니다. 결과: 모형 결과는 1920*1080입니다. 모든 아이콘/슬라이싱은 사용자에 따라 다릅니다.",
-        "date": "2026-02-12T14:14:26Z",
-        "source": "Unity.com",
-        "image": "https://assetstorev1-prd-cdn.unity3d.com/key-image/4040abe6-df72-4316-94b9-10bc5a1eef8a.jpg?v=1"
-      },
-      {
-        "title": "道路に象や恐竜が登場する状況も想定した自動運転車向けシミュレーションを生成するAIモデル「Waymo World Model」をWaymoが発表、GoogleのAIツール「Genie 3」をベースに",
-        "title_ko": "道路に象や恐竜が登場 는 자동으로 運転車向けけけけしぐ竜が登場 에 맞는 AI 모델 \"Waymo World Model\" をWaymo が発表, GoogleのAIツ発表 , GoogleのAIツ発表3」을 베이스에",
-        "link": "https://news.livedoor.com/article/detail/30545190/",
-        "summary": "Google傘下の自動運転車開発企業、Waymoが、「超リアル」なシミュレーション環境を構築して自動運転モデルを訓練できるAIモデル「Waymo World Model」を発表しました。The Waymo World Model: A New Frontier For Autonomous Driving Simulationhttps://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simu…",
-        "summary_ko": "Google傘下の自動運転車開発企業、Waymoが、「超rial」나시뮤레이션環境を構築して自동運転모델を訓練데키루AI모델 「Waymo World 모델」を発表しました。The Waymo World Model: A New Frontier for Autonomous Driving Simulationhttps://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simu…",
-        "date": "2026-02-09T02:15:00Z",
-        "source": "Livedoor.com",
-        "image": "https://image.news.livedoor.com/newsimage/stf/8/c/8c736_88_5141009cf219ed05ba653809da4c1a8b.png"
-      }
-    ]
+    "unreal": [],
+    "gis": [],
+    "us_av": [],
+    "china_av": [],
+    "europe_av": [],
+    "linkedin_av": []
   }
 }
