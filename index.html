@@ -100,8 +100,8 @@
 
         /* 좌측 순위 사이드바 */
         .sidebar {
-            width: 25%;
-            min-width: 220px;
+            width: 20%;
+            min-width: 180px;
             flex-shrink: 0;
             position: sticky;
             top: 72px;
@@ -191,6 +191,47 @@
         .rank-change.same { color: #7f8c8d; }
 
         .content-area { flex: 1; min-width: 0; }
+
+        /* 게임 카드 유튜브 링크 스타일 */
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #ff0000;
+            color: white;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+        .youtube-btn:hover { opacity: 0.85; transform: translateY(-2px); }
+
+        .game-platform {
+            display: inline-block;
+            background: rgba(39, 174, 96, 0.2);
+            color: #27ae60;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            border: 1px solid #27ae60;
+            margin-right: 0.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .game-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            color: white;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-left: 0.4rem;
+            vertical-align: middle;
+        }
 
         .section {
             padding: 3rem 0;
@@ -423,6 +464,7 @@
         <a href="#" class="tab-btn" onclick="showSection('gis', this); return false;">🗺️ Unreal GIS 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('us', this); return false;">🇺🇸 자율주행 미국 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('china', this); return false;">🇨🇳 자율주행 중국 뉴스</a>
+        <a href="#" class="tab-btn" onclick="showSection('games', this); return false;">🎮 레이싱 & 시뮬 게임</a>
     </nav>
 
     <div class="container">
@@ -1000,6 +1042,110 @@
                             <span class="card-tag">Industry Overview</span>
                             <a href="https://news.cgtn.com/news/2026-02-06/DeepSeek-robots-autonomous-driving-questions-on-China-from-Russia-1KxsIADFYnm/p.html" class="read-more" target="_blank">Read More</a>
                         </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 6. 레이싱 & 시뮬 게임 -->
+        <div id="games" class="section">
+            <h2>🎮 레이싱 & 시뮬레이션 게임</h2>
+            <div class="card-grid">
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); font-size: 2.5rem;">🏎️</div>
+                    <div class="card-content">
+                        <div class="card-meta">2026 출시 예정 · PC</div>
+                        <h3 class="card-title">Assetto Corsa EVO <span class="game-badge">NEW</span>
+                            <div class="card-title-kor">아세토 코르사 에보 — Ferrari SF-25 F1 최초 탑재</div>
+                        </h3>
+                        <div>
+                            <span class="game-platform">PC / Steam</span>
+                            <span class="game-platform">VR 지원</span>
+                        </div>
+                        <p class="card-summary">Ferrari SF-25 F1 카를 세계 최초로 시뮬레이션에 도입한 차세대 레이싱 시뮬. 1,600km² 오픈월드 뉘르부르크링, 물리 엔진 완전 재건, 프로 드라이버 훈련용으로 사용되는 최고 수준의 주행 재현도를 자랑합니다.</p>
+                        <a href="https://www.youtube.com/results?search_query=Assetto+Corsa+EVO+2026+gameplay" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); font-size: 2.5rem;">🏁</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 출시 · PC</div>
+                        <h3 class="card-title">iRacing Arcade <span class="game-badge">NEW</span>
+                            <div class="card-title-kor">아이레이싱 아케이드 — 2026년 2월 정식 출시</div>
+                        </h3>
+                        <div>
+                            <span class="game-platform">PC / Steam</span>
+                            <span class="game-platform">멀티플레이</span>
+                        </div>
+                        <p class="card-summary">세계 최고의 프로 레이싱 시뮬레이터 iRacing이 진입 장벽을 낮춘 아케이드 버전을 2026년 2월 출시했습니다. IndyCar 공식 게임도 2026년 하반기 출시 예정으로, 20년 만에 시리즈 첫 단독 레이싱 게임입니다.</p>
+                        <a href="https://www.youtube.com/results?search_query=iRacing+Arcade+2026+gameplay" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, #1b4332 0%, #0f2820 100%); font-size: 2.5rem;">🚗</div>
+                    <div class="card-content">
+                        <div class="card-meta">지속 업데이트 · PC</div>
+                        <h3 class="card-title">BeamNG.drive
+                            <div class="card-title-kor">빔엔지 드라이브 — 세계 최고 수준 물리 차량 시뮬</div>
+                        </h3>
+                        <div>
+                            <span class="game-platform">PC / Steam</span>
+                            <span class="game-platform">자율주행 연구용</span>
+                        </div>
+                        <p class="card-summary">실시간 소프트바디 물리 엔진으로 충돌·변형·도로 반응을 극한까지 재현합니다. 자율주행 연구자들이 실제 센서 시뮬레이션 및 ADAS 테스트 환경으로 적극 활용하며, Python API 연동으로 AI 훈련도 가능합니다.</p>
+                        <a href="https://www.youtube.com/results?search_query=BeamNG+drive+2026+autonomous+driving+simulation" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%); font-size: 2.5rem;">🚴</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 16 – March 29, 2026 · 진행 중</div>
+                        <h3 class="card-title">Zwift Games 2026 <span class="game-badge">NOW LIVE</span>
+                            <div class="card-title-kor">즈위프트 게임즈 2026 — 사이클링 시뮬레이션 대회</div>
+                        </h3>
+                        <div>
+                            <span class="game-platform">PC / Mac / iOS</span>
+                            <span class="game-platform">실내 사이클링</span>
+                        </div>
+                        <p class="card-summary">2026년 2월 16일~3월 29일 진행되는 Zwift Games 2026. 5개 스테이지, 신규 루트, Shimano·Oakley·Wahoo 공식 후원. 올해부터 바이크 프레임·휠 선택이 실제 속도에 영향을 미치며 전략적 장비 선택이 중요해졌습니다.</p>
+                        <a href="https://www.youtube.com/results?search_query=Zwift+Games+2026+racing+highlights" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, #2d1b69 0%, #11002d 100%); font-size: 2.5rem;">🏆</div>
+                    <div class="card-content">
+                        <div class="card-meta">2025–2026 · PC / PS5 / VR</div>
+                        <h3 class="card-title">Le Mans Ultimate
+                            <div class="card-title-kor">르망 얼티밋 — FIA WEC 공식 레이싱 시뮬</div>
+                        </h3>
+                        <div>
+                            <span class="game-platform">PC / PS5</span>
+                            <span class="game-platform">VR / PS VR2</span>
+                        </div>
+                        <p class="card-summary">FIA 세계 내구 챔피언십(WEC) 공식 라이선스 시뮬레이터. 실제 팀·차량·서킷을 완벽 재현하며 PS VR2에서 최고 수준의 VR 레이싱 경험을 제공합니다. 프로 드라이버들이 실제 훈련에 사용하는 물리 정확도를 자랑합니다.</p>
+                        <a href="https://www.youtube.com/results?search_query=Le+Mans+Ultimate+2025+2026+gameplay+VR" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); font-size: 2.5rem;">🚛</div>
+                    <div class="card-content">
+                        <div class="card-meta">지속 업데이트 · PC</div>
+                        <h3 class="card-title">Euro / American Truck Simulator
+                            <div class="card-title-kor">트럭 시뮬레이터 — 자율주행 물류 시뮬레이션</div>
+                        </h3>
+                        <div>
+                            <span class="game-platform">PC / Steam</span>
+                            <span class="game-platform">장거리 주행</span>
+                        </div>
+                        <p class="card-summary">실제 도로·교통·날씨를 재현하는 트럭 운전 시뮬레이터. 자율주행 물류 시나리오 연구에 활용되며, 장거리 ADAS 및 고속도로 자율주행 알고리즘 테스트 환경으로 주목받고 있습니다. 지속적인 맵 확장 업데이트 중.</p>
+                        <a href="https://www.youtube.com/results?search_query=Euro+Truck+Simulator+2+2026+autonomous+driving" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
                     </div>
                 </div>
 
