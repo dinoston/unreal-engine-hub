@@ -92,6 +92,106 @@
             padding: 0 2rem;
         }
 
+        .main-layout {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        /* 좌측 순위 사이드바 */
+        .sidebar {
+            width: 25%;
+            min-width: 220px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 72px;
+        }
+
+        .sidebar-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #2a3550;
+        }
+
+        .rank-list {
+            background: linear-gradient(135deg, #1a1f3a 0%, #16192c 100%);
+            border: 1px solid #2a3550;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .rank-item {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem 0.75rem;
+            border-bottom: 1px solid #1e2540;
+            transition: background 0.2s;
+            cursor: default;
+        }
+
+        .rank-item:last-child { border-bottom: none; }
+        .rank-item:hover { background: rgba(102,126,234,0.08); }
+
+        .rank-num {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-right: 0.6rem;
+        }
+        .rank-num.top1 { background: #f39c12; color: #000; }
+        .rank-num.top2 { background: #bdc3c7; color: #000; }
+        .rank-num.top3 { background: #cd7f32; color: #000; }
+        .rank-num.other { background: #2a3550; color: #a8b4c8; }
+
+        .rank-info { flex: 1; min-width: 0; }
+
+        .rank-name {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #e0e6ed;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .rank-sub {
+            font-size: 0.68rem;
+            color: #667eea;
+            margin-top: 1px;
+        }
+
+        .rank-val {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #27ae60;
+            text-align: right;
+            flex-shrink: 0;
+            margin-left: 0.4rem;
+        }
+
+        .rank-change {
+            font-size: 0.65rem;
+            margin-top: 1px;
+            text-align: right;
+        }
+        .rank-change.up { color: #e74c3c; }
+        .rank-change.down { color: #3498db; }
+        .rank-change.same { color: #7f8c8d; }
+
+        .content-area { flex: 1; min-width: 0; }
+
         .section {
             padding: 3rem 0;
             display: none;
@@ -326,6 +426,142 @@
     </nav>
 
     <div class="container">
+    <div class="main-layout">
+
+        <!-- 좌측 순위 사이드바 -->
+        <aside class="sidebar">
+            <div class="sidebar-title">🏆 글로벌 AV 시뮬레이션 기업 순위</div>
+
+            <div class="rank-list">
+                <!-- 1 Waymo -->
+                <div class="rank-item">
+                    <div class="rank-num top1">1</div>
+                    <div class="rank-info">
+                        <div class="rank-name">Waymo (Google)</div>
+                        <div class="rank-sub">🇺🇸 자체 시뮬 플랫폼</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">$45B+</div>
+                        <div class="rank-change same">— 기업가치</div>
+                    </div>
+                </div>
+                <!-- 2 NVIDIA -->
+                <div class="rank-item">
+                    <div class="rank-num top2">2</div>
+                    <div class="rank-info">
+                        <div class="rank-name">NVIDIA DRIVE</div>
+                        <div class="rank-sub">🇺🇸 Cosmos / Alpamayo</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">$3.3T</div>
+                        <div class="rank-change up">▲ 시총</div>
+                    </div>
+                </div>
+                <!-- 3 Applied Intuition -->
+                <div class="rank-item">
+                    <div class="rank-num top3">3</div>
+                    <div class="rank-info">
+                        <div class="rank-name">Applied Intuition</div>
+                        <div class="rank-sub">🇺🇸 SDS / 풀스택</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">$6B</div>
+                        <div class="rank-change up">▲ 기업가치</div>
+                    </div>
+                </div>
+                <!-- 4 Baidu Apollo -->
+                <div class="rank-item">
+                    <div class="rank-num other">4</div>
+                    <div class="rank-info">
+                        <div class="rank-name">Baidu Apollo</div>
+                        <div class="rank-sub">🇨🇳 Apollo Sim</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">$35B</div>
+                        <div class="rank-change down">▼ 시총</div>
+                    </div>
+                </div>
+                <!-- 5 dSPACE -->
+                <div class="rank-item">
+                    <div class="rank-num other">5</div>
+                    <div class="rank-info">
+                        <div class="rank-name">dSPACE AURELION</div>
+                        <div class="rank-sub">🇩🇪 UE 기반 센서 Sim</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">비상장</div>
+                        <div class="rank-change same">— €400M+</div>
+                    </div>
+                </div>
+                <!-- 6 Waabi -->
+                <div class="rank-item">
+                    <div class="rank-num other">6</div>
+                    <div class="rank-info">
+                        <div class="rank-name">Waabi</div>
+                        <div class="rank-sub">🇺🇸 Gen AI + Cosmos</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">$200M+</div>
+                        <div class="rank-change up">▲ 투자유치</div>
+                    </div>
+                </div>
+                <!-- 7 51Sim -->
+                <div class="rank-item">
+                    <div class="rank-num other">7</div>
+                    <div class="rank-info">
+                        <div class="rank-name">51Sim (중국)</div>
+                        <div class="rank-sub">🇨🇳 51SimOne 클라우드</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">비상장</div>
+                        <div class="rank-change same">— 중국 1위</div>
+                    </div>
+                </div>
+                <!-- 8 Synkrotron -->
+                <div class="rank-item">
+                    <div class="rank-num other">8</div>
+                    <div class="rank-info">
+                        <div class="rank-name">Synkrotron.ai</div>
+                        <div class="rank-sub">🇨🇳 OASIS 풀스택</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">비상장</div>
+                        <div class="rank-change up">▲ 성장 중</div>
+                    </div>
+                </div>
+                <!-- 9 Cognata -->
+                <div class="rank-item">
+                    <div class="rank-num other">9</div>
+                    <div class="rank-info">
+                        <div class="rank-name">Cognata</div>
+                        <div class="rank-sub">🇮🇱 딥러닝 Sim</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">$50M+</div>
+                        <div class="rank-change same">— 투자유치</div>
+                    </div>
+                </div>
+                <!-- 10 rFpro -->
+                <div class="rank-item">
+                    <div class="rank-num other">10</div>
+                    <div class="rank-info">
+                        <div class="rank-name">rFpro</div>
+                        <div class="rank-sub">🇬🇧 UE 기반 드라이빙</div>
+                    </div>
+                    <div>
+                        <div class="rank-val">비상장</div>
+                        <div class="rank-change same">— 유럽 선두</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="font-size:0.65rem; color:#4a5568; text-align:center; padding: 0.25rem 0;">
+                기업가치·시총 기준 / 2026.02 기준
+            </div>
+        </aside>
+
+        <!-- 우측 콘텐츠 영역 -->
+        <div class="content-area">
 
         <!-- 1. Unreal 최신 뉴스 -->
         <div id="unreal" class="section active">
@@ -616,7 +852,7 @@
                         <h3 class="card-title">Waymo World Model: Generative AV Simulation
                             <div class="card-title-kor">웨이모 월드 모델: 생성형 AI 자율주행 시뮬레이터</div>
                         </h3>
-                        <p class="card-summary">Waymo가 Google DeepMind Genie 3 기반의 생성형 시뮬레이션 플랫폼 "Waymo World Model"을 공개했습니다. 2억 마일의 실주행 데이터로 훈련해 토네이도, 코끼리 등 현실에서 재현 불가능한 극단적 시나리오까지 시뮬레이션합니다. 하루 수십억 마일의 가상 주행을 처리합니다.</p>
+                        <p class="card-summary">Waymo가 Google DeepMind Genie 3 기반 생성형 시뮬레이션 "Waymo World Model"을 공개했습니다. 2억 마일 실주행 데이터로 훈련해 멀티센서(카메라+LiDAR) 출력을 시간적으로 일관되게 생성합니다. 토네이도·코끼리 등 현실에서 재현 불가능한 극단 시나리오도 처리하며, 하루 수십억 마일 규모의 가상 주행을 지원합니다.</p>
                         <div class="card-footer">
                             <span class="card-tag">Simulation Platform</span>
                             <a href="https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation" class="read-more" target="_blank">Read More</a>
@@ -627,11 +863,11 @@
                 <div class="card fade-in">
                     <div class="card-image">⚡</div>
                     <div class="card-content">
-                        <div class="card-meta">CES 2026 · NVIDIA</div>
-                        <h3 class="card-title">NVIDIA Alpamayo: Open AV Simulation Toolkit
-                            <div class="card-title-kor">NVIDIA 알파마요: 오픈소스 자율주행 시뮬레이션 툴킷</div>
+                        <div class="card-meta">January 6, 2026 · NVIDIA CES</div>
+                        <h3 class="card-title">NVIDIA Alpamayo + Cosmos 2.5: AV Sim Revolution
+                            <div class="card-title-kor">NVIDIA 알파마요 + 코스모스 2.5: 자율주행 시뮬레이션 혁신</div>
                         </h3>
-                        <p class="card-summary">NVIDIA가 CES 2026에서 Alpamayo 오픈소스 AI 모델·시뮬레이션 툴·데이터셋 패밀리를 공개했습니다. DRIVE Sim으로 하루 100만 건 이상의 테스트, 10만 개 이상의 고유 시나리오를 2,000개 GPU로 처리하는 산업 규모 시뮬레이션을 지원합니다.</p>
+                        <p class="card-summary">CES 2026에서 NVIDIA가 오픈소스 Alpamayo AI 툴킷과 Cosmos Predict 2.5·Transfer 2.5를 공개했습니다. 인간 주행 수천 마일을 수십억 마일의 가상 주행으로 증폭하는 데이터 플라이휠을 구축하며, Waabi·Wayve 등 AV 기업들이 즉시 도입을 발표했습니다.</p>
                         <div class="card-footer">
                             <span class="card-tag">Simulation Platform</span>
                             <a href="https://nvidianews.nvidia.com/news/alpamayo-autonomous-vehicle-development" class="read-more" target="_blank">Read More</a>
@@ -642,29 +878,14 @@
                 <div class="card fade-in">
                     <div class="card-image">🎮</div>
                     <div class="card-content">
-                        <div class="card-meta">Ongoing · CARLA / Unreal Engine</div>
-                        <h3 class="card-title">CARLA: Unreal Engine-Powered Open AV Simulator
-                            <div class="card-title-kor">CARLA: 언리얼 엔진 기반 오픈소스 자율주행 시뮬레이터</div>
+                        <div class="card-meta">January 2026 · Unreal Engine CES</div>
+                        <h3 class="card-title">Unreal Engine 5 at CES 2026: ADAS + HMI Simulation
+                            <div class="card-title-kor">언리얼 엔진 5 CES 2026: ADAS + HMI 시뮬레이션 쇼케이스</div>
                         </h3>
-                        <p class="card-summary">Unreal Engine 위에서 구동되는 오픈소스 자율주행 시뮬레이터 CARLA가 UE5.5 지원 개발 브랜치를 운영 중입니다. LiDAR·카메라·GPS 센서 슈트, ASAM OpenDRIVE 표준 도로, ScenarioRunner 기반 트래픽 시뮬레이션을 지원하며 사실상 업계 표준 플랫폼으로 자리매김했습니다.</p>
+                        <p class="card-summary">CES 2026에서 공개된 UE5 Next-Gen HMI Experience는 단일 UE5 인스턴스로 60fps 디지털 콕핏 전체를 렌더링합니다. 합성 데이터로 AI를 훈련하는 포토리얼리스틱 ADAS 시뮬레이션이 포함됐으며, Ford·GM·Rivian·Volvo 등 35개 이상 차종에 UE 기반 HMI가 탑재됐습니다.</p>
                         <div class="card-footer">
-                            <span class="card-tag">Open Source / UE5</span>
-                            <a href="https://www.unrealengine.com/en-US/spotlights/carla-democratizes-autonomous-vehicle-r-d-with-free-open-source-simulator" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card fade-in">
-                    <div class="card-image">🚘</div>
-                    <div class="card-content">
-                        <div class="card-meta">2025 · Applied Intuition</div>
-                        <h3 class="card-title">Applied Intuition: Full-Stack AV Simulation SDS
-                            <div class="card-title-kor">어플라이드 인튜이션: 풀스택 자율주행 시뮬레이션 SDS</div>
-                        </h3>
-                        <p class="card-summary">Applied Intuition이 L2++부터 L3·L4 자율주행까지 지원하는 Self-Driving System(SDS) for Automotive를 출시했습니다. 완성차 OEM이 자체 자율주행 스택을 비용 효율적으로 개발할 수 있도록 화이트박스 형태의 엔드-투-엔드 시뮬레이션 솔루션을 제공합니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Simulation Platform</span>
-                            <a href="https://www.autoconnectedcar.com/2025/08/autonomous-self-driving-vehicle-news-applied-intuition-torc-edge-case-kodiak-robotics-nxp-honda-helm-ai-weride-bosch-nuro-waymo/" class="read-more" target="_blank">Read More</a>
+                            <span class="card-tag">UE5 / ADAS Sim</span>
+                            <a href="https://www.unrealengine.com/en-US/news/unreal-engine-is-everywhere-at-ces-2026-from-hmis-to-simulation-and-beyond" class="read-more" target="_blank">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -672,14 +893,29 @@
                 <div class="card fade-in">
                     <div class="card-image">🌐</div>
                     <div class="card-content">
-                        <div class="card-meta">2026 · NVIDIA + Mercedes</div>
-                        <h3 class="card-title">NVIDIA DRIVE Sim × Mercedes-Benz AV Demo
-                            <div class="card-title-kor">NVIDIA DRIVE Sim × 메르세데스-벤츠 자율주행 실증</div>
+                        <div class="card-meta">January 2026 · NVIDIA × Mercedes-Benz</div>
+                        <h3 class="card-title">NVIDIA Cosmos × Mercedes-Benz: Digital Twin AV
+                            <div class="card-title-kor">NVIDIA 코스모스 × 메르세데스-벤츠: 디지털 트윈 자율주행</div>
                         </h3>
-                        <p class="card-summary">NVIDIA와 Mercedes-Benz가 DRIVE Sim 기반 자율주행 차량 개발 및 실증을 공동 추진 중입니다. NVIDIA의 옴니버스 기반 디지털 트윈 시뮬레이션으로 실도로 테스트 전에 수천 가지 엣지 케이스를 가상 환경에서 검증하는 파이프라인을 구축했습니다.</p>
+                        <p class="card-summary">NVIDIA와 Mercedes-Benz가 Cosmos 기반 디지털 트윈 시뮬레이션으로 자율주행 양산 차량을 공동 개발 중입니다. 광범위한 실도로 테스트와 Cosmos 대규모 시뮬레이션, 긴밀한 협업을 통해 차세대 Mercedes 양산 차량에 탑재될 예정입니다.</p>
                         <div class="card-footer">
                             <span class="card-tag">Digital Twin Sim</span>
-                            <a href="https://developer.nvidia.com/drive/simulation" class="read-more" target="_blank">Read More</a>
+                            <a href="https://blogs.nvidia.com/blog/three-computer-cosmos-ces/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🚀</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 9, 2026 · Waymo</div>
+                        <h3 class="card-title">Waymo Trains Self-Driving on Impossible Scenarios
+                            <div class="card-title-kor">웨이모, 현실 불가능 시나리오로 자율주행 훈련</div>
+                        </h3>
+                        <p class="card-summary">Waymo World Model은 실제로는 수집 불가능한 희귀 상황—도로 위 화재, 눈 덮인 열대 거리, 공룡 복장 보행자 등—을 가상으로 생성해 자율주행 AI를 훈련합니다. 이 접근법은 롱테일 엣지 케이스 대응 능력을 획기적으로 향상시킵니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">AI Training Sim</span>
+                            <a href="https://www.technology.org/2026/02/09/waymos-world-model-trains-self-driving-cars-on-scenarios-that-dont-exist-yet/" class="read-more" target="_blank">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -693,13 +929,58 @@
             <div class="card-grid">
 
                 <div class="card fade-in">
+                    <div class="card-image">🏭</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 12, 2026 · Chongqing</div>
+                        <h3 class="card-title">China Opens World's First Full-Scenario AV Test Lab
+                            <div class="card-title-kor">중국, 세계 최초 풀 시나리오 자율주행 테스트 실험실 개소</div>
+                        </h3>
+                        <p class="card-summary">충칭 하이테크존에 5,000㎡ 규모의 지능형 주행 통합 실험실이 정식 가동됐습니다. 실차·동적 교통류·기후 조건을 동시에 시뮬레이션하는 세계 최초 풀 시나리오 플랫폼으로, 최대 130km/h 견인 시스템과 실시간 우·안개·빛 환경 재현 기능을 갖췄습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Test Platform</span>
+                            <a href="https://english.news.cn/20260212/ecff09320e0748069c518fc8b9e192f2/c.html" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🧠</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · BYD + DeepSeek</div>
+                        <h3 class="card-title">BYD Integrates DeepSeek for Free Self-Driving
+                            <div class="card-title-kor">BYD, 딥시크 탑재로 전 차종 자율주행 무료 제공</div>
+                        </h3>
+                        <p class="card-summary">BYD가 중국 AI DeepSeek를 탑재해 거의 모든 차종에 자율주행 기능을 무료로 제공합니다. DeepSeek의 MoE 아키텍처는 추론 속도를 최대 50배 향상시켜 차량 내 실시간 처리에 최적화되었으며, 12개 이상의 완성차 브랜드가 도입을 발표했습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">AI Integration</span>
+                            <a href="https://www.spacedaily.com/reports/Chinese_auto_giant_BYD_to_integrate_DeepSeek_broaden_self-driving_tech_999.html" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🔬</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 12, 2026 · DeepSeek</div>
+                        <h3 class="card-title">DeepSeek Triggers China AI Simulation Price War
+                            <div class="card-title-kor">딥시크가 촉발한 중국 AI 시뮬레이션 가격 전쟁</div>
+                        </h3>
+                        <p class="card-summary">DeepSeek의 충격으로 ByteDance·Alibaba 등 중국 AI 기업들이 잇따라 신모델 출시 경쟁을 벌이고 있습니다. 자율주행 시뮬레이션 비용이 급격히 낮아지며 중소 AV 기업들도 고품질 AI 시뮬레이션에 접근 가능해졌습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Industry Trend</span>
+                            <a href="https://www.technology.org/2026/02/12/deepseek-started-a-price-war-now-every-chinese-ai-lab-wants-in-on-the-fun/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
                     <div class="card-image">🧪</div>
                     <div class="card-content">
                         <div class="card-meta">2024–2026 · 51Sim</div>
-                        <h3 class="card-title">51Sim: 32,000 Extreme Scenarios Per Day
-                            <div class="card-title-kor">51심: 하루 3만 2천 개 극한 시나리오 생성</div>
+                        <h3 class="card-title">51Sim: 32,000 AI-Generated Scenarios Per Day
+                            <div class="card-title-kor">51심: AI로 하루 3만 2천 개 시나리오 자동 생성</div>
                         </h3>
-                        <p class="card-summary">중국 대표 자율주행 시뮬레이션 기업 51Sim이 AI 기반 시나리오 생성으로 하루 3만 2천 건의 극한 주행 시나리오를 생산합니다. 2024년 출시한 클라우드+단말 통합 플랫폼 51SimOne으로 다중 사용자 협업, 대규모 자동화 테스트를 지원합니다.</p>
+                        <p class="card-summary">중국 대표 자율주행 시뮬레이션 기업 51Sim이 AI 기반 씬 생성으로 하루 3만 2천 건의 극한 시나리오를 생산합니다. 클라우드+단말 통합 플랫폼 51SimOne으로 다중 사용자 협업과 대규모 자동화 테스트를 지원하며 중국 자율주행 검증 시장을 선도합니다.</p>
                         <div class="card-footer">
                             <span class="card-tag">Simulation Platform</span>
                             <a href="https://www.51sim.com/" class="read-more" target="_blank">Read More</a>
@@ -708,61 +989,16 @@
                 </div>
 
                 <div class="card fade-in">
-                    <div class="card-image">🔬</div>
-                    <div class="card-content">
-                        <div class="card-meta">2024–2026 · Synkrotron.ai</div>
-                        <h3 class="card-title">Synkrotron OASIS: Full-Stack Simulation Toolchain
-                            <div class="card-title-kor">싱크로트론 OASIS: 풀스택 시뮬레이션 툴체인</div>
-                        </h3>
-                        <p class="card-summary">Synkrotron.ai의 OASIS 플랫폼은 인지-계획-제어-차량·도로·클라우드를 아우르는 풀스택 툴체인을 통합했습니다. MIL에서 VIL까지 원활한 전환을 지원하며, 시뮬레이션 씬 라이브러리의 데이터 자산화로 데이터 거래소 연계도 추진 중입니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Simulation Platform</span>
-                            <a href="https://www.globenewswire.com/news-release/2024/05/30/2890548/0/en/Global-and-China-Autonomous-Driving-Simulation-Industry-Report-2024-Three-Trends-of-Simulation-Favoring-the-Implementation-of-High-level-Intelligent-Driving.html" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card fade-in">
-                    <div class="card-image">🧠</div>
-                    <div class="card-content">
-                        <div class="card-meta">2025–2026 · Horizon Robotics</div>
-                        <h3 class="card-title">Horizon AIDI: Perception-to-Control Sim Platform
-                            <div class="card-title-kor">호라이즌 AIDI: 인지부터 제어까지 통합 시뮬레이션</div>
-                        </h3>
-                        <p class="card-summary">Horizon Robotics의 AIDI 플랫폼은 인지·계획·제어 전 단계를 커버하는 자율주행 개발·검증 환경을 제공합니다. 고수준 자율주행 구현을 위한 3가지 시뮬레이션 트렌드(합성 데이터, 월드 모델, 풀스택 통합)를 선도하며 중국 OEM과 협력 중입니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Simulation Platform</span>
-                            <a href="https://www.researchandmarkets.com/reports/6093475/intelligent-driving-simulation-world-model" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card fade-in">
-                    <div class="card-image">🗺️</div>
-                    <div class="card-content">
-                        <div class="card-meta">2024–2026 · IAE</div>
-                        <h3 class="card-title">IAE: Scenario Data Assetization Platform
-                            <div class="card-title-kor">IAE: 시나리오 데이터 자산화 플랫폼</div>
-                        </h3>
-                        <p class="card-summary">IAE는 규제 시나리오·사고 씬·자연 주행·위험/극한 씬·재현 씬 등 다양한 씬 라이브러리를 데이터 자산으로 전환하는 작업을 추진 중입니다. 선전·상하이·쑤저우 등 중국 주요 데이터 거래소에서 시뮬레이션 데이터 거래 생태계를 구축하고 있습니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Simulation Data</span>
-                            <a href="https://www.businesswire.com/news/home/20240605465780/en/Global-and-China-Autonomous-Driving-Simulation-Industry-Report-2024-Featuring-21-Chinese-and-12-International-Simulation-Platform-Solution-Providers---ResearchAndMarkets.com" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card fade-in">
                     <div class="card-image">🌍</div>
                     <div class="card-content">
-                        <div class="card-meta">2025–2026 · Industry Trend</div>
-                        <h3 class="card-title">China AV Sim: World Model Becomes Core Tech
-                            <div class="card-title-kor">중국 자율주행 시뮬레이션, 월드 모델이 핵심 기술로 부상</div>
+                        <div class="card-meta">February 6, 2026 · CGTN</div>
+                        <h3 class="card-title">China's AV Simulation: DeepSeek, Robots & Roads
+                            <div class="card-title-kor">중국 자율주행 시뮬레이션: 딥시크, 로봇, 도로의 융합</div>
                         </h3>
-                        <p class="card-summary">중국 자율주행 시뮬레이션 산업 보고서에 따르면, 합성 데이터 생성·월드 모델·풀스택 툴체인 통합이 3대 트렌드로 자리잡았습니다. 21개 중국 기업과 12개 글로벌 기업이 시뮬레이션 플랫폼 시장을 경쟁하며 고수준 자율주행 상용화를 가속하고 있습니다.</p>
+                        <p class="card-summary">중국이 딥시크 AI·자율주행·로보틱스의 융합으로 스마트 모빌리티를 가속하고 있습니다. 베이징·우한·충칭 등 주요 도시에서 자율주행 조례가 잇따라 제정되며 시뮬레이션 기반 L3·L4 검증 체계가 빠르게 구축되고 있습니다.</p>
                         <div class="card-footer">
-                            <span class="card-tag">Industry Report</span>
-                            <a href="https://www.globenewswire.com/news-release/2024/05/30/2890548/0/en/Global-and-China-Autonomous-Driving-Simulation-Industry-Report-2024-Three-Trends-of-Simulation-Favoring-the-Implementation-of-High-level-Intelligent-Driving.html" class="read-more" target="_blank">Read More</a>
+                            <span class="card-tag">Industry Overview</span>
+                            <a href="https://news.cgtn.com/news/2026-02-06/DeepSeek-robots-autonomous-driving-questions-on-China-from-Russia-1KxsIADFYnm/p.html" class="read-more" target="_blank">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -770,7 +1006,9 @@
             </div>
         </div>
 
-    </div>
+        </div> <!-- /content-area -->
+    </div> <!-- /main-layout -->
+    </div> <!-- /container -->
 
     <footer>
         <p>&copy; 2026 Unreal Engine Hub | Last Updated: February 18, 2026</p>
