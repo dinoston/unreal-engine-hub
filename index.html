@@ -450,6 +450,99 @@
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* 게임 2열 분할 레이아웃 */
+        .games-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .games-col-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #a78bfa;
+            margin-bottom: 0.85rem;
+            padding-bottom: 0.6rem;
+            border-bottom: 2px solid #2a3550;
+        }
+
+        .game-rank-list {
+            background: linear-gradient(135deg, #1a1f3a 0%, #16192c 100%);
+            border: 1px solid #2a3550;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .game-rank-item {
+            display: flex;
+            align-items: center;
+            padding: 0.6rem 0.9rem;
+            border-bottom: 1px solid #1e2540;
+            transition: background 0.2s;
+            gap: 0.7rem;
+        }
+
+        .game-rank-item:last-child { border-bottom: none; }
+        .game-rank-item:hover { background: rgba(102,126,234,0.1); }
+
+        .g-num {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.72rem;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .g-num.r1 { background: #f39c12; color: #000; }
+        .g-num.r2 { background: #bdc3c7; color: #000; }
+        .g-num.r3 { background: #cd7f32; color: #000; }
+        .g-num.rn { background: #2a3550; color: #a8b4c8; }
+
+        .g-info { flex: 1; min-width: 0; }
+
+        .g-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #e0e6ed;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .g-meta {
+            font-size: 0.68rem;
+            color: #7b8db5;
+            margin-top: 1px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .yt-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 20px;
+            background: #ff0000;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+            transition: opacity 0.2s;
+            font-weight: 700;
+        }
+        .yt-btn:hover { opacity: 0.8; }
+
+        @media (max-width: 768px) {
+            .games-split { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -774,49 +867,43 @@
             <div class="card-grid">
 
                 <div class="card fade-in">
-                    <div class="card-image">
-                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/real-world-terrain.jpg" alt="GIS Terrain">
-                    </div>
+                    <div class="card-image" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); font-size: 2.5rem;">🌍</div>
                     <div class="card-content">
                         <div class="card-meta">Technology · Terrain</div>
                         <h3 class="card-title">Real-World Terrain from GIS Data
                             <div class="card-title-kor">GIS 데이터로 실제 지형 생성</div>
                         </h3>
-                        <p class="card-summary">Import OpenStreetMap, SRTM, and Cesium 3D Tiles directly. The Geospatial plugin generates precise terrain from lat/long coordinates. Perfect for large-scale environments, open-world games, and geographic simulations.</p>
+                        <p class="card-summary">Import OpenStreetMap, SRTM, and Cesium 3D Tiles directly into Unreal Engine. The Geospatial plugin generates precise terrain from lat/long coordinates — perfect for large-scale environments, AV simulation, and geographic simulations.</p>
                         <div class="card-footer">
                             <span class="card-tag">Terrain</span>
-                            <a href="https://www.unrealengine.com/en-US/news/geospatial-plugin" class="read-more" target="_blank">Learn More</a>
+                            <a href="https://www.unrealengine.com/en-US/events/webinar-series/working-with-geospatial-gis-data-in-unreal-engine" class="read-more" target="_blank">Learn More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card fade-in">
-                    <div class="card-image">
-                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/smart-city.jpg" alt="Smart City">
-                    </div>
+                    <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); font-size: 2.5rem;">🏙️</div>
                     <div class="card-content">
                         <div class="card-meta">Tutorial · Urban Planning</div>
-                        <h3 class="card-title">Smart City Simulation & Planning
-                            <div class="card-title-kor">스마트시티 시뮬레이션 및 계획</div>
+                        <h3 class="card-title">Digital Twin & Smart City Simulation
+                            <div class="card-title-kor">디지털 트윈 & 스마트시티 시뮬레이션</div>
                         </h3>
-                        <p class="card-summary">Build urban simulations with real GIS data. Model traffic flows, power grids, populations, and services. Use for city planning, policy testing, infrastructure planning, and stakeholder presentations.</p>
+                        <p class="card-summary">Build urban digital twins with real GIS data in Unreal Engine. Model traffic flows, power grids, and populations. 51World recreated all 3,750km² of Shanghai in UE5. Official Epic Digital Twins platform for city planning and infrastructure visualization.</p>
                         <div class="card-footer">
                             <span class="card-tag">Urban Planning</span>
-                            <a href="https://www.unrealengine.com/en-US/news/smart-city-ue" class="read-more" target="_blank">Learn More</a>
+                            <a href="https://www.unrealengine.com/en-US/digital-twins" class="read-more" target="_blank">Learn More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card fade-in">
-                    <div class="card-image">
-                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/satellite-3d.jpg" alt="Satellite 3D">
-                    </div>
+                    <div class="card-image" style="background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%); font-size: 2.5rem;">🛰️</div>
                     <div class="card-content">
                         <div class="card-meta">Technology · 3D Tiles</div>
-                        <h3 class="card-title">Satellite Imagery 3D Modeling
-                            <div class="card-title-kor">위성 이미지 3D 모델링</div>
+                        <h3 class="card-title">Cesium for Unreal — Satellite Imagery & 3D Tiles
+                            <div class="card-title-kor">세슘 포 언리얼 — 위성 이미지 & 3D 타일</div>
                         </h3>
-                        <p class="card-summary">Cesium for Unreal integrates high-resolution satellite and aerial imagery with 3D Tiles. Build AAA-quality global visualizations with Google, Bing, or custom tile servers for massive environments.</p>
+                        <p class="card-summary">Cesium for Unreal integrates high-accuracy WGS84 globe, satellite/aerial imagery, and 3D Tiles into Unreal Engine. Widely used for autonomous driving simulation — fuse multi-vehicle data with terrain, buildings, and vector layers in real time.</p>
                         <div class="card-footer">
                             <span class="card-tag">3D Tiles</span>
                             <a href="https://cesium.com/platform/cesium-for-unreal/" class="read-more" target="_blank">Explore</a>
@@ -825,52 +912,46 @@
                 </div>
 
                 <div class="card fade-in">
-                    <div class="card-image">
-                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/lidar-pointcloud.jpg" alt="LiDAR Point Cloud">
-                    </div>
+                    <div class="card-image" style="background: linear-gradient(135deg, #1d2b64 0%, #f8cdda 100%); font-size: 2.5rem;">📡</div>
                     <div class="card-content">
-                        <div class="card-meta">Tutorial · Point Clouds</div>
-                        <h3 class="card-title">LiDAR & Point Cloud Processing
-                            <div class="card-title-kor">라이다 및 포인트 클라우드 처리</div>
+                        <div class="card-meta">Official Docs · Point Clouds</div>
+                        <h3 class="card-title">LiDAR Point Cloud Plugin — Official UE5 Docs
+                            <div class="card-title-kor">라이다 포인트 클라우드 플러그인 공식 문서</div>
                         </h3>
-                        <p class="card-summary">Import drone and aerial LiDAR data seamlessly. Convert point clouds to production meshes with automated classification. Essential for autonomous vehicle simulation, photogrammetry, and precision mapping.</p>
+                        <p class="card-summary">Import, visualize, and edit LiDAR point clouds (.LAS/.LAZ) directly in Unreal Engine 5. Built-in plugin supports drone/aerial scan data, automated classification, and production mesh conversion. Essential for AV sensor simulation and precision mapping.</p>
                         <div class="card-footer">
                             <span class="card-tag">Point Clouds</span>
-                            <a href="https://www.unrealengine.com/en-US/news/lidar-point-cloud" class="read-more" target="_blank">Learn More</a>
+                            <a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/lidar-point-cloud-plugin-for-unreal-engine" class="read-more" target="_blank">Official Docs</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card fade-in">
-                    <div class="card-image">
-                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/gps-tracking.jpg" alt="GPS Tracking">
-                    </div>
+                    <div class="card-image" style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); font-size: 2.5rem;">📍</div>
                     <div class="card-content">
-                        <div class="card-meta">Feature · Mobile/AR</div>
-                        <h3 class="card-title">Real-Time GPS & Location Services
-                            <div class="card-title-kor">실시간 GPS 및 위치 서비스</div>
+                        <div class="card-meta">SDK · ArcGIS / Location</div>
+                        <h3 class="card-title">ArcGIS Maps SDK for Unreal Engine
+                            <div class="card-title-kor">ArcGIS 맵스 SDK 포 언리얼 엔진</div>
                         </h3>
-                        <p class="card-summary">Build location-based AR/VR applications with live GPS integration. Support geofencing, route planning, and location-aware mechanics. Mobile-first with cloud sync for distributed systems.</p>
+                        <p class="card-summary">Esri's ArcGIS Maps SDK (v2.2, Dec 2025) brings authoritative GIS content — buildings, integrated meshes, point clouds, 3D Tiles, vector tiles — into UE5.5–5.7. Georeference scenes to real-world coordinates. Available free on Fab Marketplace.</p>
                         <div class="card-footer">
-                            <span class="card-tag">Mobile/AR</span>
-                            <a href="https://www.unrealengine.com/en-US/news/gps-location-services" class="read-more" target="_blank">Learn More</a>
+                            <span class="card-tag">ArcGIS</span>
+                            <a href="https://developers.arcgis.com/unreal-engine/" class="read-more" target="_blank">Get SDK</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="card fade-in">
-                    <div class="card-image">
-                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/data-dashboard.jpg" alt="Data Dashboard">
-                    </div>
+                    <div class="card-image" style="background: linear-gradient(135deg, #0099f7 0%, #f11712 100%); font-size: 2.5rem;">🗺️</div>
                     <div class="card-content">
-                        <div class="card-meta">Technology · Visualization</div>
-                        <h3 class="card-title">GIS Data Visualization Dashboard
-                            <div class="card-title-kor">GIS 데이터 시각화 대시보드</div>
+                        <div class="card-meta">Platform · Smart Cities</div>
+                        <h3 class="card-title">Cesium Smart Cities — GIS Data Visualization
+                            <div class="card-title-kor">세슘 스마트시티 — GIS 데이터 시각화</div>
                         </h3>
-                        <p class="card-summary">Build interactive 3D dashboards with population density, environmental data, traffic analytics. Combines GIS layers with Unreal UMG for real-time business intelligence and decision support systems.</p>
+                        <p class="card-summary">Cesium's Smart Cities platform powers real-time 3D GIS dashboards for traffic analytics, population density, environmental monitoring, and infrastructure planning. Integrates with Unreal Engine UMG for interactive data overlays and decision support systems.</p>
                         <div class="card-footer">
                             <span class="card-tag">Visualization</span>
-                            <a href="https://www.unrealengine.com/en-US/news/gis-data-visualization" class="read-more" target="_blank">Learn More</a>
+                            <a href="https://cesium.com/industries/smart-cities/" class="read-more" target="_blank">Explore</a>
                         </div>
                     </div>
                 </div>
@@ -1051,106 +1132,387 @@
         <!-- 6. 레이싱 & 시뮬 게임 -->
         <div id="games" class="section">
             <h2>🎮 레이싱 & 시뮬레이션 게임</h2>
-            <div class="card-grid">
+            <div class="games-split">
 
-                <div class="card fade-in">
-                    <div class="card-image" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); font-size: 2.5rem;">🏎️</div>
-                    <div class="card-content">
-                        <div class="card-meta">2026 출시 예정 · PC</div>
-                        <h3 class="card-title">Assetto Corsa EVO <span class="game-badge">NEW</span>
-                            <div class="card-title-kor">아세토 코르사 에보 — Ferrari SF-25 F1 최초 탑재</div>
-                        </h3>
-                        <div>
-                            <span class="game-platform">PC / Steam</span>
-                            <span class="game-platform">VR 지원</span>
+                <!-- 좌측: 시뮬레이션 게임 TOP 20 -->
+                <div>
+                    <div class="games-col-title">🎯 시뮬레이션 게임 TOP 20 — 인기 순위</div>
+                    <div class="game-rank-list">
+
+                        <div class="game-rank-item">
+                            <div class="g-num r1">1</div>
+                            <div class="g-info">
+                                <div class="g-title">Microsoft Flight Simulator 2024</div>
+                                <div class="g-meta">PC / Xbox · 비행 시뮬레이션</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Microsoft+Flight+Simulator+2024+gameplay" class="yt-btn" target="_blank">▶</a>
                         </div>
-                        <p class="card-summary">Ferrari SF-25 F1 카를 세계 최초로 시뮬레이션에 도입한 차세대 레이싱 시뮬. 1,600km² 오픈월드 뉘르부르크링, 물리 엔진 완전 재건, 프로 드라이버 훈련용으로 사용되는 최고 수준의 주행 재현도를 자랑합니다.</p>
-                        <a href="https://www.youtube.com/results?search_query=Assetto+Corsa+EVO+2026+gameplay" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
+
+                        <div class="game-rank-item">
+                            <div class="g-num r2">2</div>
+                            <div class="g-info">
+                                <div class="g-title">BeamNG.drive</div>
+                                <div class="g-meta">PC / Steam · 물리 차량 시뮬 · AV 연구</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=BeamNG+drive+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num r3">3</div>
+                            <div class="g-info">
+                                <div class="g-title">Euro Truck Simulator 2</div>
+                                <div class="g-meta">PC / Steam · 트럭 장거리 주행</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Euro+Truck+Simulator+2+2025+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">4</div>
+                            <div class="g-info">
+                                <div class="g-title">War Thunder</div>
+                                <div class="g-meta">PC / PS5 / Xbox · 밀리터리 차량 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=War+Thunder+2025+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">5</div>
+                            <div class="g-info">
+                                <div class="g-title">American Truck Simulator</div>
+                                <div class="g-meta">PC / Steam · 북미 트럭 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=American+Truck+Simulator+2025+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">6</div>
+                            <div class="g-info">
+                                <div class="g-title">Farming Simulator 25</div>
+                                <div class="g-meta">PC / PS5 / Xbox · 농장 시뮬레이션</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Farming+Simulator+25+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">7</div>
+                            <div class="g-info">
+                                <div class="g-title">SnowRunner</div>
+                                <div class="g-meta">PC / PS5 · 오프로드 탐험 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=SnowRunner+2025+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">8</div>
+                            <div class="g-info">
+                                <div class="g-title">DCS World</div>
+                                <div class="g-meta">PC · 군사 비행 시뮬레이션</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=DCS+World+2025+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">9</div>
+                            <div class="g-info">
+                                <div class="g-title">X-Plane 12</div>
+                                <div class="g-meta">PC · 프로 비행 시뮬레이션</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=X-Plane+12+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">10</div>
+                            <div class="g-info">
+                                <div class="g-title">Bus Simulator 21</div>
+                                <div class="g-meta">PC / PS5 · 도시 버스 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Bus+Simulator+21+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">11</div>
+                            <div class="g-info">
+                                <div class="g-title">Train Sim World 5</div>
+                                <div class="g-meta">PC / PS5 · 기차 시뮬레이션</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Train+Sim+World+5+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">12</div>
+                            <div class="g-info">
+                                <div class="g-title">Wreckfest 2</div>
+                                <div class="g-meta">PC / PS5 · 충돌 물리 레이싱</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Wreckfest+2+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">13</div>
+                            <div class="g-info">
+                                <div class="g-title">CARLA Simulator</div>
+                                <div class="g-meta">PC · 자율주행 연구 오픈소스 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=CARLA+autonomous+driving+simulator+demo" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">14</div>
+                            <div class="g-info">
+                                <div class="g-title">City Car Driving 4</div>
+                                <div class="g-meta">PC · 도시 운전 교육 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=City+Car+Driving+4+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">15</div>
+                            <div class="g-info">
+                                <div class="g-title">Stormworks: Build & Rescue</div>
+                                <div class="g-meta">PC · 공학 구조 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Stormworks+Build+and+Rescue+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">16</div>
+                            <div class="g-info">
+                                <div class="g-title">Space Engineers</div>
+                                <div class="g-meta">PC / Xbox · 우주 공학 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Space+Engineers+2025+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">17</div>
+                            <div class="g-info">
+                                <div class="g-title">Kerbal Space Program 2</div>
+                                <div class="g-meta">PC · 로켓 과학 시뮬레이션</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Kerbal+Space+Program+2+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">18</div>
+                            <div class="g-info">
+                                <div class="g-title">My Summer Car</div>
+                                <div class="g-meta">PC · 핀란드 차 수리 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=My+Summer+Car+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">19</div>
+                            <div class="g-info">
+                                <div class="g-title">Automation – Car Company Tycoon</div>
+                                <div class="g-meta">PC · 자동차 설계 & 엔지니어링</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Automation+Car+Company+Tycoon+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">20</div>
+                            <div class="g-info">
+                                <div class="g-title">Jalopy</div>
+                                <div class="g-meta">PC · 동유럽 도로 여행 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Jalopy+game+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
                     </div>
                 </div>
 
-                <div class="card fade-in">
-                    <div class="card-image" style="background: linear-gradient(135deg, #0f3460 0%, #16213e 100%); font-size: 2.5rem;">🏁</div>
-                    <div class="card-content">
-                        <div class="card-meta">February 2026 출시 · PC</div>
-                        <h3 class="card-title">iRacing Arcade <span class="game-badge">NEW</span>
-                            <div class="card-title-kor">아이레이싱 아케이드 — 2026년 2월 정식 출시</div>
-                        </h3>
-                        <div>
-                            <span class="game-platform">PC / Steam</span>
-                            <span class="game-platform">멀티플레이</span>
-                        </div>
-                        <p class="card-summary">세계 최고의 프로 레이싱 시뮬레이터 iRacing이 진입 장벽을 낮춘 아케이드 버전을 2026년 2월 출시했습니다. IndyCar 공식 게임도 2026년 하반기 출시 예정으로, 20년 만에 시리즈 첫 단독 레이싱 게임입니다.</p>
-                        <a href="https://www.youtube.com/results?search_query=iRacing+Arcade+2026+gameplay" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
-                    </div>
-                </div>
+                <!-- 우측: 레이싱 & 사이클링 게임 TOP 20 -->
+                <div>
+                    <div class="games-col-title">🏎️ 레이싱 & 사이클링 TOP 20 — 인기 순위</div>
+                    <div class="game-rank-list">
 
-                <div class="card fade-in">
-                    <div class="card-image" style="background: linear-gradient(135deg, #1b4332 0%, #0f2820 100%); font-size: 2.5rem;">🚗</div>
-                    <div class="card-content">
-                        <div class="card-meta">지속 업데이트 · PC</div>
-                        <h3 class="card-title">BeamNG.drive
-                            <div class="card-title-kor">빔엔지 드라이브 — 세계 최고 수준 물리 차량 시뮬</div>
-                        </h3>
-                        <div>
-                            <span class="game-platform">PC / Steam</span>
-                            <span class="game-platform">자율주행 연구용</span>
+                        <div class="game-rank-item">
+                            <div class="g-num r1">1</div>
+                            <div class="g-info">
+                                <div class="g-title">Gran Turismo 7</div>
+                                <div class="g-meta">PS4 / PS5 · 소니 공식 레이싱 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Gran+Turismo+7+gameplay+2025" class="yt-btn" target="_blank">▶</a>
                         </div>
-                        <p class="card-summary">실시간 소프트바디 물리 엔진으로 충돌·변형·도로 반응을 극한까지 재현합니다. 자율주행 연구자들이 실제 센서 시뮬레이션 및 ADAS 테스트 환경으로 적극 활용하며, Python API 연동으로 AI 훈련도 가능합니다.</p>
-                        <a href="https://www.youtube.com/results?search_query=BeamNG+drive+2026+autonomous+driving+simulation" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
-                    </div>
-                </div>
 
-                <div class="card fade-in">
-                    <div class="card-image" style="background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%); font-size: 2.5rem;">🚴</div>
-                    <div class="card-content">
-                        <div class="card-meta">February 16 – March 29, 2026 · 진행 중</div>
-                        <h3 class="card-title">Zwift Games 2026 <span class="game-badge">NOW LIVE</span>
-                            <div class="card-title-kor">즈위프트 게임즈 2026 — 사이클링 시뮬레이션 대회</div>
-                        </h3>
-                        <div>
-                            <span class="game-platform">PC / Mac / iOS</span>
-                            <span class="game-platform">실내 사이클링</span>
+                        <div class="game-rank-item">
+                            <div class="g-num r2">2</div>
+                            <div class="g-info">
+                                <div class="g-title">Forza Horizon 5</div>
+                                <div class="g-meta">PC / Xbox · 오픈월드 레이싱</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Forza+Horizon+5+gameplay+2025" class="yt-btn" target="_blank">▶</a>
                         </div>
-                        <p class="card-summary">2026년 2월 16일~3월 29일 진행되는 Zwift Games 2026. 5개 스테이지, 신규 루트, Shimano·Oakley·Wahoo 공식 후원. 올해부터 바이크 프레임·휠 선택이 실제 속도에 영향을 미치며 전략적 장비 선택이 중요해졌습니다.</p>
-                        <a href="https://www.youtube.com/results?search_query=Zwift+Games+2026+racing+highlights" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
-                    </div>
-                </div>
 
-                <div class="card fade-in">
-                    <div class="card-image" style="background: linear-gradient(135deg, #2d1b69 0%, #11002d 100%); font-size: 2.5rem;">🏆</div>
-                    <div class="card-content">
-                        <div class="card-meta">2025–2026 · PC / PS5 / VR</div>
-                        <h3 class="card-title">Le Mans Ultimate
-                            <div class="card-title-kor">르망 얼티밋 — FIA WEC 공식 레이싱 시뮬</div>
-                        </h3>
-                        <div>
-                            <span class="game-platform">PC / PS5</span>
-                            <span class="game-platform">VR / PS VR2</span>
+                        <div class="game-rank-item">
+                            <div class="g-num r3">3</div>
+                            <div class="g-info">
+                                <div class="g-title">Assetto Corsa EVO</div>
+                                <div class="g-meta">PC / Steam · 차세대 레이싱 시뮬 2025</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Assetto+Corsa+EVO+gameplay+2025" class="yt-btn" target="_blank">▶</a>
                         </div>
-                        <p class="card-summary">FIA 세계 내구 챔피언십(WEC) 공식 라이선스 시뮬레이터. 실제 팀·차량·서킷을 완벽 재현하며 PS VR2에서 최고 수준의 VR 레이싱 경험을 제공합니다. 프로 드라이버들이 실제 훈련에 사용하는 물리 정확도를 자랑합니다.</p>
-                        <a href="https://www.youtube.com/results?search_query=Le+Mans+Ultimate+2025+2026+gameplay+VR" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
-                    </div>
-                </div>
 
-                <div class="card fade-in">
-                    <div class="card-image" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); font-size: 2.5rem;">🚛</div>
-                    <div class="card-content">
-                        <div class="card-meta">지속 업데이트 · PC</div>
-                        <h3 class="card-title">Euro / American Truck Simulator
-                            <div class="card-title-kor">트럭 시뮬레이터 — 자율주행 물류 시뮬레이션</div>
-                        </h3>
-                        <div>
-                            <span class="game-platform">PC / Steam</span>
-                            <span class="game-platform">장거리 주행</span>
+                        <div class="game-rank-item">
+                            <div class="g-num rn">4</div>
+                            <div class="g-info">
+                                <div class="g-title">iRacing</div>
+                                <div class="g-meta">PC · 세계 최고 온라인 레이싱</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=iRacing+2025+gameplay" class="yt-btn" target="_blank">▶</a>
                         </div>
-                        <p class="card-summary">실제 도로·교통·날씨를 재현하는 트럭 운전 시뮬레이터. 자율주행 물류 시나리오 연구에 활용되며, 장거리 ADAS 및 고속도로 자율주행 알고리즘 테스트 환경으로 주목받고 있습니다. 지속적인 맵 확장 업데이트 중.</p>
-                        <a href="https://www.youtube.com/results?search_query=Euro+Truck+Simulator+2+2026+autonomous+driving" class="youtube-btn" target="_blank">▶ YouTube에서 보기</a>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">5</div>
+                            <div class="g-info">
+                                <div class="g-title">Forza Motorsport (2023)</div>
+                                <div class="g-meta">PC / Xbox · 서킷 레이싱 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Forza+Motorsport+2023+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">6</div>
+                            <div class="g-info">
+                                <div class="g-title">F1 25</div>
+                                <div class="g-meta">PC / PS5 / Xbox · F1 공식 게임</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=F1+25+game+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">7</div>
+                            <div class="g-info">
+                                <div class="g-title">Assetto Corsa Competizione</div>
+                                <div class="g-meta">PC / PS5 · GT 레이싱 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Assetto+Corsa+Competizione+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">8</div>
+                            <div class="g-info">
+                                <div class="g-title">Le Mans Ultimate</div>
+                                <div class="g-meta">PC / PS5 · FIA WEC 공식 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Le+Mans+Ultimate+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">9</div>
+                            <div class="g-info">
+                                <div class="g-title">Automobilista 2</div>
+                                <div class="g-meta">PC · 브라질 레이싱 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Automobilista+2+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">10</div>
+                            <div class="g-info">
+                                <div class="g-title">rFactor 2</div>
+                                <div class="g-meta">PC · 최상급 물리 레이싱 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=rFactor+2+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">11</div>
+                            <div class="g-info">
+                                <div class="g-title">EA Sports WRC</div>
+                                <div class="g-meta">PC / PS5 · 공식 WRC 랠리 레이싱</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=EA+Sports+WRC+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">12</div>
+                            <div class="g-info">
+                                <div class="g-title">MotoGP 24</div>
+                                <div class="g-meta">PC / PS5 · 공식 모터사이클 레이싱</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=MotoGP+24+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">13</div>
+                            <div class="g-info">
+                                <div class="g-title">Ride 5</div>
+                                <div class="g-meta">PC / PS5 · 바이크 시뮬레이션</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Ride+5+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">14</div>
+                            <div class="g-info">
+                                <div class="g-title">iRacing Arcade</div>
+                                <div class="g-meta">PC / Steam · 2026년 2월 신작</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=iRacing+Arcade+2026+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">15</div>
+                            <div class="g-info">
+                                <div class="g-title">CarX Drift Racing Online</div>
+                                <div class="g-meta">PC / PS5 · 드리프트 레이싱</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=CarX+Drift+Racing+Online+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">16</div>
+                            <div class="g-info">
+                                <div class="g-title">Zwift</div>
+                                <div class="g-meta">PC / iOS · 실내 사이클링 플랫폼</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Zwift+cycling+gameplay+racing+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">17</div>
+                            <div class="g-info">
+                                <div class="g-title">RaceRoom Racing Experience</div>
+                                <div class="g-meta">PC · 무료 레이싱 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=RaceRoom+Racing+Experience+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">18</div>
+                            <div class="g-info">
+                                <div class="g-title">Rennsport</div>
+                                <div class="g-meta">PC · 차세대 레이싱 시뮬 2025</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=Rennsport+game+gameplay+2025" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">19</div>
+                            <div class="g-info">
+                                <div class="g-title">TrackMania 2020</div>
+                                <div class="g-meta">PC · 스피드 레이싱 아케이드</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=TrackMania+2020+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
+                        <div class="game-rank-item">
+                            <div class="g-num rn">20</div>
+                            <div class="g-info">
+                                <div class="g-title">ROUVY</div>
+                                <div class="g-meta">PC / Mobile · AR 사이클링 시뮬</div>
+                            </div>
+                            <a href="https://www.youtube.com/results?search_query=ROUVY+cycling+simulator+gameplay" class="yt-btn" target="_blank">▶</a>
+                        </div>
+
                     </div>
                 </div>
 
             </div>
         </div>
+
 
         </div> <!-- /content-area -->
     </div> <!-- /main-layout -->
