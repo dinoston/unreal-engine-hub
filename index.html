@@ -122,7 +122,7 @@
             background: linear-gradient(135deg, #1a1f3a 0%, #16192c 100%);
             border: 1px solid #2a3550;
             border-radius: 10px;
-            overflow: hidden;
+            overflow: visible;
             margin-bottom: 1rem;
         }
 
@@ -133,7 +133,67 @@
             border-bottom: 1px solid #1e2540;
             transition: background 0.2s;
             cursor: default;
+            position: relative;
         }
+
+        /* 회사 툴팁 */
+        .rank-tooltip {
+            display: none;
+            position: absolute;
+            left: calc(100% + 12px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1e2540;
+            border: 1px solid #667eea;
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+            width: 230px;
+            z-index: 9999;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.5);
+            pointer-events: auto;
+        }
+
+        .rank-item:hover .rank-tooltip {
+            display: block;
+        }
+
+        .rank-tooltip::before {
+            content: '';
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 7px solid transparent;
+            border-right-color: #667eea;
+        }
+
+        .rank-tooltip-name {
+            font-size: 0.83rem;
+            font-weight: 700;
+            color: #e0e6ed;
+            margin-bottom: 0.4rem;
+        }
+
+        .rank-tooltip-desc {
+            font-size: 0.74rem;
+            color: #a8b4c8;
+            line-height: 1.5;
+            margin-bottom: 0.65rem;
+        }
+
+        .rank-tooltip-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #a78bfa);
+            color: white;
+            text-decoration: none;
+            padding: 0.28rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.71rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .rank-tooltip-link:hover { opacity: 0.82; }
 
         .rank-item:last-child { border-bottom: none; }
         .rank-item:hover { background: rgba(102,126,234,0.08); }
@@ -579,6 +639,11 @@
                         <div class="rank-val">$45B+</div>
                         <div class="rank-change same">— 기업가치</div>
                     </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">Waymo (Alphabet)</div>
+                        <div class="rank-tooltip-desc">Google 모회사 Alphabet 산하. 2009년 설립, 세계 최초 완전 무인 상업용 로보택시 운영. 자체 시뮬레이터 "Waymo World Model"로 하루 수십억 마일 가상 주행 훈련.</div>
+                        <a href="https://waymo.com" target="_blank" class="rank-tooltip-link">🌐 waymo.com</a>
+                    </div>
                 </div>
                 <!-- 2 NVIDIA -->
                 <div class="rank-item">
@@ -590,6 +655,11 @@
                     <div>
                         <div class="rank-val">$3.3T</div>
                         <div class="rank-change up">▲ 시총</div>
+                    </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">NVIDIA DRIVE</div>
+                        <div class="rank-tooltip-desc">세계 1위 AI 반도체 기업. DRIVE Cosmos 시뮬레이션 플랫폼과 오픈소스 Alpamayo 툴킷으로 AV 개발을 가속. Waymo·Waabi·Mercedes 등 전 세계 AV 기업이 파트너.</div>
+                        <a href="https://www.nvidia.com/en-us/self-driving-cars/" target="_blank" class="rank-tooltip-link">🌐 nvidia.com/drive</a>
                     </div>
                 </div>
                 <!-- 3 Applied Intuition -->
@@ -603,6 +673,11 @@
                         <div class="rank-val">$6B</div>
                         <div class="rank-change up">▲ 기업가치</div>
                     </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">Applied Intuition</div>
+                        <div class="rank-tooltip-desc">실리콘밸리 AV 소프트웨어 스타트업. 시뮬레이션·검증·데이터·HMI를 포괄하는 풀스택 SDS 플랫폼 제공. Toyota·Hyundai·GM 등 주요 완성차 파트너. 기업가치 $6B.</div>
+                        <a href="https://www.appliedintuition.com" target="_blank" class="rank-tooltip-link">🌐 appliedintuition.com</a>
+                    </div>
                 </div>
                 <!-- 4 Baidu Apollo -->
                 <div class="rank-item">
@@ -614,6 +689,11 @@
                     <div>
                         <div class="rank-val">$35B</div>
                         <div class="rank-change down">▼ 시총</div>
+                    </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">Baidu Apollo</div>
+                        <div class="rank-tooltip-desc">중국 최대 검색엔진 바이두의 AV 플랫폼. Apollo Go 로보택시 서비스 운영 중. 오픈소스 Apollo 플랫폼으로 중국 AV 생태계를 선도. 베이징·우한·충칭 등 도시 상용화.</div>
+                        <a href="https://apollo.baidu.com" target="_blank" class="rank-tooltip-link">🌐 apollo.baidu.com</a>
                     </div>
                 </div>
                 <!-- 5 dSPACE -->
@@ -627,6 +707,11 @@
                         <div class="rank-val">비상장</div>
                         <div class="rank-change same">— €400M+</div>
                     </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">dSPACE AURELION</div>
+                        <div class="rank-tooltip-desc">독일 파더보른 기반 자동차 시뮬레이션 전문기업. 언리얼 엔진 기반 센서 시뮬레이터 AURELION 개발. BMW·Bosch·Continental 등 유럽 완성차·부품사 다수 고객 보유.</div>
+                        <a href="https://www.dspace.com/en/inc/home/products/sw/aurelion.cfm" target="_blank" class="rank-tooltip-link">🌐 dspace.com</a>
+                    </div>
                 </div>
                 <!-- 6 Waabi -->
                 <div class="rank-item">
@@ -638,6 +723,11 @@
                     <div>
                         <div class="rank-val">$200M+</div>
                         <div class="rank-change up">▲ 투자유치</div>
+                    </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">Waabi</div>
+                        <div class="rank-tooltip-desc">캐나다 출신 AI 연구자 Raquel Urtasun이 창업. 생성형 AI + NVIDIA Cosmos 기반 자율주행 스타트업. 주로 장거리 자율 트럭(로보트럭)에 집중. Uber ATG 출신 팀 중심.</div>
+                        <a href="https://waabi.ai" target="_blank" class="rank-tooltip-link">🌐 waabi.ai</a>
                     </div>
                 </div>
                 <!-- 7 51Sim -->
@@ -651,6 +741,11 @@
                         <div class="rank-val">비상장</div>
                         <div class="rank-change same">— 중국 1위</div>
                     </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">51Sim</div>
+                        <div class="rank-tooltip-desc">중국 자율주행 시뮬레이션 1위 기업. 클라우드+단말 통합 플랫폼 51SimOne 운영. AI로 하루 3만 2천 건 극한 시나리오 자동 생성. SAIC·Baidu·Huawei 등 고객사 보유.</div>
+                        <a href="https://www.51sim.com" target="_blank" class="rank-tooltip-link">🌐 51sim.com</a>
+                    </div>
                 </div>
                 <!-- 8 Synkrotron -->
                 <div class="rank-item">
@@ -662,6 +757,11 @@
                     <div>
                         <div class="rank-val">비상장</div>
                         <div class="rank-change up">▲ 성장 중</div>
+                    </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">Synkrotron.ai</div>
+                        <div class="rank-tooltip-desc">중국 신흥 자율주행 시뮬레이션 기업. OASIS 풀스택 플랫폼으로 고속 병렬 시나리오 테스트 제공. 센서 시뮬·교통 흐름·HD맵을 통합한 원스톱 검증 솔루션.</div>
+                        <a href="https://www.synkrotron.ai" target="_blank" class="rank-tooltip-link">🌐 synkrotron.ai</a>
                     </div>
                 </div>
                 <!-- 9 Cognata -->
@@ -675,6 +775,11 @@
                         <div class="rank-val">$50M+</div>
                         <div class="rank-change same">— 투자유치</div>
                     </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">Cognata</div>
+                        <div class="rank-tooltip-desc">이스라엘 텔아비브 기반 딥러닝 시뮬레이션 기업. 3D 도시 환경 자동 생성 및 합성 센서 데이터 생성 특화. Intel Capital·Toyota AI Ventures 등 투자 유치.</div>
+                        <a href="https://www.cognata.com" target="_blank" class="rank-tooltip-link">🌐 cognata.com</a>
+                    </div>
                 </div>
                 <!-- 10 rFpro -->
                 <div class="rank-item">
@@ -686,6 +791,11 @@
                     <div>
                         <div class="rank-val">비상장</div>
                         <div class="rank-change same">— 유럽 선두</div>
+                    </div>
+                    <div class="rank-tooltip">
+                        <div class="rank-tooltip-name">rFpro</div>
+                        <div class="rank-tooltip-desc">영국 기반 언리얼 엔진 드라이빙 시뮬레이션 전문기업. F1 팀·포르쉐·볼보 등 고성능 차량 시뮬에 사용. 포토리얼리스틱 도로 환경과 정밀 차량 다이나믹스 통합 제공.</div>
+                        <a href="https://www.rfpro.com" target="_blank" class="rank-tooltip-link">🌐 rfpro.com</a>
                     </div>
                 </div>
             </div>
