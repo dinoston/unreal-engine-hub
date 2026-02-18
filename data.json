@@ -1,0 +1,25 @@
+{
+  "updated": "2026-02-19 01:00 UTC",
+  "updated_kst": "2026-02-19 10:00 KST",
+  "stocks": {
+    "TSLA":   {"name": "Tesla",       "flag": "🇺🇸", "price": 364.00, "change_pct": -1.2, "currency": "USD"},
+    "NVDA":   {"name": "NVIDIA",      "flag": "🇺🇸", "price": 138.00, "change_pct":  2.8, "currency": "USD"},
+    "TM":     {"name": "Toyota",      "flag": "🇯🇵", "price": 192.00, "change_pct":  0.4, "currency": "USD"},
+    "HYMTF":  {"name": "Hyundai",     "flag": "🇰🇷", "price":  42.00, "change_pct":  1.1, "currency": "USD"},
+    "BYDDF":  {"name": "BYD",         "flag": "🇨🇳", "price":  38.00, "change_pct":  3.5, "currency": "USD"},
+    "MBG.DE": {"name": "Mercedes",    "flag": "🇩🇪", "price":  62.00, "change_pct": -0.7, "currency": "EUR"},
+    "BMW.DE": {"name": "BMW",         "flag": "🇩🇪", "price":  82.00, "change_pct":  0.0, "currency": "EUR"},
+    "GM":     {"name": "GM",          "flag": "🇺🇸", "price":  52.00, "change_pct":  0.9, "currency": "USD"},
+    "F":      {"name": "Ford",        "flag": "🇺🇸", "price":  11.00, "change_pct": -1.8, "currency": "USD"},
+    "MBLY":   {"name": "Mobileye",    "flag": "🇺🇸", "price":  16.00, "change_pct":  1.4, "currency": "USD"},
+    "BIDU":   {"name": "Baidu",       "flag": "🇨🇳", "price":  88.00, "change_pct":  2.1, "currency": "USD"},
+    "VWAGY":  {"name": "Volkswagen",  "flag": "🇩🇪", "price":   8.00, "change_pct": -0.5, "currency": "USD"},
+    "HMC":    {"name": "Honda",       "flag": "🇯🇵", "price":  28.00, "change_pct": -0.3, "currency": "USD"}
+  },
+  "news": {
+    "unreal": [],
+    "gis": [],
+    "us_av": [],
+    "china_av": []
+  }
+}

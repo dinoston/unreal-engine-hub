@@ -669,11 +669,11 @@
 
     <nav>
         <a href="#" class="tab-btn active" onclick="showSection('unreal', this); return false;">🚀 Unreal 최신 뉴스</a>
-        <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
         <a href="#" class="tab-btn" onclick="showSection('gis', this); return false;">🗺️ Unreal GIS 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('us', this); return false;">🇺🇸 자율주행 미국 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('china', this); return false;">🇨🇳 자율주행 중국 뉴스</a>
         <a href="#" class="tab-btn" onclick="showSection('games', this); return false;">🎮 레이싱 & 시뮬 게임</a>
+        <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
     </nav>
 
     <div class="container">
@@ -863,152 +863,87 @@
             <!-- 주식 현황 패널 -->
             <div class="sidebar-title" style="margin-top:1.1rem;">📈 AV·자동차 주식 현황</div>
             <div class="stock-list">
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="TSLA">
                     <div class="stock-flag">🇺🇸</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Tesla</div>
-                        <div class="stock-ticker">TSLA</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$364</div>
-                        <div class="stock-chg down">▼ 1.2%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Tesla</div><div class="stock-ticker">TSLA</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$364</div><div class="stock-chg down">▼ 1.2%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Tesla (TSLA)</div><div class="rank-tooltip-desc">Elon Musk의 전기차·자율주행 선두 기업. FSD 완전자율주행 기술 개발 중. Model S/3/X/Y·Cybertruck 라인업. 세계 EV 시장 선도.</div><a href="https://www.tesla.com" target="_blank" class="rank-tooltip-link">🌐 tesla.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="NVDA">
                     <div class="stock-flag">🇺🇸</div>
-                    <div class="stock-info">
-                        <div class="stock-name">NVIDIA</div>
-                        <div class="stock-ticker">NVDA</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$138</div>
-                        <div class="stock-chg up">▲ 2.8%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">NVIDIA</div><div class="stock-ticker">NVDA</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$138</div><div class="stock-chg up">▲ 2.8%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">NVIDIA (NVDA)</div><div class="rank-tooltip-desc">AI 반도체 세계 1위. DRIVE 플랫폼 & Cosmos 시뮬레이터로 자율주행 산업 공급망 장악. GPU 부족 사태로 주가 급등.</div><a href="https://www.nvidia.com" target="_blank" class="rank-tooltip-link">🌐 nvidia.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="TM">
                     <div class="stock-flag">🇯🇵</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Toyota</div>
-                        <div class="stock-ticker">TM</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$192</div>
-                        <div class="stock-chg up">▲ 0.4%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Toyota</div><div class="stock-ticker">TM</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$192</div><div class="stock-chg up">▲ 0.4%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Toyota (TM)</div><div class="rank-tooltip-desc">세계 최대 완성차 기업. Woven Planet 통해 AV 기술 개발. 하이브리드·수소차 전략 병행. 연간 1,000만 대 판매.</div><a href="https://www.toyota-global.com" target="_blank" class="rank-tooltip-link">🌐 toyota-global.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="HYMTF">
                     <div class="stock-flag">🇰🇷</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Hyundai</div>
-                        <div class="stock-ticker">HYMTF</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$42</div>
-                        <div class="stock-chg up">▲ 1.1%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Hyundai</div><div class="stock-ticker">HYMTF</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$42</div><div class="stock-chg up">▲ 1.1%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">현대자동차 (HYMTF)</div><div class="rank-tooltip-desc">한국 현대차. 보스턴 다이나믹스 인수, AV·로봇 모빌리티 적극 투자. 아이오닉 EV 시리즈 글로벌 인기.</div><a href="https://www.hyundai.com" target="_blank" class="rank-tooltip-link">🌐 hyundai.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="BYDDF">
                     <div class="stock-flag">🇨🇳</div>
-                    <div class="stock-info">
-                        <div class="stock-name">BYD</div>
-                        <div class="stock-ticker">BYDDF</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$38</div>
-                        <div class="stock-chg up">▲ 3.5%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">BYD</div><div class="stock-ticker">BYDDF</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$38</div><div class="stock-chg up">▲ 3.5%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">BYD (BYDDF)</div><div class="rank-tooltip-desc">중국 최대 전기차 기업. 글로벌 EV 판매량 1위. DeepSeek AI 자율주행 탑재. 버핏의 버크셔 해서웨이 지분 보유.</div><a href="https://www.byd.com" target="_blank" class="rank-tooltip-link">🌐 byd.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="MBG.DE">
                     <div class="stock-flag">🇩🇪</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Mercedes</div>
-                        <div class="stock-ticker">MBG.DE</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">€62</div>
-                        <div class="stock-chg down">▼ 0.7%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Mercedes</div><div class="stock-ticker">MBG.DE</div></div>
+                    <div class="stock-price-col"><div class="stock-price">€62</div><div class="stock-chg down">▼ 0.7%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Mercedes-Benz (MBG.DE)</div><div class="rank-tooltip-desc">독일 럭셔리 완성차. NVIDIA Cosmos 파트너십으로 자율주행 공동 개발. S클래스 L3 자율주행 유럽 승인.</div><a href="https://www.mercedes-benz.com" target="_blank" class="rank-tooltip-link">🌐 mercedes-benz.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="BMW.DE">
                     <div class="stock-flag">🇩🇪</div>
-                    <div class="stock-info">
-                        <div class="stock-name">BMW</div>
-                        <div class="stock-ticker">BMW.DE</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">€82</div>
-                        <div class="stock-chg flat">— 0.0%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">BMW</div><div class="stock-ticker">BMW.DE</div></div>
+                    <div class="stock-price-col"><div class="stock-price">€82</div><div class="stock-chg flat">— 0.0%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">BMW Group (BMW.DE)</div><div class="rank-tooltip-desc">독일 프리미엄 완성차. 자율주행 기술 내재화 중. 전기차 iX·i4·i7 라인업 확장. MINI·Rolls-Royce 포함.</div><a href="https://www.bmwgroup.com" target="_blank" class="rank-tooltip-link">🌐 bmwgroup.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="GM">
                     <div class="stock-flag">🇺🇸</div>
-                    <div class="stock-info">
-                        <div class="stock-name">GM</div>
-                        <div class="stock-ticker">GM</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$52</div>
-                        <div class="stock-chg up">▲ 0.9%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">GM</div><div class="stock-ticker">GM</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$52</div><div class="stock-chg up">▲ 0.9%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">General Motors (GM)</div><div class="rank-tooltip-desc">미국 최대 완성차 중 하나. Cruise 자율주행 자회사 보유. EV 트럭 GMC Hummer EV·Silverado EV 출시.</div><a href="https://www.gm.com" target="_blank" class="rank-tooltip-link">🌐 gm.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="F">
                     <div class="stock-flag">🇺🇸</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Ford</div>
-                        <div class="stock-ticker">F</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$11</div>
-                        <div class="stock-chg down">▼ 1.8%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Ford</div><div class="stock-ticker">F</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$11</div><div class="stock-chg down">▼ 1.8%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Ford Motor (F)</div><div class="rank-tooltip-desc">미국 전통 완성차. Argo AI 해체 후 자율주행 전략 재편 중. F-150 Lightning 전기 픽업트럭. BlueCruise ADAS 탑재.</div><a href="https://www.ford.com" target="_blank" class="rank-tooltip-link">🌐 ford.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="MBLY">
                     <div class="stock-flag">🇺🇸</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Mobileye</div>
-                        <div class="stock-ticker">MBLY</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$16</div>
-                        <div class="stock-chg up">▲ 1.4%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Mobileye</div><div class="stock-ticker">MBLY</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$16</div><div class="stock-chg up">▲ 1.4%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Mobileye (MBLY)</div><div class="rank-tooltip-desc">Intel에서 분사한 ADAS·자율주행 전문 기업. 카메라 기반 센서 퓨전 세계 1위. 전 세계 수억 대 차량에 EyeQ 칩 탑재.</div><a href="https://www.mobileye.com" target="_blank" class="rank-tooltip-link">🌐 mobileye.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="BIDU">
                     <div class="stock-flag">🇨🇳</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Baidu</div>
-                        <div class="stock-ticker">BIDU</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$88</div>
-                        <div class="stock-chg up">▲ 2.1%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Baidu</div><div class="stock-ticker">BIDU</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$88</div><div class="stock-chg up">▲ 2.1%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Baidu (BIDU)</div><div class="rank-tooltip-desc">중국 최대 검색엔진. Apollo 자율주행 플랫폼 & Go 로보택시 중국 전국 운영. AI·클라우드 사업 급성장.</div><a href="https://www.baidu.com" target="_blank" class="rank-tooltip-link">🌐 baidu.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="VWAGY">
                     <div class="stock-flag">🇩🇪</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Volkswagen</div>
-                        <div class="stock-ticker">VWAGY</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$8</div>
-                        <div class="stock-chg down">▼ 0.5%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Volkswagen</div><div class="stock-ticker">VWAGY</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$8</div><div class="stock-chg down">▼ 0.5%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Volkswagen Group (VWAGY)</div><div class="rank-tooltip-desc">독일 최대 자동차 그룹. Audi·Porsche·SEAT 포함. 전기차 전환 및 자율주행 소프트웨어 내재화 추진 중.</div><a href="https://www.volkswagenag.com" target="_blank" class="rank-tooltip-link">🌐 volkswagenag.com</a></div>
                 </div>
-                <div class="stock-item">
+                <div class="stock-item" data-ticker="HMC">
                     <div class="stock-flag">🇯🇵</div>
-                    <div class="stock-info">
-                        <div class="stock-name">Honda</div>
-                        <div class="stock-ticker">HMC</div>
-                    </div>
-                    <div class="stock-price-col">
-                        <div class="stock-price">$28</div>
-                        <div class="stock-chg down">▼ 0.3%</div>
-                    </div>
+                    <div class="stock-info"><div class="stock-name">Honda</div><div class="stock-ticker">HMC</div></div>
+                    <div class="stock-price-col"><div class="stock-price">$28</div><div class="stock-chg down">▼ 0.3%</div></div>
+                    <div class="rank-tooltip"><div class="rank-tooltip-name">Honda Motor (HMC)</div><div class="rank-tooltip-desc">일본 혼다. GM과 협력해 자율주행 기술 개발. 2026년 일본 내 L3 자율주행 양산 예정. 모터사이클 세계 1위.</div><a href="https://global.honda" target="_blank" class="rank-tooltip-link">🌐 global.honda</a></div>
                 </div>
             </div>
             <div style="font-size:0.6rem; color:#4a5568; text-align:center; padding: 0.2rem 0 0.5rem;">
-                ※ 참고 시세 / 실시간 아님 / 2026.02
+                ※ 매일 자동 업데이트 · <span id="stock-updated">2026.02 기준</span>
             </div>
         </aside>
 
@@ -1018,7 +953,7 @@
         <!-- 1. Unreal 최신 뉴스 -->
         <div id="unreal" class="section active">
             <h2>🚀 Unreal 최신 뉴스</h2>
-            <div class="card-grid">
+            <div class="card-grid" id="news-grid-unreal">
 
                 <div class="card fade-in">
                     <div class="card-image">
@@ -1181,7 +1116,7 @@
         <!-- 3. Unreal GIS 뉴스 -->
         <div id="gis" class="section">
             <h2>🗺️ Unreal GIS 뉴스</h2>
-            <div class="card-grid">
+            <div class="card-grid" id="news-grid-gis">
 
                 <div class="card fade-in">
                     <div class="card-image" style="background: linear-gradient(135deg, #134e5e 0%, #71b280 100%); font-size: 2.5rem;">🌍</div>
@@ -1283,7 +1218,7 @@
         <!-- 4. 자율주행 미국 뉴스 -->
         <div id="us" class="section">
             <h2>🇺🇸 자율주행 시뮬레이션 - 미국</h2>
-            <div class="card-grid">
+            <div class="card-grid" id="news-grid-us_av">
 
                 <div class="card fade-in">
                     <div class="card-image">🤖</div>
@@ -1366,7 +1301,7 @@
         <!-- 5. 자율주행 중국 뉴스 -->
         <div id="china" class="section">
             <h2>🇨🇳 자율주행 시뮬레이션 - 중국</h2>
-            <div class="card-grid">
+            <div class="card-grid" id="news-grid-china_av">
 
                 <div class="card fade-in">
                     <div class="card-image">🏭</div>
@@ -1451,191 +1386,55 @@
             <h2>🎮 레이싱 & 시뮬레이션 게임</h2>
             <div class="games-split">
 
-                <!-- 좌측: 시뮬레이션 게임 TOP 20 -->
+                <!-- 좌측: 시뮬레이션 게임 TOP 40 -->
                 <div>
-                    <div class="games-col-title">🎯 시뮬레이션 게임 TOP 20 — 인기 순위</div>
+                    <div class="games-col-title">🎯 시뮬레이션 게임 TOP 40 — 자동차·항공·드론·자전거·도시제작</div>
                     <div class="game-rank-list">
-
-                        <div class="game-rank-item">
-                            <div class="g-num r1">1</div>
-                            <div class="g-info">
-                                <div class="g-title">Microsoft Flight Simulator 2024</div>
-                                <div class="g-meta">PC / Xbox · 비행 시뮬레이션</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Microsoft+Flight+Simulator+2024+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num r2">2</div>
-                            <div class="g-info">
-                                <div class="g-title">BeamNG.drive</div>
-                                <div class="g-meta">PC / Steam · 물리 차량 시뮬 · AV 연구</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=BeamNG+drive+gameplay+2025" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num r3">3</div>
-                            <div class="g-info">
-                                <div class="g-title">Euro Truck Simulator 2</div>
-                                <div class="g-meta">PC / Steam · 트럭 장거리 주행</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Euro+Truck+Simulator+2+2025+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">4</div>
-                            <div class="g-info">
-                                <div class="g-title">War Thunder</div>
-                                <div class="g-meta">PC / PS5 / Xbox · 밀리터리 차량 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=War+Thunder+2025+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">5</div>
-                            <div class="g-info">
-                                <div class="g-title">American Truck Simulator</div>
-                                <div class="g-meta">PC / Steam · 북미 트럭 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=American+Truck+Simulator+2025+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">6</div>
-                            <div class="g-info">
-                                <div class="g-title">Farming Simulator 25</div>
-                                <div class="g-meta">PC / PS5 / Xbox · 농장 시뮬레이션</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Farming+Simulator+25+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">7</div>
-                            <div class="g-info">
-                                <div class="g-title">SnowRunner</div>
-                                <div class="g-meta">PC / PS5 · 오프로드 탐험 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=SnowRunner+2025+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">8</div>
-                            <div class="g-info">
-                                <div class="g-title">DCS World</div>
-                                <div class="g-meta">PC · 군사 비행 시뮬레이션</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=DCS+World+2025+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">9</div>
-                            <div class="g-info">
-                                <div class="g-title">X-Plane 12</div>
-                                <div class="g-meta">PC · 프로 비행 시뮬레이션</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=X-Plane+12+gameplay+2025" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">10</div>
-                            <div class="g-info">
-                                <div class="g-title">Bus Simulator 21</div>
-                                <div class="g-meta">PC / PS5 · 도시 버스 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Bus+Simulator+21+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">11</div>
-                            <div class="g-info">
-                                <div class="g-title">Train Sim World 5</div>
-                                <div class="g-meta">PC / PS5 · 기차 시뮬레이션</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Train+Sim+World+5+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">12</div>
-                            <div class="g-info">
-                                <div class="g-title">Wreckfest 2</div>
-                                <div class="g-meta">PC / PS5 · 충돌 물리 레이싱</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Wreckfest+2+gameplay+2025" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">13</div>
-                            <div class="g-info">
-                                <div class="g-title">CARLA Simulator</div>
-                                <div class="g-meta">PC · 자율주행 연구 오픈소스 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=CARLA+autonomous+driving+simulator+demo" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">14</div>
-                            <div class="g-info">
-                                <div class="g-title">City Car Driving 4</div>
-                                <div class="g-meta">PC · 도시 운전 교육 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=City+Car+Driving+4+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">15</div>
-                            <div class="g-info">
-                                <div class="g-title">Stormworks: Build & Rescue</div>
-                                <div class="g-meta">PC · 공학 구조 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Stormworks+Build+and+Rescue+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">16</div>
-                            <div class="g-info">
-                                <div class="g-title">Space Engineers</div>
-                                <div class="g-meta">PC / Xbox · 우주 공학 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Space+Engineers+2025+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">17</div>
-                            <div class="g-info">
-                                <div class="g-title">Kerbal Space Program 2</div>
-                                <div class="g-meta">PC · 로켓 과학 시뮬레이션</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Kerbal+Space+Program+2+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">18</div>
-                            <div class="g-info">
-                                <div class="g-title">My Summer Car</div>
-                                <div class="g-meta">PC · 핀란드 차 수리 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=My+Summer+Car+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">19</div>
-                            <div class="g-info">
-                                <div class="g-title">Automation – Car Company Tycoon</div>
-                                <div class="g-meta">PC · 자동차 설계 & 엔지니어링</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Automation+Car+Company+Tycoon+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
-                        <div class="game-rank-item">
-                            <div class="g-num rn">20</div>
-                            <div class="g-info">
-                                <div class="g-title">Jalopy</div>
-                                <div class="g-meta">PC · 동유럽 도로 여행 시뮬</div>
-                            </div>
-                            <a href="https://www.youtube.com/results?search_query=Jalopy+game+gameplay" class="yt-btn" target="_blank">▶</a>
-                        </div>
-
+                        <!-- 🚗 자동차·트럭 -->
+                        <div class="game-rank-item"><div class="g-num r1">1</div><div class="g-info"><div class="g-title">BeamNG.drive</div><div class="g-meta">🚗 PC · 극강 물리 차량 시뮬 · AV 연구용</div></div><a href="https://www.youtube.com/results?search_query=BeamNG+drive+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num r2">2</div><div class="g-info"><div class="g-title">Euro Truck Simulator 2</div><div class="g-meta">🚗 PC · 유럽 트럭 장거리 주행</div></div><a href="https://www.youtube.com/results?search_query=Euro+Truck+Simulator+2+2025+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num r3">3</div><div class="g-info"><div class="g-title">American Truck Simulator</div><div class="g-meta">🚗 PC · 북미 트럭 시뮬레이션</div></div><a href="https://www.youtube.com/results?search_query=American+Truck+Simulator+2025+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">4</div><div class="g-info"><div class="g-title">City Car Driving 4</div><div class="g-meta">🚗 PC · 도시 운전 교육 시뮬</div></div><a href="https://www.youtube.com/results?search_query=City+Car+Driving+4+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">5</div><div class="g-info"><div class="g-title">CARLA Simulator</div><div class="g-meta">🚗 PC · 자율주행 연구 오픈소스</div></div><a href="https://www.youtube.com/results?search_query=CARLA+autonomous+driving+simulator+demo" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">6</div><div class="g-info"><div class="g-title">SnowRunner</div><div class="g-meta">🚗 PC / PS5 · 극한 오프로드 탐험</div></div><a href="https://www.youtube.com/results?search_query=SnowRunner+2025+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">7</div><div class="g-info"><div class="g-title">Bus Simulator 21</div><div class="g-meta">🚗 PC / PS5 · 도시 버스 운영 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Bus+Simulator+21+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">8</div><div class="g-info"><div class="g-title">My Summer Car</div><div class="g-meta">🚗 PC · 핀란드 차 조립·수리 시뮬</div></div><a href="https://www.youtube.com/results?search_query=My+Summer+Car+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">9</div><div class="g-info"><div class="g-title">Automation – Car Company Tycoon</div><div class="g-meta">🚗 PC · 자동차 설계 & 엔지니어링</div></div><a href="https://www.youtube.com/results?search_query=Automation+Car+Company+Tycoon+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">10</div><div class="g-info"><div class="g-title">Wreckfest 2</div><div class="g-meta">🚗 PC / PS5 · 충돌 물리 레이싱</div></div><a href="https://www.youtube.com/results?search_query=Wreckfest+2+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <!-- 🏙️ 도시 제작 -->
+                        <div class="game-rank-item"><div class="g-num rn">11</div><div class="g-info"><div class="g-title">Cities: Skylines II</div><div class="g-meta">🏙️ PC / Xbox · 차세대 도시 건설 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Cities+Skylines+2+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">12</div><div class="g-info"><div class="g-title">Cities: Skylines</div><div class="g-meta">🏙️ PC / PS5 · 인기 도시 건설 클래식</div></div><a href="https://www.youtube.com/results?search_query=Cities+Skylines+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">13</div><div class="g-info"><div class="g-title">Transport Fever 2</div><div class="g-meta">🏙️ PC · 교통망 & 도시 건설</div></div><a href="https://www.youtube.com/results?search_query=Transport+Fever+2+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">14</div><div class="g-info"><div class="g-title">Anno 1800</div><div class="g-meta">🏙️ PC · 산업혁명 시대 도시 건설</div></div><a href="https://www.youtube.com/results?search_query=Anno+1800+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">15</div><div class="g-info"><div class="g-title">Tropico 6</div><div class="g-meta">🏙️ PC / PS5 · 열대 섬나라 도시 통치</div></div><a href="https://www.youtube.com/results?search_query=Tropico+6+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">16</div><div class="g-info"><div class="g-title">Workers & Resources: Soviet Republic</div><div class="g-meta">🏙️ PC · 소련 산업 도시 건설</div></div><a href="https://www.youtube.com/results?search_query=Workers+Resources+Soviet+Republic+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">17</div><div class="g-info"><div class="g-title">Mini Metro</div><div class="g-meta">🏙️ PC / Mobile · 미니멀 지하철 노선 설계</div></div><a href="https://www.youtube.com/results?search_query=Mini+Metro+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">18</div><div class="g-info"><div class="g-title">SimCity 4</div><div class="g-meta">🏙️ PC · 고전 도시 계획 시뮬</div></div><a href="https://www.youtube.com/results?search_query=SimCity+4+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <!-- ✈️ 항공 -->
+                        <div class="game-rank-item"><div class="g-num rn">19</div><div class="g-info"><div class="g-title">Microsoft Flight Simulator 2024</div><div class="g-meta">✈️ PC / Xbox · 세계 최고 비행 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Microsoft+Flight+Simulator+2024+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">20</div><div class="g-info"><div class="g-title">DCS World</div><div class="g-meta">✈️ PC · 군사 비행 시뮬레이션</div></div><a href="https://www.youtube.com/results?search_query=DCS+World+2025+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">21</div><div class="g-info"><div class="g-title">X-Plane 12</div><div class="g-meta">✈️ PC · 전문 비행 시뮬레이션</div></div><a href="https://www.youtube.com/results?search_query=X-Plane+12+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">22</div><div class="g-info"><div class="g-title">IL-2 Sturmovik: Great Battles</div><div class="g-meta">✈️ PC · 2차대전 항공 전투 시뮬</div></div><a href="https://www.youtube.com/results?search_query=IL-2+Sturmovik+Great+Battles+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">23</div><div class="g-info"><div class="g-title">Aerofly FS 4</div><div class="g-meta">✈️ PC / VR · 고품질 민간 비행 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Aerofly+FS+4+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">24</div><div class="g-info"><div class="g-title">Infinite Flight</div><div class="g-meta">✈️ iOS / Android · 모바일 비행 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Infinite+Flight+simulator+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">25</div><div class="g-info"><div class="g-title">Prepar3D v6</div><div class="g-meta">✈️ PC · 프로페셔널 비행 훈련 플랫폼</div></div><a href="https://www.youtube.com/results?search_query=Prepar3D+v6+flight+simulation" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">26</div><div class="g-info"><div class="g-title">War Thunder (Air)</div><div class="g-meta">✈️ PC / PS5 · 리얼 항공 전투 시뮬</div></div><a href="https://www.youtube.com/results?search_query=War+Thunder+aircraft+gameplay+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <!-- 🚁 드론 -->
+                        <div class="game-rank-item"><div class="g-num rn">27</div><div class="g-info"><div class="g-title">Liftoff: FPV Drone Racing</div><div class="g-meta">🚁 PC / PS5 · FPV 드론 레이싱 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Liftoff+FPV+Drone+Racing+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">28</div><div class="g-info"><div class="g-title">Velocidrone</div><div class="g-meta">🚁 PC · FPV 드론 레이싱 트레이너</div></div><a href="https://www.youtube.com/results?search_query=Velocidrone+FPV+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">29</div><div class="g-info"><div class="g-title">Uncrashed: FPV Drone Simulator</div><div class="g-meta">🚁 PC · FPV 드론 자유비행 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Uncrashed+FPV+Drone+Simulator+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">30</div><div class="g-info"><div class="g-title">DJI Flight Simulator</div><div class="g-meta">🚁 PC · DJI 공식 드론 훈련 시뮬</div></div><a href="https://www.youtube.com/results?search_query=DJI+Flight+Simulator+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">31</div><div class="g-info"><div class="g-title">FPV Freerider Recharged</div><div class="g-meta">🚁 PC · 입문용 FPV 드론 시뮬</div></div><a href="https://www.youtube.com/results?search_query=FPV+Freerider+Recharged+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">32</div><div class="g-info"><div class="g-title">Zephyr FPV Simulator</div><div class="g-meta">🚁 PC · 고급 FPV 드론 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Zephyr+FPV+Simulator+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">33</div><div class="g-info"><div class="g-title">RealFlight Evolution</div><div class="g-meta">🚁 PC · RC 비행기·드론 전문 시뮬</div></div><a href="https://www.youtube.com/results?search_query=RealFlight+Evolution+drone+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <!-- 🚲 자전거 -->
+                        <div class="game-rank-item"><div class="g-num rn">34</div><div class="g-info"><div class="g-title">Zwift</div><div class="g-meta">🚲 PC / iOS · 실내 사이클링 e스포츠</div></div><a href="https://www.youtube.com/results?search_query=Zwift+cycling+gameplay+racing+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">35</div><div class="g-info"><div class="g-title">ROUVY</div><div class="g-meta">🚲 PC / Mobile · AR 실제 도로 사이클링</div></div><a href="https://www.youtube.com/results?search_query=ROUVY+cycling+simulator+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">36</div><div class="g-info"><div class="g-title">Wahoo RGT Cycling</div><div class="g-meta">🚲 PC / Mobile · 리얼 자전거 라이딩</div></div><a href="https://www.youtube.com/results?search_query=Wahoo+RGT+Cycling+simulator" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">37</div><div class="g-info"><div class="g-title">BKool Cycling</div><div class="g-meta">🚲 PC · 스마트 트레이너 연동 시뮬</div></div><a href="https://www.youtube.com/results?search_query=BKool+Cycling+simulator+2025" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">38</div><div class="g-info"><div class="g-title">Road Grand Tours</div><div class="g-meta">🚲 PC · 사이클 그랜드 투어 시뮬</div></div><a href="https://www.youtube.com/results?search_query=Road+Grand+Tours+cycling+game" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">39</div><div class="g-info"><div class="g-title">Crit Cycling</div><div class="g-meta">🚲 PC · FPV 사이클 레이싱 게임</div></div><a href="https://www.youtube.com/results?search_query=Crit+Cycling+game+gameplay" class="yt-btn" target="_blank">▶</a></div>
+                        <div class="game-rank-item"><div class="g-num rn">40</div><div class="g-info"><div class="g-title">The Breakaway</div><div class="g-meta">🚲 PC · 차세대 프로 사이클링 시뮬 2026</div></div><a href="https://www.youtube.com/results?search_query=The+Breakaway+cycling+game+2025" class="yt-btn" target="_blank">▶</a></div>
                     </div>
                 </div>
 
@@ -1848,6 +1647,87 @@
             clickedTab.classList.add('active');
             window.scrollTo(0, 0);
         }
+
+        // ── Dynamic data loader ──────────────────────────────────────────────
+        function fmtPrice(s) {
+            const sym = s.currency === 'EUR' ? '€' : '$';
+            return sym + s.price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+        }
+
+        function fmtChg(chg) {
+            const arrow = chg > 0 ? '▲' : chg < 0 ? '▼' : '—';
+            const cls   = chg > 0 ? 'up' : chg < 0 ? 'down' : 'flat';
+            return { text: arrow + ' ' + Math.abs(chg).toFixed(1) + '%', cls };
+        }
+
+        function fmtDate(d) {
+            try { return new Date(d).toLocaleDateString('ko-KR', {year:'numeric', month:'2-digit', day:'2-digit'}); }
+            catch(e) { return (d || '').slice(0,10); }
+        }
+
+        function esc(s) {
+            return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+        }
+
+        function renderNews(section, articles) {
+            if (!articles || !articles.length) return;
+            const grid = document.getElementById('news-grid-' + section);
+            if (!grid) return;
+            grid.innerHTML = articles.map(a => `
+                <div class="card fade-in">
+                    <div class="card-image" style="font-size:2.5rem; background:linear-gradient(135deg,#1a1f3a,#2a3550);">📰</div>
+                    <div class="card-content">
+                        <div class="card-meta">${fmtDate(a.date)}${a.source ? ' · ' + esc(a.source) : ''}</div>
+                        <h3 class="card-title">${esc(a.title)}
+                            <div class="card-title-kor">${esc(a.title_ko || '')}</div>
+                        </h3>
+                        <p class="card-summary">${esc(a.summary_ko || a.summary || '')}</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Latest</span>
+                            ${a.link ? '<a href="'+esc(a.link)+'" class="read-more" target="_blank">Read More</a>' : ''}
+                        </div>
+                    </div>
+                </div>`).join('');
+        }
+
+        async function loadData() {
+            try {
+                const res = await fetch('data.json?t=' + Date.now());
+                if (!res.ok) return;
+                const data = await res.json();
+
+                // Update stocks
+                if (data.stocks) {
+                    document.querySelectorAll('.stock-item[data-ticker]').forEach(el => {
+                        const s = data.stocks[el.dataset.ticker];
+                        if (!s) return;
+                        el.querySelector('.stock-price').textContent = fmtPrice(s);
+                        const c = fmtChg(s.change_pct);
+                        const chgEl = el.querySelector('.stock-chg');
+                        chgEl.textContent  = c.text;
+                        chgEl.className    = 'stock-chg ' + c.cls;
+                    });
+                }
+
+                // Update timestamp
+                if (data.updated_kst) {
+                    const el = document.getElementById('stock-updated');
+                    if (el) el.textContent = data.updated_kst + ' 기준';
+                }
+
+                // Update news grids
+                if (data.news) {
+                    renderNews('unreal',   data.news.unreal);
+                    renderNews('gis',      data.news.gis);
+                    renderNews('us_av',    data.news.us_av);
+                    renderNews('china_av', data.news.china_av);
+                }
+            } catch(e) {
+                console.log('Data load error:', e);
+            }
+        }
+
+        loadData();
     </script>
 </body>
 </html>
