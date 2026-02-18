@@ -2,12 +2,14 @@
 """
 Daily data updater for Unreal Engine Hub
 - Fetches stock prices from Yahoo Finance
-- Fetches news from Google News RSS
+- Fetches news + images from NewsAPI.org
 - Translates summaries to Korean via unofficial Google Translate
 """
 import json, urllib.request, urllib.parse
-import xml.etree.ElementTree as ET
-import datetime, re, time
+import datetime, time, os
+
+# ── API Key (GitHub Secret > fallback) ────────────────────────────────────────
+NEWS_API_KEY = os.environ.get('NEWS_API_KEY', 'de6682f46f90485d99bd48c42e7feaba')
 
 # ── Stock tickers ─────────────────────────────────────────────────────────────
 TICKERS = [
@@ -26,14 +28,14 @@ TICKERS = [
     ('HMC',    'Honda',       '🇯🇵'),
 ]
 
-# ── Google News RSS queries ────────────────────────────────────────────────────
-NEWS_FEEDS = {
-    'unreal':   'https://news.google.com/rss/search?q=%22Unreal+Engine%22+OR+%22Epic+Games%22&hl=en-US&gl=US&ceid=US:en',
-    'gis':      'https://news.google.com/rss/search?q=%22Unreal+Engine%22+GIS+OR+%22digital+twin%22+OR+Cesium+OR+ArcGIS&hl=en-US&gl=US&ceid=US:en',
-    'us_av':    'https://news.google.com/rss/search?q=autonomous+driving+simulation+Waymo+OR+Tesla+OR+NVIDIA+OR+%22self-driving%22&hl=en-US&gl=US&ceid=US:en',
-    'china_av':  'https://news.google.com/rss/search?q=China+%22autonomous+vehicle%22+OR+%22self-driving%22+BYD+OR+Baidu+OR+DeepSeek&hl=en-US&gl=US&ceid=US:en',
-    'europe_av': 'https://news.google.com/rss/search?q=Europe+%22autonomous+vehicle%22+OR+%22self-driving%22+Mercedes+OR+BMW+OR+Volkswagen+OR+Wayve+OR+Mobileye&hl=en-US&gl=US&ceid=US:en',
-    'linkedin_av': 'https://news.google.com/rss/search?q=%22AV+simulation%22+OR+%22autonomous+driving+simulation%22+OR+%22CARLA+simulator%22+OR+%22driving+simulator%22+OR+%22synthetic+data+autonomous%22&hl=en-US&gl=US&ceid=US:en',
+# ── NewsAPI queries ────────────────────────────────────────────────────────────
+NEWS_QUERIES = {
+    'unreal':     '"Unreal Engine" OR "Epic Games"',
+    'gis':        '"Unreal Engine" GIS OR "digital twin" OR Cesium OR ArcGIS',
+    'us_av':      'autonomous driving Waymo OR Tesla OR NVIDIA OR "self-driving"',
+    'china_av':   'China "autonomous vehicle" OR "self-driving" BYD OR Baidu OR DeepSeek',
+    'europe_av':  'Europe "autonomous vehicle" OR "self-driving" Mercedes OR BMW OR Volkswagen OR Wayve',
+    'linkedin_av': '"AV simulation" OR "autonomous driving simulation" OR "CARLA simulator" OR "driving simulator"',
 }
 
 
@@ -73,26 +75,27 @@ def translate_ko(text):
         return text
 
 
-def fetch_news(url, limit=5):
+def fetch_news(query, limit=5):
     try:
+        q = urllib.parse.quote(query)
+        url = (f'https://newsapi.org/v2/everything'
+               f'?q={q}&language=en&sortBy=publishedAt&pageSize={limit}'
+               f'&apiKey={NEWS_API_KEY}')
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as r:
-            root = ET.fromstring(r.read())
+            data = json.loads(r.read())
 
-        items   = root.findall('.//item')
         results = []
-
-        for item in items:
-            title    = (item.findtext('title')       or '').strip()
-            link     = (item.findtext('link')        or '').strip()
-            raw_desc = item.findtext('description')  or ''
-            desc     = re.sub(r'<[^>]+>', '', raw_desc).strip()[:300]
-            pub      = (item.findtext('pubDate')     or '').strip()
-            src_el   = item.find('{https://news.google.com/rss}source')
-            source   = src_el.text if src_el is not None else ''
-
-            if not title:
+        for art in data.get('articles', []):
+            title = (art.get('title') or '').strip()
+            if not title or title == '[Removed]':
                 continue
+
+            desc   = (art.get('description') or '').strip()[:300]
+            link   = art.get('url', '')
+            image  = art.get('urlToImage') or ''
+            pub    = art.get('publishedAt', '')
+            source = art.get('source', {}).get('name', '')
 
             title_ko = translate_ko(title)
             desc_ko  = translate_ko(desc) if desc else ''
@@ -106,6 +109,7 @@ def fetch_news(url, limit=5):
                 'summary_ko': desc_ko,
                 'date':       pub,
                 'source':     source,
+                'image':      image,
             })
             if len(results) >= limit:
                 break
@@ -137,9 +141,9 @@ for ticker, name, flag in TICKERS:
     time.sleep(0.4)
 
 print('── News ──')
-for section, feed_url in NEWS_FEEDS.items():
+for section, query in NEWS_QUERIES.items():
     print(f'  {section} ...')
-    articles = fetch_news(feed_url, limit=5)
+    articles = fetch_news(query, limit=5)
     output['news'][section] = articles
     print(f'    → {len(articles)} articles')
     time.sleep(1)
