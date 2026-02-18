@@ -693,6 +693,49 @@
         }
         .yt-btn:hover { opacity: 0.8; }
 
+        /* ── LinkedIn / Reddit 바로가기 카드 ── */
+        .li-shortcut-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            background: linear-gradient(135deg, #1a1f3a, #2a3550);
+            border: 1px solid #2a3550;
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            text-decoration: none;
+            color: #e0e6ed;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .li-shortcut-card:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(102,126,234,0.25);
+        }
+        .li-icon { font-size: 2rem; }
+        .li-label { font-size: 1rem; font-weight: 700; color: #fff; margin-top: 0.2rem; }
+        .li-sub { font-size: 0.78rem; color: #667eea; }
+        .li-arrow { font-size: 0.8rem; color: #a8b4c8; margin-top: 0.6rem; }
+
+        .reddit-shortcut-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            background: linear-gradient(135deg, #1e1a2e, #2e1e1e);
+            border: 1px solid #3a2525;
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            text-decoration: none;
+            color: #e0e6ed;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .reddit-shortcut-card:hover {
+            border-color: #ff4500;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(255,69,0,0.25);
+        }
+
         @media (max-width: 768px) {
             .games-split { grid-template-columns: 1fr; }
         }
@@ -710,10 +753,11 @@
             <a href="#" class="tab-btn" onclick="showSection('gis', this); return false;">🗺️ Unreal GIS 뉴스</a>
             <a href="#" class="tab-btn" onclick="showSection('us', this); return false;">🇺🇸 자율주행 미국 뉴스</a>
             <a href="#" class="tab-btn" onclick="showSection('china', this); return false;">🇨🇳 자율주행 중국 뉴스</a>
+            <a href="#" class="tab-btn" onclick="showSection('europe', this); return false;">🇪🇺 자율주행 유럽 뉴스</a>
         </div>
         <div class="nav-row">
-            <a href="#" class="tab-btn" onclick="showSection('europe', this); return false;">🇪🇺 자율주행 유럽 뉴스</a>
-            <a href="#" class="tab-btn" onclick="showSection('linkedin', this); return false;">💼 링크드인 뉴스</a>
+            <a href="#" class="tab-btn" onclick="showSection('linkedin', this); return false;">💼 링크드인 속보</a>
+            <a href="#" class="tab-btn" onclick="showSection('reddit', this); return false;">🔴 레딧 속보</a>
             <a href="#" class="tab-btn" onclick="showSection('games', this); return false;">🎮 레이싱 & 시뮬 게임</a>
             <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
         </div>
@@ -1459,92 +1503,139 @@
             </div>
         </div>
 
-        <!-- 7. AV 시뮬레이션 업계 뉴스 (LinkedIn 유형) -->
+        <!-- 7. 링크드인 속보 -->
         <div id="linkedin" class="section">
-            <h2>💼 링크드인 뉴스 — AV 시뮬레이션 업계</h2>
-            <p style="color:#aab0d0;font-size:0.85rem;margin-bottom:1rem;">※ LinkedIn은 공개 RSS를 제공하지 않아, 동일 주제의 업계 전문 뉴스를 Google News에서 집계합니다. 매일 자동 업데이트됩니다.</p>
-            <div class="card-grid" id="news-grid-linkedin_av">
+            <h2>💼 링크드인 속보 — 자율주행 개인 포스트</h2>
+            <p style="color:#aab0d0;font-size:0.85rem;margin-bottom:2rem;">LinkedIn은 로그인 없이 개인 포스트를 가져올 수 없습니다. 아래 버튼을 클릭하면 LinkedIn에서 직접 최신 포스트를 볼 수 있습니다.</p>
 
-                <div class="card fade-in">
-                    <span class="hot-badge">🔥 HOT</span>
-                    <div class="card-image">🧪</div>
-                    <div class="card-content">
-                        <div class="card-meta">2026 · CARLA Simulator</div>
-                        <h3 class="card-title">CARLA Open-Source AV Simulator — Industry Standard
-                            <div class="card-title-kor">카를라 오픈소스 자율주행 시뮬레이터 — 업계 표준</div>
-                        </h3>
-                        <p class="card-summary">CARLA(Car Learning to Act)는 자율주행 연구의 사실상 업계 표준 오픈소스 시뮬레이터입니다. Unreal Engine 기반으로 구축되어 있으며, 센서 시뮬레이션(카메라·LiDAR·레이더)과 교통 흐름 생성, 다양한 날씨·조명 조건 재현이 가능합니다. 전 세계 AV 연구팀과 기업들이 알고리즘 사전 검증에 활용합니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Open Source</span>
-                            <a href="https://carla.org" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem; max-width:1100px;">
 
-                <div class="card fade-in">
-                    <div class="card-image">🌐</div>
-                    <div class="card-content">
-                        <div class="card-meta">2026 · NVIDIA Omniverse</div>
-                        <h3 class="card-title">NVIDIA Omniverse & Cosmos: Synthetic Data at Scale
-                            <div class="card-title-kor">NVIDIA 옴니버스 & 코스모스: 대규모 합성 데이터 생성</div>
-                        </h3>
-                        <p class="card-summary">NVIDIA Omniverse와 Cosmos 플랫폼이 자율주행 합성 데이터 생성의 핵심 인프라로 자리잡고 있습니다. Waymo·Toyota 등 주요 AV 기업들이 수십억 km의 가상 주행 데이터를 생성해 AI 학습에 활용 중입니다. dSPACE·ANSYS와의 통합으로 HIL/SIL 테스트까지 원스톱 처리가 가능합니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Synthetic Data</span>
-                            <a href="https://www.nvidia.com/en-us/omniverse/" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.linkedin.com/search/results/content/?keywords=autonomous%20driving&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">🚗</div>
+                    <div class="li-label">자율주행</div>
+                    <div class="li-sub">autonomous driving</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
 
-                <div class="card fade-in">
-                    <div class="card-image">🔬</div>
-                    <div class="card-content">
-                        <div class="card-meta">2026 · Waymo / Google</div>
-                        <h3 class="card-title">Waymo Simulation-First: Testing Billions of Miles Virtually
-                            <div class="card-title-kor">웨이모 '시뮬레이션 우선': 수십억 마일의 가상 테스트</div>
-                        </h3>
-                        <p class="card-summary">웨이모는 실제 도로 주행보다 시뮬레이션 검증을 앞세우는 'Simulation-First' 전략을 채택했습니다. 자체 개발 시뮬레이터 CarCraft에서 연간 수십억 마일을 가상으로 주행하며, 엣지 케이스(Edge Case) 시나리오를 체계적으로 생성·검증합니다. 이 방식으로 실차 주행 대비 수천 배 빠른 안전성 검증이 가능합니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Simulation-First</span>
-                            <a href="https://waymo.com/research/" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.linkedin.com/search/results/content/?keywords=self-driving%20simulation&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">🧪</div>
+                    <div class="li-label">자율주행 시뮬레이션</div>
+                    <div class="li-sub">self-driving simulation</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
 
-                <div class="card fade-in">
-                    <div class="card-image">📊</div>
-                    <div class="card-content">
-                        <div class="card-meta">2026 · Industry Trend</div>
-                        <h3 class="card-title">AV Simulation Market: $10B+ by 2030
-                            <div class="card-title-kor">자율주행 시뮬레이션 시장: 2030년 100억 달러 돌파 전망</div>
-                        </h3>
-                        <p class="card-summary">글로벌 자율주행 시뮬레이션 시장이 연평균 30% 이상 성장해 2030년 100억 달러를 넘어설 것으로 전망됩니다. dSPACE·Ansys·Applied Intuition·Cognata 등 전문 시뮬레이션 업체들이 OEM 및 Tier-1 공급업체의 수요를 흡수하며 빠르게 성장하고 있습니다. Unreal Engine 기반 솔루션의 채택이 특히 두드러집니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Market Research</span>
-                            <a href="https://www.linkedin.com/search/results/content/?keywords=autonomous+driving+simulation" class="read-more" target="_blank">LinkedIn에서 보기</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.linkedin.com/search/results/content/?keywords=AV%20simulation%20unreal%20engine&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">🎮</div>
+                    <div class="li-label">언리얼 엔진 AV</div>
+                    <div class="li-sub">AV simulation unreal engine</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
 
-                <div class="card fade-in">
-                    <div class="card-image">🤝</div>
-                    <div class="card-content">
-                        <div class="card-meta">2026 · Applied Intuition</div>
-                        <h3 class="card-title">Applied Intuition: Enterprise AV Simulation Platform
-                            <div class="card-title-kor">어플라이드 인튜이션: 기업용 자율주행 시뮬레이션 플랫폼</div>
-                        </h3>
-                        <p class="card-summary">Applied Intuition이 Toyota·Hyundai·GM 등 주요 완성차 기업과 파트너십을 확대하며 기업용 AV 시뮬레이션 플랫폼의 선두주자로 부상했습니다. 수동 시나리오 작성 없이 AI가 자동으로 엣지 케이스를 생성하는 'Generative Simulation' 기능이 업계의 주목을 받고 있습니다.</p>
-                        <div class="card-footer">
-                            <span class="card-tag">Enterprise Platform</span>
-                            <a href="https://www.appliedintuition.com" class="read-more" target="_blank">Read More</a>
-                        </div>
-                    </div>
-                </div>
+                <a href="https://www.linkedin.com/search/results/content/?keywords=Waymo%20Tesla%20autonomous&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">🤖</div>
+                    <div class="li-label">Waymo · Tesla AV</div>
+                    <div class="li-sub">Waymo Tesla autonomous</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
+
+                <a href="https://www.linkedin.com/search/results/content/?keywords=NVIDIA%20autonomous%20driving%20Cosmos&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">💡</div>
+                    <div class="li-label">NVIDIA Cosmos · Omniverse</div>
+                    <div class="li-sub">NVIDIA autonomous driving Cosmos</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
+
+                <a href="https://www.linkedin.com/search/results/content/?keywords=CARLA%20simulator%20autonomous&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">🔬</div>
+                    <div class="li-label">CARLA 시뮬레이터</div>
+                    <div class="li-sub">CARLA simulator autonomous</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
+
+                <a href="https://www.linkedin.com/search/results/content/?keywords=BYD%20Baidu%20autonomous%20China&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">🇨🇳</div>
+                    <div class="li-label">중국 자율주행</div>
+                    <div class="li-sub">BYD Baidu autonomous China</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
+
+                <a href="https://www.linkedin.com/search/results/content/?keywords=digital%20twin%20autonomous%20vehicle&sortBy=date" target="_blank" class="li-shortcut-card">
+                    <div class="li-icon">🌐</div>
+                    <div class="li-label">디지털 트윈 AV</div>
+                    <div class="li-sub">digital twin autonomous vehicle</div>
+                    <div class="li-arrow">LinkedIn 바로가기 →</div>
+                </a>
 
             </div>
         </div>
 
-        <!-- 8. 레이싱 & 시뮬 게임 -->
+        <!-- 8. 레딧 속보 -->
+        <div id="reddit" class="section">
+            <h2>🔴 레딧 속보 — 자율주행 커뮤니티 포스트</h2>
+            <p style="color:#aab0d0;font-size:0.85rem;margin-bottom:2rem;">Reddit 자율주행 커뮤니티에서 개인들이 올린 최신 포스트를 바로 확인하세요. 아래 버튼을 클릭하면 해당 서브레딧으로 이동합니다.</p>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.2rem; max-width:1100px;">
+
+                <a href="https://www.reddit.com/r/SelfDrivingCars/new/" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">🚗</div>
+                    <div class="li-label">r/SelfDrivingCars</div>
+                    <div class="li-sub">자율주행 최신 포스트</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+                <a href="https://www.reddit.com/r/autonomous/new/" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">🤖</div>
+                    <div class="li-label">r/autonomous</div>
+                    <div class="li-sub">자율주행 기술 토론</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+                <a href="https://www.reddit.com/r/MachineLearning/search/?q=autonomous+driving&sort=new" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">🧠</div>
+                    <div class="li-label">r/MachineLearning</div>
+                    <div class="li-sub">자율주행 AI/ML 포스트</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+                <a href="https://www.reddit.com/r/Waymo/new/" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">🏎️</div>
+                    <div class="li-label">r/Waymo</div>
+                    <div class="li-sub">Waymo 사용자 경험 & 뉴스</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+                <a href="https://www.reddit.com/r/teslamotors/search/?q=autopilot+FSD&sort=new" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">⚡</div>
+                    <div class="li-label">r/teslamotors — FSD</div>
+                    <div class="li-sub">Tesla 자율주행 포스트</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+                <a href="https://www.reddit.com/r/nvidia/search/?q=autonomous+driving+simulation&sort=new" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">💻</div>
+                    <div class="li-label">r/nvidia — AV Simulation</div>
+                    <div class="li-sub">NVIDIA 자율주행 시뮬 포스트</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+                <a href="https://www.reddit.com/r/unrealengine/search/?q=autonomous+simulation&sort=new" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">🎮</div>
+                    <div class="li-label">r/unrealengine — AV Sim</div>
+                    <div class="li-sub">언리얼 엔진 자율주행 프로젝트</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+                <a href="https://www.reddit.com/r/China/search/?q=autonomous+vehicle+BYD+Baidu&sort=new" target="_blank" class="reddit-shortcut-card">
+                    <div class="li-icon">🇨🇳</div>
+                    <div class="li-label">Reddit — 중국 AV</div>
+                    <div class="li-sub">BYD · Baidu 자율주행 포스트</div>
+                    <div class="li-arrow" style="color:#ff6534;">Reddit 바로가기 →</div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- 9. 레이싱 & 시뮬 게임 -->
         <div id="games" class="section">
             <h2>🎮 레이싱 & 시뮬레이션 게임</h2>
             <div class="games-split">
