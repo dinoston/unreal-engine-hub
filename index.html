@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unreal Engine Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: #0a0e27;
+            color: #e0e6ed;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #2a3550;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            background: linear-gradient(135deg, #667eea 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+            color: #a8b4c8;
+        }
+
+        nav {
+            background: rgba(10, 14, 39, 0.95);
+            padding: 1.5rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #2a3550;
+            backdrop-filter: blur(10px);
+        }
+
+        nav a {
+            color: #a8b4c8;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.5rem;
+        }
+
+        nav a:hover, nav a.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 3rem 0;
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #1a1f3a 0%, #16192c 100%);
+            border: 1px solid #2a3550;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #667eea;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .card-title-kor {
+            font-size: 0.85rem;
+            color: #a8b4c8;
+            font-weight: 400;
+            margin-top: 0.3rem;
+            font-style: italic;
+        }
+
+        .card-summary {
+            font-size: 0.95rem;
+            color: #a8b4c8;
+            margin-bottom: 1rem;
+            flex: 1;
+            line-height: 1.6;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .card-tag {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            border: 1px solid #667eea;
+        }
+
+        .card-price {
+            color: #27ae60;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .read-more {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .read-more::after {
+            content: ' →';
+        }
+
+        .card:hover .read-more {
+            color: #a78bfa;
+        }
+
+        .update-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8787 100%);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            font-weight: 600;
+        }
+
+        .info-box {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(164, 139, 250, 0.1) 100%);
+            border: 1px solid #667eea;
+            border-radius: 10px;
+            color: #a8b4c8;
+            font-size: 1rem;
+        }
+
+        .browse-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+        }
+
+        .browse-btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #a8b4c8;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #2a3550;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                margin: 0 0.7rem;
+                font-size: 0.85rem;
+            }
+
+            .section h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Unreal Engine Hub</h1>
+        <p>Latest News, Free Assets & GIS Integration in One Place</p>
+    </header>
+
+    <nav>
+        <a href="#" class="tab-btn active" onclick="showSection('unreal', this); return false;">🚀 Unreal 최신 뉴스</a>
+        <a href="#" class="tab-btn" onclick="showSection('assets', this); return false;">💎 Fab 무료 에셋</a>
+        <a href="#" class="tab-btn" onclick="showSection('gis', this); return false;">🗺️ Unreal GIS 뉴스</a>
+        <a href="#" class="tab-btn" onclick="showSection('us', this); return false;">🇺🇸 자율주행 미국 뉴스</a>
+        <a href="#" class="tab-btn" onclick="showSection('china', this); return false;">🇨🇳 자율주행 중국 뉴스</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- 1. Unreal 최신 뉴스 -->
+        <div id="unreal" class="section active">
+            <h2>🚀 Unreal 최신 뉴스</h2>
+            <div class="card-grid">
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/2026/02/unreal-fest-chicago-2026-header.jpg" alt="Unreal Fest Chicago 2026">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 18, 2026 · Event</div>
+                        <h3 class="card-title">Unreal Fest Chicago 2026
+                            <div class="card-title-kor">언리얼 페스트 시카고 2026</div>
+                        </h3>
+                        <p class="card-summary">Join the biggest Unreal event of the year! Network with developers, learn cutting-edge techniques, and see the future of real-time 3D technology at Unreal Fest Chicago 2026.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Event</span>
+                            <a href="https://www.unrealengine.com/en-US/events/unreal-fest-chicago-2026" class="read-more" target="_blank">Get Tickets</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/2026/02/decision-engine-home-building.jpg" alt="Decision Engine Home Building">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 11, 2026 · Industry</div>
+                        <h3 class="card-title">Decision Engine: Home Building Future
+                            <div class="card-title-kor">의사결정 엔진: 홈빌딩의 미래</div>
+                        </h3>
+                        <p class="card-summary">3D visualization transforms from marketing tool to critical business decision engine. See how Unreal Engine powers automation, financial valuation, and project de-risking for the construction industry.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Industry</span>
+                            <a href="https://www.unrealengine.com/en-US/news/long-live-the-decision-engine-how-ue-is-powering-the-future-of-home-building" class="read-more" target="_blank">Read Article</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/2026/02/gdc-2026-san-francisco.jpg" alt="GDC 2026">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 4, 2026 · Conference</div>
+                        <h3 class="card-title">GDC Festival of Gaming 2026
+                            <div class="card-title-kor">GDC 게이밍 페스티벌 2026</div>
+                        </h3>
+                        <p class="card-summary">Epic Games hosts four dynamic sessions and Power Talks at GDC 2026 in San Francisco. Explore the latest in game development, UEFN, mobile optimization, and real-time 3D innovation.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Conference</span>
+                            <a href="https://www.unrealengine.com/en-US/events/gdc-2026" class="read-more" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/2026/02/valor-mortis-soulslike.jpg" alt="Valor Mortis">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 3, 2026 · Game Spotlight</div>
+                        <h3 class="card-title">Valor Mortis: UE5 Powers Soulslike
+                            <div class="card-title-kor">발로르 모르티스: UE5가 강화하는 소울라이크</div>
+                        </h3>
+                        <p class="card-summary">One More Level's innovative supernatural Soulslike set in alternate 19th-century Europe. Valor Mortis leverages UE5's advanced rendering, destruction systems, and performance optimization for next-gen gameplay.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Game Spotlight</span>
+                            <a href="https://www.unrealengine.com/en-US/developer-interviews/key-ue5-features-fuel-supernatural-soulslike-valor-mortis" class="read-more" target="_blank">Read Interview</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/2026/02/megagrants-2025.jpg" alt="Epic MegaGrants">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 3, 2026 · Grants</div>
+                        <h3 class="card-title">Epic MegaGrants 2025 - Apply Now
+                            <div class="card-title-kor">에픽 메가그랜츠 2025 - 지금 신청하기</div>
+                        </h3>
+                        <p class="card-summary">Now in its seventh year, Epic MegaGrants has supported groundbreaking creators worldwide. The first submission cycle of 2026 is now open. Apply for funding to bring your creative vision to life.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Grants</span>
+                            <a href="https://www.unrealengine.com/en-US/news/epic-megagrants-2025-recap-first-submissions-are-now-open" class="read-more" target="_blank">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 2. Fab 무료 에셋 -->
+        <div id="assets" class="section">
+            <h2>💎 Fab 무료 에셋 <span class="update-badge">매주 업데이트</span></h2>
+            <div class="card-grid">
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://cdn.fab.com/listings/c9a2e4b8-1400-4cf7-ba7f-57e4588840bd/thumb.jpg" alt="Free Asset 1">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Free Asset</div>
+                        <h3 class="card-title">Premium Asset Pack - Free This Month
+                            <div class="card-title-kor">프리미엄 에셋 팩 - 이번 달 무료</div>
+                        </h3>
+                        <p class="card-summary">Monthly rotating free premium asset. Production-ready, high-quality content created by top Fab creators. Materials, models, animations, and audio all with full commercial rights included.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Free Asset</span>
+                            <span class="card-price">FREE</span>
+                        </div>
+                        <a href="https://www.fab.com/listings/c9a2e4b8-1400-4cf7-ba7f-57e4588840bd" class="read-more" target="_blank" style="margin-top: 1rem;">Get Now</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://cdn.fab.com/listings/e627507f-3dbd-4b88-8e3e-db4dc1730fdd/thumb.jpg" alt="Free Asset 2">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Limited Time</div>
+                        <h3 class="card-title">Premium Asset Pack - Limited Time Free
+                            <div class="card-title-kor">프리미엄 에셋 팩 - 제한 시간 무료</div>
+                        </h3>
+                        <p class="card-summary">Exclusive premium asset available for free this week only. Sourced from top Fab creators and studios. Perfect for game development, visualization, and real-time 3D projects. Full source files included!</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Limited Time</span>
+                            <span class="card-price">FREE</span>
+                        </div>
+                        <a href="https://www.fab.com/listings/e627507f-3dbd-4b88-8e3e-db4dc1730fdd" class="read-more" target="_blank" style="margin-top: 1rem;">Get Now</a>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://cdn.fab.com/listings/b1ad8ff7-2bf2-49fc-a685-fa2af0a1d73f/thumb.jpg" alt="Free Asset 3">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Premium</div>
+                        <h3 class="card-title">Premium Asset Pack - Grab While Free
+                            <div class="card-title-kor">프리미엄 에셋 팩 - 무료 중에 받기</div>
+                        </h3>
+                        <p class="card-summary">Ultra-premium asset from renowned Fab publisher. Limited free slot available this month. HD/4K quality, fully compatible with UE5, includes documentation and example scenes. Don't miss out!</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Premium</span>
+                            <span class="card-price">FREE</span>
+                        </div>
+                        <a href="https://www.fab.com/listings/b1ad8ff7-2bf2-49fc-a685-fa2af0a1d73f" class="read-more" target="_blank" style="margin-top: 1rem;">Get Now</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="info-box">
+                <p>💡 <strong>Pro Tip:</strong> 무료 프리미엄 에셋은 Fab에서 매주 업데이트됩니다! 매달 새로운 고가 에셋이 한시적으로 무료로 제공됩니다. 모든 에셋에는 상업적 사용권 및 평생 지원이 포함됩니다.</p>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://www.fab.com/featured?category=unreal&free=true" target="_blank" class="browse-btn">Fab에서 모든 무료 Unreal 에셋 보기 →</a>
+            </div>
+        </div>
+
+        <!-- 3. Unreal GIS 뉴스 -->
+        <div id="gis" class="section">
+            <h2>🗺️ Unreal GIS 뉴스</h2>
+            <div class="card-grid">
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/real-world-terrain.jpg" alt="GIS Terrain">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Technology · Terrain</div>
+                        <h3 class="card-title">Real-World Terrain from GIS Data
+                            <div class="card-title-kor">GIS 데이터로 실제 지형 생성</div>
+                        </h3>
+                        <p class="card-summary">Import OpenStreetMap, SRTM, and Cesium 3D Tiles directly. The Geospatial plugin generates precise terrain from lat/long coordinates. Perfect for large-scale environments, open-world games, and geographic simulations.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Terrain</span>
+                            <a href="https://www.unrealengine.com/en-US/news/geospatial-plugin" class="read-more" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/smart-city.jpg" alt="Smart City">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Tutorial · Urban Planning</div>
+                        <h3 class="card-title">Smart City Simulation & Planning
+                            <div class="card-title-kor">스마트시티 시뮬레이션 및 계획</div>
+                        </h3>
+                        <p class="card-summary">Build urban simulations with real GIS data. Model traffic flows, power grids, populations, and services. Use for city planning, policy testing, infrastructure planning, and stakeholder presentations.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Urban Planning</span>
+                            <a href="https://www.unrealengine.com/en-US/news/smart-city-ue" class="read-more" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/satellite-3d.jpg" alt="Satellite 3D">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Technology · 3D Tiles</div>
+                        <h3 class="card-title">Satellite Imagery 3D Modeling
+                            <div class="card-title-kor">위성 이미지 3D 모델링</div>
+                        </h3>
+                        <p class="card-summary">Cesium for Unreal integrates high-resolution satellite and aerial imagery with 3D Tiles. Build AAA-quality global visualizations with Google, Bing, or custom tile servers for massive environments.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">3D Tiles</span>
+                            <a href="https://cesium.com/platform/cesium-for-unreal/" class="read-more" target="_blank">Explore</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/lidar-pointcloud.jpg" alt="LiDAR Point Cloud">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Tutorial · Point Clouds</div>
+                        <h3 class="card-title">LiDAR & Point Cloud Processing
+                            <div class="card-title-kor">라이다 및 포인트 클라우드 처리</div>
+                        </h3>
+                        <p class="card-summary">Import drone and aerial LiDAR data seamlessly. Convert point clouds to production meshes with automated classification. Essential for autonomous vehicle simulation, photogrammetry, and precision mapping.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Point Clouds</span>
+                            <a href="https://www.unrealengine.com/en-US/news/lidar-point-cloud" class="read-more" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/gps-tracking.jpg" alt="GPS Tracking">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Feature · Mobile/AR</div>
+                        <h3 class="card-title">Real-Time GPS & Location Services
+                            <div class="card-title-kor">실시간 GPS 및 위치 서비스</div>
+                        </h3>
+                        <p class="card-summary">Build location-based AR/VR applications with live GPS integration. Support geofencing, route planning, and location-aware mechanics. Mobile-first with cloud sync for distributed systems.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Mobile/AR</span>
+                            <a href="https://www.unrealengine.com/en-US/news/gps-location-services" class="read-more" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">
+                        <img src="https://d1jtxmhcm0pp0b.cloudfront.net/cms-assets/gis/data-dashboard.jpg" alt="Data Dashboard">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">Technology · Visualization</div>
+                        <h3 class="card-title">GIS Data Visualization Dashboard
+                            <div class="card-title-kor">GIS 데이터 시각화 대시보드</div>
+                        </h3>
+                        <p class="card-summary">Build interactive 3D dashboards with population density, environmental data, traffic analytics. Combines GIS layers with Unreal UMG for real-time business intelligence and decision support systems.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Visualization</span>
+                            <a href="https://www.unrealengine.com/en-US/news/gis-data-visualization" class="read-more" target="_blank">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="info-box">
+                <p>📍 <strong>추천 스택:</strong> Geospatial Plugin + Cesium for Unreal + Procedural Foliage Spawner = 엔터프라이즈급 GIS 생태계</p>
+            </div>
+        </div>
+
+        <!-- 4. 자율주행 미국 뉴스 -->
+        <div id="us" class="section">
+            <h2>🇺🇸 자율주행 미국 뉴스</h2>
+            <div class="card-grid">
+
+                <div class="card fade-in">
+                    <div class="card-image">🏛️</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 4, 2026 · Regulation</div>
+                        <h3 class="card-title">U.S. Senate Hearing: "Hit the Road, Mac"
+                            <div class="card-title-kor">미국 상원 청문회: 자율주행차의 미래</div>
+                        </h3>
+                        <p class="card-summary">Ted Cruz 상원의원 주재로 Tesla·Waymo 임원이 자율주행 안전성을 증언했습니다. 인간 운전자보다 낮은 사고율을 강조하면서도, 스쿨버스 미정차 사고 등 안전 우려로 여야 의원들의 강도 높은 질의가 이어졌습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Regulation</span>
+                            <a href="https://www.commerce.senate.gov/2026/2/hit-the-road-mac-the-future-of-self-driving-cars" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">📜</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 5, 2026 · Legislation</div>
+                        <h3 class="card-title">SELF DRIVE Act of 2026 (H.R. 7390) Introduced
+                            <div class="card-title-kor">자율주행 연방법 SELF DRIVE Act 2026 발의</div>
+                        </h3>
+                        <p class="card-summary">Robert Latta 하원의원이 H.R. 7390을 발의했습니다. NHTSA의 자율주행시스템(ADS) 권한을 강화하고, 미국의 자율주행 기술 리더십 확보를 위한 연방 표준 프레임워크를 수립하는 것이 핵심 내용입니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Legislation</span>
+                            <a href="https://www.autoconnectedcar.com/2026/02/autonomous-self-driving-vehicle-news-tesla-waymo-us-senate-teamsters-pronto-ai/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🤖</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 6, 2026 · Technology</div>
+                        <h3 class="card-title">Waymo World Model: New AV Simulation Frontier
+                            <div class="card-title-kor">웨이모 월드 모델: 자율주행 시뮬레이션 새 지평</div>
+                        </h3>
+                        <p class="card-summary">2억 마일 이상의 완전 자율주행 데이터를 기반으로 Waymo가 생성형 AI 시뮬레이션 모델 "Waymo World Model"을 공개했습니다. Genie 3 사전학습을 활용해 2D 영상 지식을 3D 라이다 출력으로 전환, 실제 주행 중 미경험 상황까지 시뮬레이션합니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Technology</span>
+                            <a href="https://waymo.com/blog/2026/02/the-waymo-world-model-a-new-frontier-for-autonomous-driving-simulation" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">⚠️</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Safety</div>
+                        <h3 class="card-title">Waymo Safety Controversy & Regulatory Pressure
+                            <div class="card-title-kor">웨이모 안전 논란 및 규제 압박</div>
+                        </h3>
+                        <p class="card-summary">어린이 충돌 사고를 계기로 Teamsters California가 캘리포니아 공익사업위원회(CPUC)에 Waymo 운행 허가 무기한 정지를 요청했습니다. NHTSA 조사가 진행 중이며, 의회 내에서도 로보택시 운행 기준 강화 논의가 확산되고 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Safety</span>
+                            <a href="https://www.autoconnectedcar.com/2026/02/autonomous-self-driving-vehicle-news-tesla-waymo-us-senate-teamsters-pronto-ai/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">📊</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 17, 2026 · Market Report</div>
+                        <h3 class="card-title">AV Market to Consolidate Around Top Players
+                            <div class="card-title-kor">자율주행 시장, 선두 기업 중심으로 재편 전망</div>
+                        </h3>
+                        <p class="card-summary">최신 전략 보고서에 따르면 AV 시장은 Waymo, Zoox, Baidu Apollo Go, WeRide, Pony.ai 등 자본력 있는 선두 기업 중심으로 통합될 것으로 전망됩니다. 로보택시 확산은 규제 친화적 도시 중심으로 진행 중입니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Market Report</span>
+                            <a href="https://www.globenewswire.com/news-release/2026/02/17/3239534/28124/en/Autonomous-Vehicles-Strategic-Intelligence-Report-2025-Market-to-Consolidate-Around-a-Small-Set-of-Well-capitalized-First-Movers-especially-Baidu-Apollo-Go-Waymo-Zoox-WeRide-and-Po.html" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 5. 자율주행 중국 뉴스 -->
+        <div id="china" class="section">
+            <h2>🇨🇳 자율주행 중국 뉴스</h2>
+            <div class="card-grid">
+
+                <div class="card fade-in">
+                    <div class="card-image">🚗</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Production</div>
+                        <h3 class="card-title">Pony.ai × Toyota: Mass-Produced Robotaxi Launch
+                            <div class="card-title-kor">Pony.ai × 토요타, 양산형 로보택시 출시</div>
+                        </h3>
+                        <p class="card-summary">Pony.ai와 Toyota가 공동 개발한 bZ4X 기반 양산형 로보택시가 생산 라인을 가동했습니다. 2026년 내 1,000대 이상 생산 계획이며, 7세대 자율주행 시스템으로 하드웨어 비용을 전 세대 대비 약 70% 절감했습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Production</span>
+                            <a href="https://www.autoconnectedcar.com/2026/02/autonomous-self-driving-vehicle-news-pony-ai-toyota-ouster-stereolabs-baidu-uber-apollo-go-msci-aurora-waymo-caocao/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">📈</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 27, 2026 · Finance</div>
+                        <h3 class="card-title">Pony.ai Joins MSCI China Index
+                            <div class="card-title-kor">Pony.ai, MSCI 중국 지수 최초 로보택시 기업으로 편입</div>
+                        </h3>
+                        <p class="card-summary">Pony.ai가 2026년 2월 27일부로 MSCI 중국 지수에 편입되었습니다. 로보택시 기업으로는 MSCI 중국 지수 최초 편입 사례로, 중국 자율주행 산업의 금융 시장 내 위상이 높아지고 있음을 보여줍니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Finance</span>
+                            <a href="https://stocktwits.com/news-articles/markets/equity/pony-ai-stock-msci-china-index-robotaxi-toyota-production-2026/cZb69h5R4qK" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🚕</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Milestone</div>
+                        <h3 class="card-title">Baidu Apollo Go: 250,000+ Rides/Week
+                            <div class="card-title-kor">바이두 아폴로 고, 주당 25만 건 이상 완전 무인 운행</div>
+                        </h3>
+                        <p class="card-summary">바이두 Apollo Go의 완전 무인 로보택시 서비스가 중국 여러 도시에서 주당 25만 건 이상의 탑승을 기록했습니다. 중국 최대 자율주행 플랫폼으로서의 입지를 굳히며 상업화 규모를 지속 확대하고 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Milestone</span>
+                            <a href="https://www.nasdaq.com/articles/chinas-av-push-bidu-pony-wrd-lead-robotaxi-revolution" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">💬</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Expansion</div>
+                        <h3 class="card-title">WeRide Integrates with WeChat for Booking
+                            <div class="card-title-kor">WeRide, 위챗으로 로보택시 예약 통합</div>
+                        </h3>
+                        <p class="card-summary">WeRide가 중국 최대 메신저 플랫폼 WeChat과 통합해 로보택시 예약 서비스를 개시했습니다. 2030년까지 수만 대 규모로 확장 계획이며, 중동 등 해외 시장 진출도 적극 추진하고 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Expansion</span>
+                            <a href="https://www.autoconnectedcar.com/2026/02/autonomous-self-driving-vehicle-news-pony-ai-toyota-ouster-stereolabs-baidu-uber-apollo-go-msci-aurora-waymo-caocao/" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in">
+                    <div class="card-image">🚦</div>
+                    <div class="card-content">
+                        <div class="card-meta">February 2026 · Regulation</div>
+                        <h3 class="card-title">China Approves Level 3 AV on Public Roads
+                            <div class="card-title-kor">중국, 레벨3 자율주행차 일반 도로 시범 운행 승인</div>
+                        </h3>
+                        <p class="card-summary">중국 공업정보화부(MIIT)가 Deepal SL03, Arcfox 알파 S 등에 레벨3(L3) 자율주행 일반 도로 시범 운행을 승인했습니다. 업계는 2026년을 L3 자율주행 본격 상용화의 분기점으로 평가하고 있습니다.</p>
+                        <div class="card-footer">
+                            <span class="card-tag">Regulation</span>
+                            <a href="https://dspdaily.com/news/view.php?no=25300" class="read-more" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Unreal Engine Hub | Last Updated: February 18, 2026</p>
+        <p>For official news, visit <a href="https://www.unrealengine.com/en-US/news" style="color: #667eea; text-decoration: none;">Unreal Engine News</a> and <a href="https://www.fab.com" style="color: #667eea; text-decoration: none;">Fab Marketplace</a></p>
+    </footer>
+
+    <script>
+        function showSection(sectionId, clickedTab) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            clickedTab.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
