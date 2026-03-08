@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-07 03:19 UTC",
-  "updated_kst": "2026-03-07 12:19 KST",
+  "updated": "2026-03-08 03:32 UTC",
+  "updated_kst": "2026-03-08 12:32 KST",
   "stocks": {
     "TSLA": {
       "price": 396.73,
@@ -24,8 +24,8 @@
       "flag": "🇯🇵"
     },
     "BYDDF": {
-      "price": 11.85,
-      "change_pct": -3.74,
+      "price": 11.87,
+      "change_pct": -3.57,
       "currency": "USD",
       "name": "BYD",
       "flag": "🇨🇳"
