@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-22 03:40 UTC",
-  "updated_kst": "2026-03-22 12:40 KST",
+  "updated": "2026-03-23 03:45 UTC",
+  "updated_kst": "2026-03-23 12:45 KST",
   "stocks": {
     "TSLA": {
       "price": 367.96,
@@ -10,8 +10,8 @@
       "flag": "🇺🇸"
     },
     "NVDA": {
-      "price": 172.7,
-      "change_pct": -4.27,
+      "price": 172.93,
+      "change_pct": -4.14,
       "currency": "USD",
       "name": "NVIDIA",
       "flag": "🇺🇸"
