@@ -1,87 +1,87 @@
 {
-  "updated": "2026-04-14 04:11 UTC",
-  "updated_kst": "2026-04-14 13:11 KST",
+  "updated": "2026-04-15 04:10 UTC",
+  "updated_kst": "2026-04-15 13:10 KST",
   "stocks": {
     "TSLA": {
-      "price": 352.42,
-      "change_pct": 1.97,
+      "price": 364.2,
+      "change_pct": 4.37,
       "currency": "USD",
       "name": "Tesla",
       "flag": "🇺🇸"
     },
     "NVDA": {
-      "price": 189.31,
-      "change_pct": 2.94,
+      "price": 196.51,
+      "change_pct": 4.18,
       "currency": "USD",
       "name": "NVIDIA",
       "flag": "🇺🇸"
     },
     "TM": {
-      "price": 211.06,
-      "change_pct": -0.04,
+      "price": 211.55,
+      "change_pct": 0.43,
       "currency": "USD",
       "name": "Toyota",
       "flag": "🇯🇵"
     },
     "BYDDF": {
       "price": 14.12,
-      "change_pct": 7.38,
+      "change_pct": 4.9,
       "currency": "USD",
       "name": "BYD",
       "flag": "🇨🇳"
     },
     "MBG.DE": {
-      "price": 54.2,
-      "change_pct": 1.78,
+      "price": 54.83,
+      "change_pct": 1.76,
       "currency": "EUR",
       "name": "Mercedes",
       "flag": "🇩🇪"
     },
     "BMW.DE": {
-      "price": 83.88,
-      "change_pct": 1.82,
+      "price": 82.5,
+      "change_pct": -1.6,
       "currency": "EUR",
       "name": "BMW",
       "flag": "🇩🇪"
     },
     "GM": {
-      "price": 76.83,
-      "change_pct": 0.13,
+      "price": 79.46,
+      "change_pct": 3.98,
       "currency": "USD",
       "name": "GM",
       "flag": "🇺🇸"
     },
     "F": {
-      "price": 12.16,
-      "change_pct": -0.65,
+      "price": 12.71,
+      "change_pct": 4.78,
       "currency": "USD",
       "name": "Ford",
       "flag": "🇺🇸"
     },
     "MBLY": {
-      "price": 7.47,
-      "change_pct": 3.61,
+      "price": 7.62,
+      "change_pct": 5.25,
       "currency": "USD",
       "name": "Mobileye",
       "flag": "🇺🇸"
     },
     "BIDU": {
-      "price": 112.01,
-      "change_pct": 3.49,
+      "price": 118.23,
+      "change_pct": 9.06,
       "currency": "USD",
       "name": "Baidu",
       "flag": "🇨🇳"
     },
     "VWAGY": {
-      "price": 10.64,
-      "change_pct": -0.84,
+      "price": 10.86,
+      "change_pct": 1.78,
       "currency": "USD",
       "name": "Volkswagen",
       "flag": "🇩🇪"
     },
     "HMC": {
-      "price": 24.2,
-      "change_pct": -0.7,
+      "price": 24.16,
+      "change_pct": 0.5,
       "currency": "USD",
       "name": "Honda",
       "flag": "🇯🇵"
