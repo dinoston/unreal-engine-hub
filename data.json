@@ -1,6 +1,6 @@
 {
-  "updated": "2026-04-26 04:24 UTC",
-  "updated_kst": "2026-04-26 13:24 KST",
+  "updated": "2026-04-27 04:32 UTC",
+  "updated_kst": "2026-04-27 13:32 KST",
   "stocks": {
     "TSLA": {
       "price": 376.3,
@@ -10,8 +10,8 @@
       "flag": "🇺🇸"
     },
     "NVDA": {
-      "price": 208.27,
-      "change_pct": 2.85,
+      "price": 208.26,
+      "change_pct": 2.84,
       "currency": "USD",
       "name": "NVIDIA",
       "flag": "🇺🇸"
@@ -59,8 +59,8 @@
       "flag": "🇺🇸"
     },
     "MBLY": {
-      "price": 9.23,
-      "change_pct": 16.84,
+      "price": 9.22,
+      "change_pct": 16.71,
       "currency": "USD",
       "name": "Mobileye",
       "flag": "🇺🇸"
