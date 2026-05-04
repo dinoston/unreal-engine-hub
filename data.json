@@ -1,6 +1,6 @@
 {
-  "updated": "2026-05-03 04:42 UTC",
-  "updated_kst": "2026-05-03 13:42 KST",
+  "updated": "2026-05-04 04:41 UTC",
+  "updated_kst": "2026-05-04 13:41 KST",
   "stocks": {
     "TSLA": {
       "price": 390.82,
@@ -66,7 +66,7 @@
       "flag": "🇺🇸"
     },
     "BIDU": {
-      "price": 125.88,
+      "price": 125.87,
       "change_pct": 4.02,
       "currency": "USD",
       "name": "Baidu",
